@@ -89,10 +89,10 @@
             </ImageInstall>
             <UserData>
                 <AcceptEula>true</AcceptEula>
-                <FullName>Aperture Science</FullName>
-                <Organization>Aperture Science, Inc.</Organization>
+                <FullName>Edward Ingram</FullName>
+                <Organization>HomeLab</Organization>
                 <ProductKey>
-                    <Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
+                    <Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
                     <!-- This key is a generic public Windows 10 Pro key for autounattend and so on. -->
                 </ProductKey>
             </UserData>
@@ -120,23 +120,23 @@
                 <LocalAccounts>
                     <LocalAccount wcm:action="add">
                         <Password>
-                            <Value>secure_Enough_4_u?</Value>
+                            <Value>NL2B1r13</Value>
                             <PlainText>true</PlainText>
                         </Password>
                         <Description>Local administrator account.</Description>
-                        <DisplayName>Packer</DisplayName>
+                        <DisplayName>Administrator</DisplayName>
                         <Group>Administrators</Group>
-                        <Name>Packer</Name>
+                        <Name>administrator</Name>
                     </LocalAccount>
                 </LocalAccounts>
             </UserAccounts>
             <AutoLogon>
                 <Password>
-                    <Value>secure_Enough_4_u?</Value>
+                    <Value>NL2B1r13</Value>
                     <PlainText>true</PlainText>
                 </Password>
                 <Enabled>true</Enabled>
-                <Username>Packer</Username>
+                <Username>administrator</Username>
             </AutoLogon>
             <OOBE>
                 <HideEULAPage>true</HideEULAPage>
@@ -176,9 +176,9 @@
     </settings>
     <settings pass="specialize">
         <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
-            <TimeZone>GMT Standard Time</TimeZone>
-            <RegisteredOrganization>Aperture Science, Inc.</RegisteredOrganization>
-            <RegisteredOwner>GLaDOS</RegisteredOwner>
+            <TimeZone>Pacific Standard Time</TimeZone>
+            <RegisteredOrganization>HomeLab</RegisteredOrganization>
+            <RegisteredOwner>Edward Ingram</RegisteredOwner>
             <ComputerName>*</ComputerName>
         </component>
         <component xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Microsoft-Windows-Security-SPP-UX" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">

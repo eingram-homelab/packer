@@ -4,8 +4,9 @@ variable "vsphere_template_name" {
   type    = string
 }
 
-variable "vsphere_folder" {
+variable "vm_folder" {
   type    = string
+  default = "${env("vm_folder")}"
 }
 
 variable "cpu_num" {
@@ -22,7 +23,7 @@ variable "mem_size" {
 
 variable "vsphere_user" {
   type    = string
-  default = "${env("VSPHERE_USER")}"
+  default = "${env("vsphere_user")}"
 }
 
 variable "vsphere_password" {
@@ -32,7 +33,7 @@ variable "vsphere_password" {
 
 variable "ssh_username" {
   type    = string
-  default = "root"
+  default = "${env("ssh_username")}"
 }
 
 variable "ssh_password" {
@@ -40,28 +41,34 @@ variable "ssh_password" {
   default = "${env("SSH_PASS")}"
 }
 
-variable "vsphere_server" {
+variable "vcenter_server" {
   type    = string
+  default = "${env("vcenter_server")}"
 }
 
-variable "vsphere_dc_name" {
+variable "vcenter_dc_name" {
   type    = string
+  default = "${env("vcenter_dc_name")}"
 }
 
-variable "vsphere_compute_cluster" {
+variable "vcenter_cluster" {
   type    = string
+  default = "${env("vcenter_cluster")}"
 }
 
 variable "vsphere_host" {
   type    = string
+  default = "${env("vsphere_host")}"
 }
 
-variable "vsphere_datastore" {
+variable "vcenter_datastore" {
   type    = string
+  default = "${env("vcenter_datastore")}"
 }
 
-variable "vsphere_portgroup_name" {
+variable "vm_network" {
   type    = string
+  default = "${env("vm_network")}"
 }
 
 variable "os_iso_path" {
@@ -102,12 +109,12 @@ source "vsphere-iso" "centos" {
   insecure_connection   = "true"
   username              = "${var.vsphere_user}"
   password              = "${var.vsphere_password}"
-  vcenter_server        = "${var.vsphere_server}"
-  cluster               = "${var.vsphere_compute_cluster}"
-  datacenter            = "${var.vsphere_dc_name}"
+  vcenter_server        = "${var.vcenter_server}"
+  cluster               = "${var.vcenter_cluster}"
+  datacenter            = "${var.vcenter_dc_name}"
   host                  = "${var.vsphere_host}"
-  datastore             = "${var.vsphere_datastore}"
-  folder                = "${var.vsphere_folder}"
+  datastore             = "${var.vcenter_datastore}"
+  folder                = "${var.vm_folder}"
   vm_name               = "${var.vsphere_template_name}"
   convert_to_template   = true
 
@@ -121,7 +128,7 @@ source "vsphere-iso" "centos" {
   notes                 = "Packer built. Access Cockpit on port 9090."
 
   network_adapters {
-      network           = "${var.vsphere_portgroup_name}"
+      network           = "${var.vm_network}"
       network_card      = "vmxnet3"
   }
 

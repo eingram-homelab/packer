@@ -3,27 +3,28 @@ Specify any declared variables from the file of, variables.pkr.hcl, to override 
 Example of default value of var cpu_name is 2 cores. We override that with 4 cores below.
 */
 
-vcenter_username        = "packer@local"
-vcenter_password        = "Is_This_My_Password?"
+vcenter_username        = "administrator@vsphere.local"
+vcenter_password        = "B0Cadence&"
 
-os_username             = "Packer"
-os_password_workstation = "Is_This_My_Password?"
+os_username             = "administrator"
+os_password_workstation = "NL2B1r13"
 
-vcenter_server          = "vcenter.local"
-vcenter_cluster         = "cluster-lab"
-vcenter_datacenter      = "dc-lab01"
-vcenter_host            = "esxilab01.local"
-vcenter_datastore       = "templates"
-vcenter_folder          = "templates"
+vcenter_folder          = "Templates"
+vcenter_server          = "vcsa.local.lan"
+vcenter_datacenter      = "HomeLab Datacenter"
+vcenter_cluster         = "Intel NUC10 Cluster"
+vcenter_host            = "esxinuc1.local.lan"
+vcenter_datastore       = "XN_iSCSI_SSD"
 
-vm_name                 = "win10_pro_x64_packer_template"
-vm_network              = "lab"
-vm_guest_os_type        = "windows9_64Guest" # Refer to https://code.vmware.com/apis/704/vsphere/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for guest OS types.
-vm_version              = "13" # Refer to https://kb.vmware.com/s/article/1003746 for specific VM versions.
+vm_name                 = "TMP-Win10_Packer"
+vm_network              = "Lab-LAN1"
 
-os_iso_path             = "[iso_datastore] iso/windows_10_x64_21H1.iso"
-vmtools_iso_path        = "[iso_datastore] iso/windows_vmware_tools_v10.3.10-12406962.iso"
+vm_guest_os_type        = "windows9_64Guest" # Refer to https://code.vmware.com/apis/704/vcenter/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for guest OS types.
+vm_version              = "19" # Refer to https://kb.vmware.com/s/article/1003746 for specific VM versions.
 
-cpu_num                 = 4
-ram                     = 8192
-disk_size               = 81920
+os_iso_path             = "[XN_iSCSI_HDD] Repo/en_windows_10_consumer_edition_version_1803_updated_june_2019_x64_dvd_5c0f3aae.iso"
+vmtools_iso_path        = "[XN_iSCSI_HDD] Repo/windows.iso"
+
+cpu_num                 = 2
+ram                     = 4096
+disk_size               = 40960

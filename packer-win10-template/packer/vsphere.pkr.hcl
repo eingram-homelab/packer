@@ -26,7 +26,7 @@ source "vsphere-iso" "win_10_sysprep" {
   convert_to_template     = true
   notes                   = "Windows 10 Pro x64 VM template built using Packer.\nThis template is syspred and can be used for domain deployments."
 
-  ip_wait_timeout         = "20m"
+  ip_wait_timeout         = "60m"
   ip_settle_timeout       = "1m"
   communicator            = "winrm"
   #winrm_port             = "5985"
@@ -44,7 +44,7 @@ source "vsphere-iso" "win_10_sysprep" {
   RAM                     = var.ram
   RAM_reserve_all         = false
   RAM_hot_plug            = true
-  video_ram               = "16384"
+  video_ram               = "8192"
   cdrom_type              = "sata"
   disk_controller_type    = ["lsilogic-sas"]
     
@@ -86,38 +86,38 @@ build {
     restart_timeout = "15m"
   }
 
-  provisioner "windows-update" {
-    pause_before = "2m"
-    timeout = "1h"
-    search_criteria = "IsInstalled=0"
-    filters = [
-      #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      "exclude:$_.Title -like '*Preview*'",
-      "include:$true"
-    ]
-  }
+  # provisioner "windows-update" {
+  #   pause_before = "2m"
+  #   timeout = "1h"
+  #   search_criteria = "IsInstalled=0"
+  #   filters = [
+  #     #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+  #     "exclude:$_.Title -like '*Preview*'",
+  #     "include:$true"
+  #   ]
+  # }
 
-  provisioner "windows-update" {
-    pause_before = "2m"
-    timeout = "1h"
-    search_criteria = "IsInstalled=0"
-    filters = [
-      #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      "exclude:$_.Title -like '*Preview*'",
-      "include:$true"
-    ]
-  }
+  # provisioner "windows-update" {
+  #   pause_before = "2m"
+  #   timeout = "1h"
+  #   search_criteria = "IsInstalled=0"
+  #   filters = [
+  #     #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+  #     "exclude:$_.Title -like '*Preview*'",
+  #     "include:$true"
+  #   ]
+  # }
 
-  provisioner "windows-update" {
-    pause_before = "2m"
-    timeout = "1h"
-    search_criteria = "IsInstalled=0"
-    filters = [
-      #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      "exclude:$_.Title -like '*Preview*'",
-      "include:$true"
-    ]
-  }
+  # provisioner "windows-update" {
+  #   pause_before = "2m"
+  #   timeout = "1h"
+  #   search_criteria = "IsInstalled=0"
+  #   filters = [
+  #     #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+  #     "exclude:$_.Title -like '*Preview*'",
+  #     "include:$true"
+  #   ]
+  # }
   
   provisioner "powershell" {
     pause_before      = "2m"

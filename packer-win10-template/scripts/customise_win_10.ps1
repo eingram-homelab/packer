@@ -6,7 +6,7 @@ $ErrorActionPreference = "Stop"
 try {
     # Disable password expiration for your local admin account.
     Write-Host "Setting admin account to not expire..."
-    wmic useraccount where "name='Packer'" set PasswordExpires=FALSE
+    wmic useraccount where "name='administrator'" set PasswordExpires=FALSE
 
     # Set power plan to High Performance.
     Write-Host "Setting power plan to high performance..."
@@ -14,7 +14,7 @@ try {
     powercfg /setactive ([string]$p.InstanceID).Replace("Microsoft:PowerPlan\{","").Replace("}","")
 
     # Show file extensions in Windows Explorer.
-    Write-Host "Enbaling file extensions in Windows Explorer..."
+    Write-Host "Enabling file extensions in Windows Explorer..."
     Set-Itemproperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Value 0 -Verbose
 
     ##### While the step below I had to do previously, this breaks now since an application is now required. For some reason, running it manually works. 

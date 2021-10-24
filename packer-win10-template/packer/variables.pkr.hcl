@@ -8,12 +8,12 @@ I have use environment variables from GitLab. You may use them from elsewhere.
 variable "vcenter_username" {
     description = "vCenter username."
     type    = string
-    default = env("LAB_VSPHERE_USER") # Example of using evironment variables.
+    default = env("VSPHERE_USER") # Example of using evironment variables.
 }
 variable "vcenter_password" {
     description = "vCenter password."
     type    = string
-    default = env("LAB_VSPHERE_PASS") # Example of using evironment variables.
+    default = env("VSPHERE_PASS") # Example of using evironment variables.
     sensitive = true
 }
 variable "os_username" {
@@ -24,7 +24,7 @@ variable "os_username" {
 variable "os_password_workstation" {
     description = "Local workstation password for login, WinRM or SSH etc."
     type    = string
-    default = "${env("LAB_W10_PASS")}" # Example of using evironment variables.
+    default = "${env("W10_PASS")}" # Example of using evironment variables.
     sensitive = true
 }
 variable "vcenter_server" {

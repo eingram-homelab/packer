@@ -1,0 +1,144 @@
+2021/10/23 23:49:38 [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/23 23:49:38 [TRACE] discovering plugins in /usr/local/bin
+2021/10/23 23:49:38 [TRACE] discovering plugins in /Users/edwardingram/.config/packer/plugins
+2021/10/23 23:49:38 [TRACE] discovering plugins in .
+2021/10/23 23:49:38 [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/23 23:49:38 [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:38 [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:38 [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/23 23:49:38 [TRACE] listing potential installations for "github.com/rgl/windows-update" that match "0.14.0". plugingetter.ListInstallationsOptions{FromFolders:[]string{"/usr/local/bin/packer", ".", "/Users/edwardingram/.config/packer/plugins"}, BinaryInstallationOptions:plugingetter.BinaryInstallationOptions{APIVersionMajor:"5", APIVersionMinor:"0", OS:"darwin", ARCH:"amd64", Ext:"", Checksummers:[]plugingetter.Checksummer{plugingetter.Checksummer{Type:"sha256", Hash:(*sha256.digest)(0xc000178200)}}}}
+2021/10/23 23:49:38 [TRACE] Found the following "github.com/rgl/windows-update" installations: [{/Users/edwardingram/.config/packer/plugins/github.com/rgl/windows-update/packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 v0.14.0}]
+2021/10/23 23:49:38 found external [-packer-default-plugin-name-] provisioner from windows-update plugin
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_network, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for ram, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_password, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_server, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_cluster, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_datacenter, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_host, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_firmware, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for cpu_num, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_username, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for os_username, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_version, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for network_card, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for os_password_workstation, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_folder, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_guest_os_type, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for disk_size, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for os_iso_path, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vmtools_iso_path, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_datastore, so skipping
+2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_name, so skipping
+2021/10/23 23:49:38 [TRACE] Starting internal plugin packer-builder-vsphere-iso
+2021/10/23 23:49:38 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-builder-vsphere-iso"}
+2021/10/23 23:49:38 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: args: []string{"packer-builder-vsphere-iso"}
+2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2305081622
+2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: Waiting for connection...
+2021/10/23 23:49:38 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2305081622
+2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: Serving a plugin connection...
+2021/10/23 23:49:38 [TRACE] Starting internal plugin packer-provisioner-windows-restart
+2021/10/23 23:49:38 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-windows-restart"}
+2021/10/23 23:49:38 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: args: []string{"packer-provisioner-windows-restart"}
+2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2049540878
+2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: Waiting for connection...
+2021/10/23 23:49:38 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2049540878
+2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: Serving a plugin connection...
+2021/10/23 23:49:38 [TRACE] Starting internal plugin packer-provisioner-powershell
+2021/10/23 23:49:38 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-powershell"}
+2021/10/23 23:49:38 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/23 23:49:38 packer-provisioner-powershell plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/23 23:49:38 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/23 23:49:38 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:38 packer-provisioner-powershell plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:38 packer-provisioner-powershell plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/23 23:49:38 packer-provisioner-powershell plugin: args: []string{"packer-provisioner-powershell"}
+2021/10/23 23:49:38 packer-provisioner-powershell plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin209761358
+2021/10/23 23:49:38 packer-provisioner-powershell plugin: Waiting for connection...
+2021/10/23 23:49:38 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin209761358
+2021/10/23 23:49:38 packer-provisioner-powershell plugin: Serving a plugin connection...
+2021/10/23 23:49:38 [TRACE] Starting internal plugin packer-provisioner-windows-restart
+2021/10/23 23:49:38 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-windows-restart"}
+2021/10/23 23:49:38 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: args: []string{"packer-provisioner-windows-restart"}
+2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin498306299
+2021/10/23 23:49:39 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin498306299
+2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: Waiting for connection...
+2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: Serving a plugin connection...
+2021/10/23 23:49:39 [TRACE] Starting internal plugin packer-provisioner-powershell
+2021/10/23 23:49:39 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-powershell"}
+2021/10/23 23:49:39 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/23 23:49:39 packer-provisioner-powershell plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/23 23:49:39 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/23 23:49:39 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:39 packer-provisioner-powershell plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/23 23:49:39 packer-provisioner-powershell plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/23 23:49:39 packer-provisioner-powershell plugin: args: []string{"packer-provisioner-powershell"}
+2021/10/23 23:49:39 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin670252489
+2021/10/23 23:49:39 packer-provisioner-powershell plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin670252489
+2021/10/23 23:49:39 packer-provisioner-powershell plugin: Waiting for connection...
+2021/10/23 23:49:39 packer-provisioner-powershell plugin: Serving a plugin connection...
+2021/10/23 23:49:39 ui: [1;32mvsphere-iso.win_10_sysprep: output will be in this color.[0m
+2021/10/23 23:49:39 ui: 
+2021/10/23 23:49:39 Build debug mode: false
+2021/10/23 23:49:39 Force build: false
+2021/10/23 23:49:39 On error: 
+2021/10/23 23:49:39 Waiting on builds to complete...
+2021/10/23 23:49:39 Starting build run: vsphere-iso.win_10_sysprep
+2021/10/23 23:49:39 Running builder: 
+2021/10/23 23:49:39 [INFO] (telemetry) Starting builder vsphere-iso.win_10_sysprep
+2021/10/23 23:49:39 packer-builder-vsphere-iso plugin: No URLs were provided to Step Download. Continuing...
+2021/10/23 23:49:39 packer-builder-vsphere-iso plugin: No CD files specified. CD disk will not be made.
+2021/10/23 23:49:39 ui: [1;32m2021-10-23T23:49:39-07:00: ==> vsphere-iso.win_10_sysprep: Creating VM...[0m
+2021/10/23 23:49:40 ui: [1;32m2021-10-23T23:49:40-07:00: ==> vsphere-iso.win_10_sysprep: Customizing hardware...[0m
+2021/10/23 23:49:40 ui: [1;32m2021-10-23T23:49:40-07:00: ==> vsphere-iso.win_10_sysprep: Adding SATA controller...[0m
+2021/10/23 23:49:41 ui: [1;32m2021-10-23T23:49:41-07:00: ==> vsphere-iso.win_10_sysprep: Mounting ISO images...[0m
+2021/10/23 23:49:41 packer-builder-vsphere-iso plugin: Check if ISO path is a Content Library path
+2021/10/23 23:49:41 packer-builder-vsphere-iso plugin: ISO path not identified as a Content Library path
+2021/10/23 23:49:41 packer-builder-vsphere-iso plugin: Using [XN_iSCSI_HDD] Repo/en_windows_10_consumer_edition_version_1803_updated_june_2019_x64_dvd_5c0f3aae.iso as the datastore path
+2021/10/23 23:49:41 packer-builder-vsphere-iso plugin: Creating CD-ROM on controller '&{{{} 15000 0xc000e64d00 <nil> <nil> <nil> 100 0xc000f352ec} 0 []}' with iso '[XN_iSCSI_HDD] Repo/en_windows_10_consumer_edition_version_1803_updated_june_2019_x64_dvd_5c0f3aae.iso'
+2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Check if ISO path is a Content Library path
+2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: ISO path not identified as a Content Library path
+2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Using [XN_iSCSI_HDD] Repo/windows.iso as the datastore path
+2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Creating CD-ROM on controller '&{{{} 15000 0xc0010776c0 <nil> <nil> <nil> 100 0xc00107e09c} 0 [16000]}' with iso '[XN_iSCSI_HDD] Repo/windows.iso'
+2021/10/23 23:49:42 ui: [1;32m2021-10-23T23:49:42-07:00: ==> vsphere-iso.win_10_sysprep: Adding configuration parameters...[0m
+2021/10/23 23:49:42 ui: [1;32m2021-10-23T23:49:42-07:00: ==> vsphere-iso.win_10_sysprep: Creating floppy disk...[0m
+2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Floppy path: /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer1561794727
+2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Initializing block device backed by temporary file
+2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Formatting the block device with a FAT filesystem...
+2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Initializing FAT filesystem on block device
+2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Reading the root directory from the filesystem
+2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Copying files flatly from floppy_files[0m
+2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Copying file: unattended/autounattend.xml[0m
+2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Done copying files from floppy_files[0m
+2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Collecting paths from floppy_dirs[0m
+2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Resulting paths from floppy_dirs : [scripts][0m
+2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Recursively copying : scripts[0m
+2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Done copying paths from floppy_dirs[0m
+2021/10/23 23:49:42 ui: [1;32m2021-10-23T23:49:42-07:00: ==> vsphere-iso.win_10_sysprep: Uploading created floppy image[0m
+2021/10/23 23:49:42 ui: [1;32m2021-10-23T23:49:42-07:00: ==> vsphere-iso.win_10_sysprep: Adding generated Floppy...[0m
+2021/10/23 23:49:43 ui: [1;32m2021-10-23T23:49:43-07:00: ==> vsphere-iso.win_10_sysprep: Set boot order temporary...[0m
+2021/10/23 23:49:43 ui: [1;32m2021-10-23T23:49:43-07:00: ==> vsphere-iso.win_10_sysprep: Power on VM...[0m
+2021/10/23 23:49:44 ui: [1;32m2021-10-23T23:49:44-07:00: ==> vsphere-iso.win_10_sysprep: Waiting 3s for boot...[0m
+2021/10/23 23:49:47 ui: [1;32m2021-10-23T23:49:47-07:00: ==> vsphere-iso.win_10_sysprep: Typing boot command...[0m
+2021/10/23 23:49:47 packer-builder-vsphere-iso plugin: Special code '<spacebar>' found, replacing with: CodeSpacebar
+2021/10/23 23:49:47 packer-builder-vsphere-iso plugin: Special code '<spacebar>' found, replacing with: CodeSpacebar
+2021/10/23 23:49:47 packer-builder-vsphere-iso plugin: [INFO] Waiting for IP, up to total timeout: 1h0m0s, settle timeout: 1m0s
+2021/10/23 23:49:47 ui: [1;32m2021-10-23T23:49:47-07:00: ==> vsphere-iso.win_10_sysprep: Waiting for IP...[0m
