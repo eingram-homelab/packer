@@ -1,144 +1,1176 @@
-2021/10/23 23:49:38 [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
-2021/10/23 23:49:38 [TRACE] discovering plugins in /usr/local/bin
-2021/10/23 23:49:38 [TRACE] discovering plugins in /Users/edwardingram/.config/packer/plugins
-2021/10/23 23:49:38 [TRACE] discovering plugins in .
-2021/10/23 23:49:38 [INFO] PACKER_CONFIG env var not set; checking the default config file path
-2021/10/23 23:49:38 [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:38 [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:38 [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
-2021/10/23 23:49:38 [TRACE] listing potential installations for "github.com/rgl/windows-update" that match "0.14.0". plugingetter.ListInstallationsOptions{FromFolders:[]string{"/usr/local/bin/packer", ".", "/Users/edwardingram/.config/packer/plugins"}, BinaryInstallationOptions:plugingetter.BinaryInstallationOptions{APIVersionMajor:"5", APIVersionMinor:"0", OS:"darwin", ARCH:"amd64", Ext:"", Checksummers:[]plugingetter.Checksummer{plugingetter.Checksummer{Type:"sha256", Hash:(*sha256.digest)(0xc000178200)}}}}
-2021/10/23 23:49:38 [TRACE] Found the following "github.com/rgl/windows-update" installations: [{/Users/edwardingram/.config/packer/plugins/github.com/rgl/windows-update/packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 v0.14.0}]
-2021/10/23 23:49:38 found external [-packer-default-plugin-name-] provisioner from windows-update plugin
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_network, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for ram, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_password, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_server, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_cluster, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_datacenter, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_host, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_firmware, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for cpu_num, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_username, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for os_username, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_version, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for network_card, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for os_password_workstation, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_folder, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_guest_os_type, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for disk_size, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for os_iso_path, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vmtools_iso_path, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vcenter_datastore, so skipping
-2021/10/23 23:49:38 [TRACE] validateValue: not active for vm_name, so skipping
-2021/10/23 23:49:38 [TRACE] Starting internal plugin packer-builder-vsphere-iso
-2021/10/23 23:49:38 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-builder-vsphere-iso"}
-2021/10/23 23:49:38 Waiting for RPC address for: /usr/local/bin/packer
-2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
-2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
-2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
-2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: args: []string{"packer-builder-vsphere-iso"}
-2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2305081622
-2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: Waiting for connection...
-2021/10/23 23:49:38 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2305081622
-2021/10/23 23:49:38 packer-builder-vsphere-iso plugin: Serving a plugin connection...
-2021/10/23 23:49:38 [TRACE] Starting internal plugin packer-provisioner-windows-restart
-2021/10/23 23:49:38 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-windows-restart"}
-2021/10/23 23:49:38 Waiting for RPC address for: /usr/local/bin/packer
-2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
-2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
-2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
-2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: args: []string{"packer-provisioner-windows-restart"}
-2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2049540878
-2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: Waiting for connection...
-2021/10/23 23:49:38 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2049540878
-2021/10/23 23:49:38 packer-provisioner-windows-restart plugin: Serving a plugin connection...
-2021/10/23 23:49:38 [TRACE] Starting internal plugin packer-provisioner-powershell
-2021/10/23 23:49:38 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-powershell"}
-2021/10/23 23:49:38 Waiting for RPC address for: /usr/local/bin/packer
-2021/10/23 23:49:38 packer-provisioner-powershell plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
-2021/10/23 23:49:38 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
-2021/10/23 23:49:38 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:38 packer-provisioner-powershell plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:38 packer-provisioner-powershell plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
-2021/10/23 23:49:38 packer-provisioner-powershell plugin: args: []string{"packer-provisioner-powershell"}
-2021/10/23 23:49:38 packer-provisioner-powershell plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin209761358
-2021/10/23 23:49:38 packer-provisioner-powershell plugin: Waiting for connection...
-2021/10/23 23:49:38 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin209761358
-2021/10/23 23:49:38 packer-provisioner-powershell plugin: Serving a plugin connection...
-2021/10/23 23:49:38 [TRACE] Starting internal plugin packer-provisioner-windows-restart
-2021/10/23 23:49:38 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-windows-restart"}
-2021/10/23 23:49:38 Waiting for RPC address for: /usr/local/bin/packer
-2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
-2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
-2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
-2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: args: []string{"packer-provisioner-windows-restart"}
-2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin498306299
-2021/10/23 23:49:39 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin498306299
-2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: Waiting for connection...
-2021/10/23 23:49:39 packer-provisioner-windows-restart plugin: Serving a plugin connection...
-2021/10/23 23:49:39 [TRACE] Starting internal plugin packer-provisioner-powershell
-2021/10/23 23:49:39 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-powershell"}
-2021/10/23 23:49:39 Waiting for RPC address for: /usr/local/bin/packer
-2021/10/23 23:49:39 packer-provisioner-powershell plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
-2021/10/23 23:49:39 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
-2021/10/23 23:49:39 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:39 packer-provisioner-powershell plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
-2021/10/23 23:49:39 packer-provisioner-powershell plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
-2021/10/23 23:49:39 packer-provisioner-powershell plugin: args: []string{"packer-provisioner-powershell"}
-2021/10/23 23:49:39 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin670252489
-2021/10/23 23:49:39 packer-provisioner-powershell plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin670252489
-2021/10/23 23:49:39 packer-provisioner-powershell plugin: Waiting for connection...
-2021/10/23 23:49:39 packer-provisioner-powershell plugin: Serving a plugin connection...
-2021/10/23 23:49:39 ui: [1;32mvsphere-iso.win_10_sysprep: output will be in this color.[0m
-2021/10/23 23:49:39 ui: 
-2021/10/23 23:49:39 Build debug mode: false
-2021/10/23 23:49:39 Force build: false
-2021/10/23 23:49:39 On error: 
-2021/10/23 23:49:39 Waiting on builds to complete...
-2021/10/23 23:49:39 Starting build run: vsphere-iso.win_10_sysprep
-2021/10/23 23:49:39 Running builder: 
-2021/10/23 23:49:39 [INFO] (telemetry) Starting builder vsphere-iso.win_10_sysprep
-2021/10/23 23:49:39 packer-builder-vsphere-iso plugin: No URLs were provided to Step Download. Continuing...
-2021/10/23 23:49:39 packer-builder-vsphere-iso plugin: No CD files specified. CD disk will not be made.
-2021/10/23 23:49:39 ui: [1;32m2021-10-23T23:49:39-07:00: ==> vsphere-iso.win_10_sysprep: Creating VM...[0m
-2021/10/23 23:49:40 ui: [1;32m2021-10-23T23:49:40-07:00: ==> vsphere-iso.win_10_sysprep: Customizing hardware...[0m
-2021/10/23 23:49:40 ui: [1;32m2021-10-23T23:49:40-07:00: ==> vsphere-iso.win_10_sysprep: Adding SATA controller...[0m
-2021/10/23 23:49:41 ui: [1;32m2021-10-23T23:49:41-07:00: ==> vsphere-iso.win_10_sysprep: Mounting ISO images...[0m
-2021/10/23 23:49:41 packer-builder-vsphere-iso plugin: Check if ISO path is a Content Library path
-2021/10/23 23:49:41 packer-builder-vsphere-iso plugin: ISO path not identified as a Content Library path
-2021/10/23 23:49:41 packer-builder-vsphere-iso plugin: Using [XN_iSCSI_HDD] Repo/en_windows_10_consumer_edition_version_1803_updated_june_2019_x64_dvd_5c0f3aae.iso as the datastore path
-2021/10/23 23:49:41 packer-builder-vsphere-iso plugin: Creating CD-ROM on controller '&{{{} 15000 0xc000e64d00 <nil> <nil> <nil> 100 0xc000f352ec} 0 []}' with iso '[XN_iSCSI_HDD] Repo/en_windows_10_consumer_edition_version_1803_updated_june_2019_x64_dvd_5c0f3aae.iso'
-2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Check if ISO path is a Content Library path
-2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: ISO path not identified as a Content Library path
-2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Using [XN_iSCSI_HDD] Repo/windows.iso as the datastore path
-2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Creating CD-ROM on controller '&{{{} 15000 0xc0010776c0 <nil> <nil> <nil> 100 0xc00107e09c} 0 [16000]}' with iso '[XN_iSCSI_HDD] Repo/windows.iso'
-2021/10/23 23:49:42 ui: [1;32m2021-10-23T23:49:42-07:00: ==> vsphere-iso.win_10_sysprep: Adding configuration parameters...[0m
-2021/10/23 23:49:42 ui: [1;32m2021-10-23T23:49:42-07:00: ==> vsphere-iso.win_10_sysprep: Creating floppy disk...[0m
-2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Floppy path: /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer1561794727
-2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Initializing block device backed by temporary file
-2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Formatting the block device with a FAT filesystem...
-2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Initializing FAT filesystem on block device
-2021/10/23 23:49:42 packer-builder-vsphere-iso plugin: Reading the root directory from the filesystem
-2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Copying files flatly from floppy_files[0m
-2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Copying file: unattended/autounattend.xml[0m
-2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Done copying files from floppy_files[0m
-2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Collecting paths from floppy_dirs[0m
-2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Resulting paths from floppy_dirs : [scripts][0m
-2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Recursively copying : scripts[0m
-2021/10/23 23:49:42 ui: [0;32m2021-10-23T23:49:42-07:00:     vsphere-iso.win_10_sysprep: Done copying paths from floppy_dirs[0m
-2021/10/23 23:49:42 ui: [1;32m2021-10-23T23:49:42-07:00: ==> vsphere-iso.win_10_sysprep: Uploading created floppy image[0m
-2021/10/23 23:49:42 ui: [1;32m2021-10-23T23:49:42-07:00: ==> vsphere-iso.win_10_sysprep: Adding generated Floppy...[0m
-2021/10/23 23:49:43 ui: [1;32m2021-10-23T23:49:43-07:00: ==> vsphere-iso.win_10_sysprep: Set boot order temporary...[0m
-2021/10/23 23:49:43 ui: [1;32m2021-10-23T23:49:43-07:00: ==> vsphere-iso.win_10_sysprep: Power on VM...[0m
-2021/10/23 23:49:44 ui: [1;32m2021-10-23T23:49:44-07:00: ==> vsphere-iso.win_10_sysprep: Waiting 3s for boot...[0m
-2021/10/23 23:49:47 ui: [1;32m2021-10-23T23:49:47-07:00: ==> vsphere-iso.win_10_sysprep: Typing boot command...[0m
-2021/10/23 23:49:47 packer-builder-vsphere-iso plugin: Special code '<spacebar>' found, replacing with: CodeSpacebar
-2021/10/23 23:49:47 packer-builder-vsphere-iso plugin: Special code '<spacebar>' found, replacing with: CodeSpacebar
-2021/10/23 23:49:47 packer-builder-vsphere-iso plugin: [INFO] Waiting for IP, up to total timeout: 1h0m0s, settle timeout: 1m0s
-2021/10/23 23:49:47 ui: [1;32m2021-10-23T23:49:47-07:00: ==> vsphere-iso.win_10_sysprep: Waiting for IP...[0m
+2021/10/26 13:58:54 [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/26 13:58:54 [TRACE] discovering plugins in /usr/local/bin
+2021/10/26 13:58:54 [TRACE] discovering plugins in /Users/edwardingram/.config/packer/plugins
+2021/10/26 13:58:54 [TRACE] discovering plugins in .
+2021/10/26 13:58:54 [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/26 13:58:54 [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:54 [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:54 [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/26 13:58:54 [TRACE] listing potential installations for "github.com/rgl/windows-update" that match "0.14.0". plugingetter.ListInstallationsOptions{FromFolders:[]string{"/usr/local/bin/packer", ".", "/Users/edwardingram/.config/packer/plugins"}, BinaryInstallationOptions:plugingetter.BinaryInstallationOptions{APIVersionMajor:"5", APIVersionMinor:"0", OS:"darwin", ARCH:"amd64", Ext:"", Checksummers:[]plugingetter.Checksummer{plugingetter.Checksummer{Type:"sha256", Hash:(*sha256.digest)(0xc000408200)}}}}
+2021/10/26 13:58:55 [TRACE] Found the following "github.com/rgl/windows-update" installations: [{/Users/edwardingram/.config/packer/plugins/github.com/rgl/windows-update/packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 v0.14.0}]
+2021/10/26 13:58:55 found external [-packer-default-plugin-name-] provisioner from windows-update plugin
+2021/10/26 13:58:55 [TRACE] validateValue: not active for os_password_workstation, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vcenter_server, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vm_name, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vm_guest_os_type, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vm_firmware, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for disk_size, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for os_iso_path, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for os_username, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vcenter_datastore, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vcenter_folder, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vm_network, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vcenter_datacenter, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vm_version, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for network_card, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vmtools_iso_path, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for cpu_num, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for ram, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vcenter_username, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vcenter_password, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vcenter_cluster, so skipping
+2021/10/26 13:58:55 [TRACE] validateValue: not active for vcenter_host, so skipping
+2021/10/26 13:58:55 [TRACE] Starting internal plugin packer-builder-vsphere-iso
+2021/10/26 13:58:55 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-builder-vsphere-iso"}
+2021/10/26 13:58:55 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: args: []string{"packer-builder-vsphere-iso"}
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin1333930780
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: Waiting for connection...
+2021/10/26 13:58:55 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin1333930780
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: Serving a plugin connection...
+2021/10/26 13:58:55 [TRACE] Starting internal plugin packer-provisioner-windows-restart
+2021/10/26 13:58:55 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-windows-restart"}
+2021/10/26 13:58:55 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: args: []string{"packer-provisioner-windows-restart"}
+2021/10/26 13:58:55 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin4113243592
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin4113243592
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: Waiting for connection...
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: Serving a plugin connection...
+2021/10/26 13:58:55 [TRACE] Starting external plugin /Users/edwardingram/.config/packer/plugins/github.com/rgl/windows-update/packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 start provisioner -packer-default-plugin-name-
+2021/10/26 13:58:55 Starting plugin: /Users/edwardingram/.config/packer/plugins/github.com/rgl/windows-update/packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 []string{"/Users/edwardingram/.config/packer/plugins/github.com/rgl/windows-update/packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64", "start", "provisioner", "-packer-default-plugin-name-"}
+2021/10/26 13:58:55 Waiting for RPC address for: /Users/edwardingram/.config/packer/plugins/github.com/rgl/windows-update/packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64
+2021/10/26 13:58:55 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 13:58:55 Starting packer-plugin-windows-update (version 0.14.0; commit 9068df71325b1a74c8f37301fcf0e4d46ef3c63f; date 2021-08-01T11:29:50Z)
+2021/10/26 13:58:55 Received unix RPC address for /Users/edwardingram/.config/packer/plugins/github.com/rgl/windows-update/packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin731952485
+2021/10/26 13:58:55 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 13:58:55 Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin731952485
+2021/10/26 13:58:55 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 13:58:55 Waiting for connection...
+2021/10/26 13:58:55 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 13:58:55 Serving a plugin connection...
+2021/10/26 13:58:55 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 13:58:55 [TRACE] starting provisioner -packer-default-plugin-name-
+2021/10/26 13:58:55 [TRACE] Starting internal plugin packer-provisioner-powershell
+2021/10/26 13:58:55 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-powershell"}
+2021/10/26 13:58:55 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: args: []string{"packer-provisioner-powershell"}
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2389941730
+2021/10/26 13:58:55 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2389941730
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: Waiting for connection...
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: Serving a plugin connection...
+2021/10/26 13:58:55 [TRACE] Starting internal plugin packer-provisioner-windows-restart
+2021/10/26 13:58:55 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-windows-restart"}
+2021/10/26 13:58:55 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: args: []string{"packer-provisioner-windows-restart"}
+2021/10/26 13:58:55 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin616183586
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin616183586
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: Waiting for connection...
+2021/10/26 13:58:55 packer-provisioner-windows-restart plugin: Serving a plugin connection...
+2021/10/26 13:58:55 [TRACE] Starting internal plugin packer-provisioner-powershell
+2021/10/26 13:58:55 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-provisioner-powershell"}
+2021/10/26 13:58:55 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: args: []string{"packer-provisioner-powershell"}
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin1980295818
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: Waiting for connection...
+2021/10/26 13:58:55 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin1980295818
+2021/10/26 13:58:55 packer-provisioner-powershell plugin: Serving a plugin connection...
+2021/10/26 13:58:55 ui: [1;32mvsphere-iso.win_10_sysprep: output will be in this color.[0m
+2021/10/26 13:58:55 ui: 
+2021/10/26 13:58:55 Build debug mode: false
+2021/10/26 13:58:55 Force build: false
+2021/10/26 13:58:55 On error: 
+2021/10/26 13:58:55 Waiting on builds to complete...
+2021/10/26 13:58:55 Starting build run: vsphere-iso.win_10_sysprep
+2021/10/26 13:58:55 Running builder: 
+2021/10/26 13:58:55 [INFO] (telemetry) Starting builder vsphere-iso.win_10_sysprep
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: No URLs were provided to Step Download. Continuing...
+2021/10/26 13:58:55 packer-builder-vsphere-iso plugin: No CD files specified. CD disk will not be made.
+2021/10/26 13:58:55 ui: [1;32m2021-10-26T13:58:55-07:00: ==> vsphere-iso.win_10_sysprep: Creating VM...[0m
+2021/10/26 13:58:56 ui: [1;32m2021-10-26T13:58:56-07:00: ==> vsphere-iso.win_10_sysprep: Customizing hardware...[0m
+2021/10/26 13:58:57 ui: [1;32m2021-10-26T13:58:57-07:00: ==> vsphere-iso.win_10_sysprep: Adding SATA controller...[0m
+2021/10/26 13:58:57 ui: [1;32m2021-10-26T13:58:57-07:00: ==> vsphere-iso.win_10_sysprep: Mounting ISO images...[0m
+2021/10/26 13:58:57 packer-builder-vsphere-iso plugin: Check if ISO path is a Content Library path
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: ISO path not identified as a Content Library path
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Using [XN_iSCSI_HDD] Repo/en_windows_10_consumer_edition_version_1803_updated_june_2019_x64_dvd_5c0f3aae.iso as the datastore path
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Creating CD-ROM on controller '&{{{} 15000 0xc0012ab180 <nil> <nil> <nil> 100 0xc00075043c} 0 []}' with iso '[XN_iSCSI_HDD] Repo/en_windows_10_consumer_edition_version_1803_updated_june_2019_x64_dvd_5c0f3aae.iso'
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Check if ISO path is a Content Library path
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: ISO path not identified as a Content Library path
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Using [XN_iSCSI_HDD] Repo/windows.iso as the datastore path
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Creating CD-ROM on controller '&{{{} 15000 0xc000cfe400 <nil> <nil> <nil> 100 0xc000e4de6c} 0 [16000]}' with iso '[XN_iSCSI_HDD] Repo/windows.iso'
+2021/10/26 13:58:58 ui: [1;32m2021-10-26T13:58:58-07:00: ==> vsphere-iso.win_10_sysprep: Adding configuration parameters...[0m
+2021/10/26 13:58:58 ui: [1;32m2021-10-26T13:58:58-07:00: ==> vsphere-iso.win_10_sysprep: Creating floppy disk...[0m
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Floppy path: /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer653155196
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Initializing block device backed by temporary file
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Formatting the block device with a FAT filesystem...
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Initializing FAT filesystem on block device
+2021/10/26 13:58:58 packer-builder-vsphere-iso plugin: Reading the root directory from the filesystem
+2021/10/26 13:58:58 ui: [0;32m2021-10-26T13:58:58-07:00:     vsphere-iso.win_10_sysprep: Copying files flatly from floppy_files[0m
+2021/10/26 13:58:58 ui: [0;32m2021-10-26T13:58:58-07:00:     vsphere-iso.win_10_sysprep: Copying file: unattended/autounattend.xml[0m
+2021/10/26 13:58:58 ui: [0;32m2021-10-26T13:58:58-07:00:     vsphere-iso.win_10_sysprep: Done copying files from floppy_files[0m
+2021/10/26 13:58:58 ui: [0;32m2021-10-26T13:58:58-07:00:     vsphere-iso.win_10_sysprep: Collecting paths from floppy_dirs[0m
+2021/10/26 13:58:58 ui: [0;32m2021-10-26T13:58:58-07:00:     vsphere-iso.win_10_sysprep: Resulting paths from floppy_dirs : [scripts][0m
+2021/10/26 13:58:58 ui: [0;32m2021-10-26T13:58:58-07:00:     vsphere-iso.win_10_sysprep: Recursively copying : scripts[0m
+2021/10/26 13:58:58 ui: [0;32m2021-10-26T13:58:58-07:00:     vsphere-iso.win_10_sysprep: Done copying paths from floppy_dirs[0m
+2021/10/26 13:58:58 ui: [1;32m2021-10-26T13:58:58-07:00: ==> vsphere-iso.win_10_sysprep: Uploading created floppy image[0m
+2021/10/26 13:58:59 ui: [1;32m2021-10-26T13:58:59-07:00: ==> vsphere-iso.win_10_sysprep: Adding generated Floppy...[0m
+2021/10/26 13:58:59 ui: [1;32m2021-10-26T13:58:59-07:00: ==> vsphere-iso.win_10_sysprep: Set boot order temporary...[0m
+2021/10/26 13:58:59 ui: [1;32m2021-10-26T13:58:59-07:00: ==> vsphere-iso.win_10_sysprep: Power on VM...[0m
+2021/10/26 13:59:00 ui: [1;32m2021-10-26T13:59:00-07:00: ==> vsphere-iso.win_10_sysprep: Waiting 3s for boot...[0m
+2021/10/26 13:59:03 ui: [1;32m2021-10-26T13:59:03-07:00: ==> vsphere-iso.win_10_sysprep: Typing boot command...[0m
+2021/10/26 13:59:03 packer-builder-vsphere-iso plugin: Special code '<spacebar>' found, replacing with: CodeSpacebar
+2021/10/26 13:59:03 packer-builder-vsphere-iso plugin: Special code '<spacebar>' found, replacing with: CodeSpacebar
+2021/10/26 13:59:03 packer-builder-vsphere-iso plugin: [INFO] Waiting for IP, up to total timeout: 1h0m0s, settle timeout: 1m0s
+2021/10/26 13:59:03 ui: [1;32m2021-10-26T13:59:03-07:00: ==> vsphere-iso.win_10_sysprep: Waiting for IP...[0m
+2021/10/26 14:11:22 packer-builder-vsphere-iso plugin: VM IP aquired: 10.10.0.122
+2021/10/26 14:11:22 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.122
+2021/10/26 14:11:37 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.122
+2021/10/26 14:11:52 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.122
+2021/10/26 14:12:07 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.122
+2021/10/26 14:12:22 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.122
+2021/10/26 14:12:22 packer-builder-vsphere-iso plugin: VM IP seems stable enough: 10.10.0.122
+2021/10/26 14:12:22 ui: [1;32m2021-10-26T14:12:22-07:00: ==> vsphere-iso.win_10_sysprep: IP address: 10.10.0.122[0m
+2021/10/26 14:12:22 ui: [1;32m2021-10-26T14:12:22-07:00: ==> vsphere-iso.win_10_sysprep: Using WinRM communicator to connect: 10.10.0.122[0m
+2021/10/26 14:12:22 packer-builder-vsphere-iso plugin: Waiting for WinRM, up to timeout: 10m0s
+2021/10/26 14:12:22 ui: [1;32m2021-10-26T14:12:22-07:00: ==> vsphere-iso.win_10_sysprep: Waiting for WinRM to become available...[0m
+2021/10/26 14:12:22 packer-builder-vsphere-iso plugin: [INFO] Attempting WinRM connection...
+2021/10/26 14:12:22 packer-builder-vsphere-iso plugin: [DEBUG] connecting to remote shell using WinRM
+2021/10/26 14:12:28 packer-builder-vsphere-iso plugin: Checking that WinRM is connected with: 'powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGkAZgAgACgAVABlAHMAdAAtAFAAYQB0AGgAIAB2AGEAcgBpAGEAYgBsAGUAOgBnAGwAbwBiAGEAbAA6AFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlACkAewAkAFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlAD0AJwBTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACcAfQA7ACAAZQBjAGgAbwAgACIAVwBpAG4AUgBNACAAYwBvAG4AbgBlAGMAdABlAGQALgAiAA=='
+2021/10/26 14:12:28 packer-builder-vsphere-iso plugin: [INFO] starting remote command: powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGkAZgAgACgAVABlAHMAdAAtAFAAYQB0AGgAIAB2AGEAcgBpAGEAYgBsAGUAOgBnAGwAbwBiAGEAbAA6AFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlACkAewAkAFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlAD0AJwBTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACcAfQA7ACAAZQBjAGgAbwAgACIAVwBpAG4AUgBNACAAYwBvAG4AbgBlAGMAdABlAGQALgAiAA==
+2021/10/26 14:12:30 packer-builder-vsphere-iso plugin: [INFO] command 'powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGkAZgAgACgAVABlAHMAdAAtAFAAYQB0AGgAIAB2AGEAcgBpAGEAYgBsAGUAOgBnAGwAbwBiAGEAbAA6AFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlACkAewAkAFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlAD0AJwBTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACcAfQA7ACAAZQBjAGgAbwAgACIAVwBpAG4AUgBNACAAYwBvAG4AbgBlAGMAdABlAGQALgAiAA==' exited with code: 0
+2021/10/26 14:12:30 ui: [0;32m2021-10-26T14:12:30-07:00:     vsphere-iso.win_10_sysprep: WinRM connected.[0m
+2021/10/26 14:12:30 packer-builder-vsphere-iso plugin: Connected to machine
+2021/10/26 14:12:30 ui: [1;32m2021-10-26T14:12:30-07:00: ==> vsphere-iso.win_10_sysprep: Connected to WinRM![0m
+2021/10/26 14:12:30 ui: [1;32m2021-10-26T14:12:30-07:00: ==> vsphere-iso.win_10_sysprep: Pausing 5m0s before connecting...[0m
+2021/10/26 14:17:30 packer-builder-vsphere-iso plugin: Pause over; connecting...
+2021/10/26 14:17:30 packer-builder-vsphere-iso plugin: Waiting for WinRM, up to timeout: 10m0s
+2021/10/26 14:17:30 ui: [1;32m2021-10-26T14:17:30-07:00: ==> vsphere-iso.win_10_sysprep: Waiting for WinRM to become available...[0m
+2021/10/26 14:17:30 packer-builder-vsphere-iso plugin: [INFO] Attempting WinRM connection...
+2021/10/26 14:17:30 packer-builder-vsphere-iso plugin: [DEBUG] connecting to remote shell using WinRM
+2021/10/26 14:17:35 packer-builder-vsphere-iso plugin: Checking that WinRM is connected with: 'powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGkAZgAgACgAVABlAHMAdAAtAFAAYQB0AGgAIAB2AGEAcgBpAGEAYgBsAGUAOgBnAGwAbwBiAGEAbAA6AFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlACkAewAkAFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlAD0AJwBTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACcAfQA7ACAAZQBjAGgAbwAgACIAVwBpAG4AUgBNACAAYwBvAG4AbgBlAGMAdABlAGQALgAiAA=='
+2021/10/26 14:17:35 packer-builder-vsphere-iso plugin: [INFO] starting remote command: powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGkAZgAgACgAVABlAHMAdAAtAFAAYQB0AGgAIAB2AGEAcgBpAGEAYgBsAGUAOgBnAGwAbwBiAGEAbAA6AFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlACkAewAkAFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlAD0AJwBTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACcAfQA7ACAAZQBjAGgAbwAgACIAVwBpAG4AUgBNACAAYwBvAG4AbgBlAGMAdABlAGQALgAiAA==
+2021/10/26 14:17:37 packer-builder-vsphere-iso plugin: [INFO] command 'powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGkAZgAgACgAVABlAHMAdAAtAFAAYQB0AGgAIAB2AGEAcgBpAGEAYgBsAGUAOgBnAGwAbwBiAGEAbAA6AFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlACkAewAkAFAAcgBvAGcAcgBlAHMAcwBQAHIAZQBmAGUAcgBlAG4AYwBlAD0AJwBTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACcAfQA7ACAAZQBjAGgAbwAgACIAVwBpAG4AUgBNACAAYwBvAG4AbgBlAGMAdABlAGQALgAiAA==' exited with code: 0
+2021/10/26 14:17:37 ui: [0;32m2021-10-26T14:17:37-07:00:     vsphere-iso.win_10_sysprep: WinRM connected.[0m
+2021/10/26 14:17:37 packer-builder-vsphere-iso plugin: Connected to machine
+2021/10/26 14:17:37 ui: [1;32m2021-10-26T14:17:37-07:00: ==> vsphere-iso.win_10_sysprep: Connected to WinRM![0m
+2021/10/26 14:17:37 packer-builder-vsphere-iso plugin: Running the provision hook
+2021/10/26 14:17:37 [INFO] (telemetry) Starting provisioner windows-restart
+2021/10/26 14:17:37 ui: [1;32m2021-10-26T14:17:37-07:00: ==> vsphere-iso.win_10_sysprep: Pausing 2m0s before the next provisioner...[0m
+2021/10/26 14:19:37 ui: [1;32m2021-10-26T14:19:37-07:00: ==> vsphere-iso.win_10_sysprep: Restarting Machine[0m
+2021/10/26 14:19:37 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown /r /f /t 0 /c "packer restart"
+2021/10/26 14:19:37 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown /r /f /t 0 /c "packer restart"' exited with code: 0
+2021/10/26 14:19:37 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:19:37 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:19:37 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:19:37 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:19:37 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:19:37 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:19:37 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:19:37 packer-provisioner-windows-restart plugin: [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:19:37 ui: [1;32m2021-10-26T14:19:37-07:00: ==> vsphere-iso.win_10_sysprep: Waiting for machine to restart...[0m
+2021/10/26 14:19:37 packer-provisioner-windows-restart plugin: Check if machine is rebooting...
+2021/10/26 14:19:37 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown /r /f /t 60 /c "packer restart test"
+2021/10/26 14:19:37 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown /r /f /t 60 /c "packer restart test"' exited with code: 1115
+2021/10/26 14:19:37 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:19:37 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:19:37 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:19:37 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:19:37 [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:19:37 ui error: [1;31m2021-10-26T14:19:37-07:00: ==> vsphere-iso.win_10_sysprep: A system shutdown is in progress.(1115)[0m
+2021/10/26 14:19:37 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:19:37 packer-provisioner-windows-restart plugin: [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:19:37 packer-provisioner-windows-restart plugin: [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:19:37 packer-provisioner-windows-restart plugin: Reboot already in progress, waiting...
+2021/10/26 14:19:47 packer-provisioner-windows-restart plugin: Check if machine is rebooting...
+2021/10/26 14:20:00 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:00 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:00 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:00 packer-provisioner-windows-restart plugin: Waiting for machine to reboot with timeout: 15m0s
+2021/10/26 14:20:00 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:00 packer-provisioner-windows-restart plugin: Waiting for machine to become available...
+2021/10/26 14:20:00 packer-provisioner-windows-restart plugin: Checking that communicator is connected with: 'powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGUAYwBoAG8AIAAoACIAewAwAH0AIAByAGUAcwB0AGEAcgB0AGUAZAAuACIAIAAtAGYAIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBEAG4AcwBdADoAOgBHAGUAdABIAG8AcwB0AE4AYQBtAGUAKAApACkA'
+2021/10/26 14:20:06 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:06 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:06 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:20:06 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:06 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:12 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:12 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:12 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:12 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:20:12 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:18 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:18 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:18 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:20:18 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:18 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:24 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:24 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:24 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:24 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:24 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:20:30 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:30 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:30 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:30 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:20:30 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:36 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:36 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:36 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:36 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:36 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:20:42 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:42 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:42 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:42 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:42 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:20:48 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:48 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:48 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:48 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:48 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:20:54 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:20:54 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:54 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:20:54 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:20:54 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:00 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:00 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:00 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:00 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:21:00 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:06 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:06 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:06 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:06 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:06 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:21:12 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:12 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:12 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:12 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:21:12 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:18 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:18 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:18 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:18 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:18 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:21:24 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:24 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:24 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:21:24 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:24 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:30 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:30 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:30 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:30 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:30 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:21:36 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:36 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:36 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:36 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:21:36 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:42 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:42 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:42 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:42 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:21:42 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:48 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:48 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:48 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:21:48 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:48 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:54 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:54 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:54 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:21:54 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:21:54 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:22:00 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:22:00 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:22:00 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:22:00 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:22:00 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:22:05 packer-builder-vsphere-iso plugin: [INFO] starting remote command: powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGUAYwBoAG8AIAAoACIAewAwAH0AIAByAGUAcwB0AGEAcgB0AGUAZAAuACIAIAAtAGYAIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBEAG4AcwBdADoAOgBHAGUAdABIAG8AcwB0AE4AYQBtAGUAKAApACkA
+2021/10/26 14:22:08 packer-builder-vsphere-iso plugin: [INFO] command 'powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGUAYwBoAG8AIAAoACIAewAwAH0AIAByAGUAcwB0AGEAcgB0AGUAZAAuACIAIAAtAGYAIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBEAG4AcwBdADoAOgBHAGUAdABIAG8AcwB0AE4AYQBtAGUAKAApACkA' exited with code: 0
+2021/10/26 14:22:08 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:22:08 [INFO] 28 bytes written for 'stdout'
+2021/10/26 14:22:08 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:22:08 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:22:08 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:22:08 packer-provisioner-windows-restart plugin: [INFO] 28 bytes written for 'stdout'
+2021/10/26 14:22:08 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:22:08 ui: [0;32m2021-10-26T14:22:08-07:00:     vsphere-iso.win_10_sysprep: EDWARD-U1DJGNTB restarted.[0m
+2021/10/26 14:22:08 packer-provisioner-windows-restart plugin: [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:22:08 ui: [1;32m2021-10-26T14:22:08-07:00: ==> vsphere-iso.win_10_sysprep: Machine successfully restarted, moving on[0m
+2021/10/26 14:22:08 [INFO] (telemetry) ending windows-restart
+2021/10/26 14:22:08 [INFO] (telemetry) Starting provisioner windows-update
+2021/10/26 14:22:08 ui: [1;32m2021-10-26T14:22:08-07:00: ==> vsphere-iso.win_10_sysprep: Pausing 2m0s before the next provisioner...[0m
+2021/10/26 14:24:08 ui: [1;32m2021-10-26T14:24:08-07:00: ==> vsphere-iso.win_10_sysprep: Uploading the Windows update elevated script...[0m
+2021/10/26 14:24:08 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:24:08 [INFO] 4481 bytes written for 'uploadData'
+2021/10/26 14:24:08 [INFO] 4481 bytes written for 'uploadData'
+2021/10/26 14:24:08 packer-builder-vsphere-iso plugin: Uploading file to 'C:/Windows/Temp/packer-windows-update-elevated.ps1'
+2021/10/26 14:24:12 ui: [1;32m2021-10-26T14:24:12-07:00: ==> vsphere-iso.win_10_sysprep: Uploading the Windows update check for reboot required elevated script...[0m
+2021/10/26 14:24:12 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:24:12 [INFO] 4190 bytes written for 'uploadData'
+2021/10/26 14:24:12 [INFO] 4190 bytes written for 'uploadData'
+2021/10/26 14:24:12 packer-builder-vsphere-iso plugin: Uploading file to 'C:/Windows/Temp/packer-windows-update-pending-reboot-elevated.ps1'
+2021/10/26 14:24:16 ui: [1;32m2021-10-26T14:24:16-07:00: ==> vsphere-iso.win_10_sysprep: Uploading the Windows update script...[0m
+2021/10/26 14:24:16 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:24:16 [INFO] 10134 bytes written for 'uploadData'
+2021/10/26 14:24:16 [INFO] 10134 bytes written for 'uploadData'
+2021/10/26 14:24:16 packer-builder-vsphere-iso plugin: Uploading file to 'C:/Windows/Temp/packer-windows-update.ps1'
+2021/10/26 14:24:20 ui: [1;32m2021-10-26T14:24:20-07:00: ==> vsphere-iso.win_10_sysprep: Running Windows update...[0m
+2021/10/26 14:24:20 packer-builder-vsphere-iso plugin: [INFO] starting remote command: PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-elevated.ps1
+2021/10/26 14:24:28 ui: [0;32m2021-10-26T14:24:28-07:00:     vsphere-iso.win_10_sysprep: Searching for Windows updates...[0m
+2021/10/26 14:24:33 ui: [0;32m2021-10-26T14:24:33-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2020-01-14; 71.72 MB): Microsoft .NET Framework 4.8 for Windows 10 Version 1803 for x64 (KB4486153)[0m
+2021/10/26 14:24:33 ui: [0;32m2021-10-26T14:24:33-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2020-07-01; 0.77 MB): 2020-06 Update for Windows 10 Version 1803 for x64-based Systems (KB4480730)[0m
+2021/10/26 14:24:33 ui: [0;32m2021-10-26T14:24:33-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2021-05-27; 1.81 MB): 2021-05 Update for Windows 10 Version 1803 for x64-based Systems (KB4023057)[0m
+2021/10/26 14:24:33 ui: [0;32m2021-10-26T14:24:33-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2021-10-12; 36.92 MB): Windows Malicious Software Removal Tool x64 - v5.94 (KB890830)[0m
+2021/10/26 14:24:33 ui: [0;32m2021-10-26T14:24:33-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2021-10-26; 124.37 MB): Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.351.1123.0)[0m
+2021/10/26 14:24:33 ui: [0;32m2021-10-26T14:24:33-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2020-02-11; 89976.99 MB): 2020-02 Cumulative Update for Windows 10 Version 1803 for x64-based Systems (KB4537762)[0m
+2021/10/26 14:24:33 ui: [0;32m2021-10-26T14:24:33-07:00:     vsphere-iso.win_10_sysprep: Downloading Windows updates (6 updates; 90212.58 MB)...[0m
+2021/10/26 14:25:26 ui: [0;32m2021-10-26T14:25:26-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 34% cpu; 47% memory)...[0m
+2021/10/26 14:26:28 ui: [0;32m2021-10-26T14:26:28-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 27% cpu; 51% memory)...[0m
+2021/10/26 14:27:31 ui: [0;32m2021-10-26T14:27:31-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 21% cpu; 54% memory)...[0m
+2021/10/26 14:27:51 ui: [0;32m2021-10-26T14:27:51-07:00:     vsphere-iso.win_10_sysprep: Installing Windows updates...[0m
+2021/10/26 14:28:33 ui: [0;32m2021-10-26T14:28:33-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 47% cpu; 49% memory)...[0m
+2021/10/26 14:29:35 ui: [0;32m2021-10-26T14:29:35-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 37% cpu; 45% memory)...[0m
+2021/10/26 14:30:38 ui: [0;32m2021-10-26T14:30:38-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 37% cpu; 49% memory)...[0m
+2021/10/26 14:31:40 ui: [0;32m2021-10-26T14:31:40-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 39% cpu; 46% memory)...[0m
+2021/10/26 14:32:42 ui: [0;32m2021-10-26T14:32:42-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 49% cpu; 56% memory)...[0m
+2021/10/26 14:33:45 ui: [0;32m2021-10-26T14:33:45-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 50% cpu; 51% memory)...[0m
+2021/10/26 14:34:47 ui: [0;32m2021-10-26T14:34:47-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 41% cpu; 46% memory)...[0m
+2021/10/26 14:35:51 ui: [0;32m2021-10-26T14:35:51-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 97% cpu; 66% memory)...[0m
+2021/10/26 14:36:31 ui: [0;32m2021-10-26T14:36:31-07:00:     vsphere-iso.win_10_sysprep: Waiting for the Windows Modules Installer to exit...[0m
+2021/10/26 14:36:54 ui: [0;32m2021-10-26T14:36:54-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 50% cpu; 51% memory)...[0m
+2021/10/26 14:37:56 ui: [0;32m2021-10-26T14:37:56-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 49% cpu; 51% memory)...[0m
+2021/10/26 14:38:58 ui: [0;32m2021-10-26T14:38:58-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 89% cpu; 51% memory)...[0m
+2021/10/26 14:40:01 ui: [0;32m2021-10-26T14:40:01-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 55% cpu; 50% memory)...[0m
+2021/10/26 14:40:45 packer-builder-vsphere-iso plugin: [INFO] command 'PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-elevated.ps1' exited with code: 101
+2021/10/26 14:40:45 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 101
+2021/10/26 14:40:45 [INFO] 2133 bytes written for 'stdout'
+2021/10/26 14:40:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:40:45 [INFO] RPC client: Communicator ended with: 101
+2021/10/26 14:40:45 [INFO] RPC endpoint: Communicator ended with: 101
+2021/10/26 14:40:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:40:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:45 [INFO] 2133 bytes written for 'stdout'
+2021/10/26 14:40:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:45 [INFO] RPC client: Communicator ended with: 101
+2021/10/26 14:40:45 ui: [1;32m2021-10-26T14:40:45-07:00: ==> vsphere-iso.win_10_sysprep: Restarting the machine...[0m
+2021/10/26 14:40:45 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -f -r -t 0 -c "packer restart"
+2021/10/26 14:40:45 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -f -r -t 0 -c "packer restart"' exited with code: 0
+2021/10/26 14:40:45 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:40:45 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:40:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:40:45 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:40:45 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:40:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:45 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:40:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:40:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:45 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:40:45 ui: [1;32m2021-10-26T14:40:45-07:00: ==> vsphere-iso.win_10_sysprep: Waiting for machine to become available...[0m
+2021/10/26 14:40:46 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -f -r -t 60 -c "packer restart test"
+2021/10/26 14:40:46 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -f -r -t 60 -c "packer restart test"' exited with code: 1115
+2021/10/26 14:40:46 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:40:46 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:40:46 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:40:46 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:40:46 [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:40:46 ui error: [1;31m2021-10-26T14:40:46-07:00: ==> vsphere-iso.win_10_sysprep: A system shutdown is in progress.(1115)[0m
+2021/10/26 14:40:46 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:46 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:40:46 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:46 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:40:46 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:46 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:40:46 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:46 Retryable error: Machine not yet available (exit status 1115)
+2021/10/26 14:40:51 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -f -r -t 60 -c "packer restart test"
+2021/10/26 14:40:51 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -f -r -t 60 -c "packer restart test"' exited with code: 1115
+2021/10/26 14:40:51 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:40:51 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:40:51 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:40:51 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:40:51 [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:40:51 ui error: [1;31m2021-10-26T14:40:51-07:00: ==> vsphere-iso.win_10_sysprep: A system shutdown is in progress.(1115)[0m
+2021/10/26 14:40:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:51 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:40:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:51 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:40:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:51 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:40:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:40:51 Retryable error: Machine not yet available (exit status 1115)
+2021/10/26 14:42:10 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:10 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:10 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:10 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:10 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:10 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:10 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:10 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": read tcp 192.168.1.87:59571->10.10.0.122:5985: read: connection reset by peer
+2021/10/26 14:42:16 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:16 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:16 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:16 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:16 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:16 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:16 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:16 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:42:29 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:29 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:29 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:29 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:29 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:29 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:29 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:29 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: operation timed out
+2021/10/26 14:42:35 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:35 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:35 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:35 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:35 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:35 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:35 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:35 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:42:41 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:41 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:41 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:41 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:41 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:41 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:41 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:41 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:42:47 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:47 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:47 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:47 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:47 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:47 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:47 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:47 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:42:53 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:53 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:53 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:53 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:53 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:53 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:53 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:53 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:42:59 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:59 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:59 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:59 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:42:59 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:59 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:42:59 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:42:59 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:05 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:05 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:05 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:05 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:05 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:05 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:05 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:05 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:11 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:11 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:11 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:11 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:11 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:11 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:11 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:11 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:17 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:17 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:17 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:17 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:17 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:17 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:17 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:17 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:23 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:23 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:23 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:23 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:23 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:23 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:23 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:23 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:29 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:29 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:29 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:29 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:29 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:29 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:29 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:29 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:35 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:35 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:35 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:35 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:35 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:35 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:35 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:35 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:41 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:41 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:41 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:41 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:41 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:41 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:41 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:41 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:47 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:47 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:47 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:47 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:47 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:47 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:47 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:47 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:53 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:53 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:53 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:53 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:53 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:53 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:53 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:53 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:43:59 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:59 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:59 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:59 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:43:59 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:59 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:43:59 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:43:59 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:44:05 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:05 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:05 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:05 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:05 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:05 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:05 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:05 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:44:11 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:11 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:11 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:11 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:11 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:11 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:11 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:11 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:44:17 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:17 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:17 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:17 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:17 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:17 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:17 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:17 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:44:23 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:23 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:23 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:23 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:23 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:23 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:23 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:23 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:44:29 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:29 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:29 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:29 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:29 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:29 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:29 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:29 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:44:35 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:35 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:35 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:35 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:35 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:35 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:35 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:35 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:44:40 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -f -r -t 60 -c "packer restart test"
+2021/10/26 14:44:40 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -f -r -t 60 -c "packer restart test"' exited with code: 0
+2021/10/26 14:44:40 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:44:40 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:40 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:40 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:44:40 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:44:40 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:40 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:40 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:40 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:40 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:40 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:44:41 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -a
+2021/10/26 14:44:41 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -a' exited with code: 0
+2021/10/26 14:44:41 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:44:41 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:41 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:41 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:44:41 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:44:41 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:41 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:44:41 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:41 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:41 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:41 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:44:41 ui: [1;32m2021-10-26T14:44:41-07:00: ==> vsphere-iso.win_10_sysprep: Checking for pending restart...[0m
+2021/10/26 14:44:41 packer-builder-vsphere-iso plugin: [INFO] starting remote command: PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-pending-reboot-elevated.ps1
+2021/10/26 14:44:50 packer-builder-vsphere-iso plugin: [INFO] command 'PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-pending-reboot-elevated.ps1' exited with code: 0
+2021/10/26 14:44:50 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:44:50 [INFO] 28 bytes written for 'stdout'
+2021/10/26 14:44:50 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:50 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:44:50 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:44:50 ui: [0;32m2021-10-26T14:44:50-07:00:     vsphere-iso.win_10_sysprep: EDWARD-U1DJGNTB restarted.[0m
+2021/10/26 14:44:50 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:50 [INFO] 28 bytes written for 'stdout'
+2021/10/26 14:44:50 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:50 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:44:50 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:44:50 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:44:50 ui: [1;32m2021-10-26T14:44:50-07:00: ==> vsphere-iso.win_10_sysprep: Restart complete[0m
+2021/10/26 14:44:50 ui: [1;32m2021-10-26T14:44:50-07:00: ==> vsphere-iso.win_10_sysprep: Running Windows update...[0m
+2021/10/26 14:44:50 packer-builder-vsphere-iso plugin: [INFO] starting remote command: PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-elevated.ps1
+2021/10/26 14:44:57 ui: [0;32m2021-10-26T14:44:57-07:00:     vsphere-iso.win_10_sysprep: Searching for Windows updates...[0m
+2021/10/26 14:45:07 ui: [0;32m2021-10-26T14:45:07-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2020-02-25; 51.07 MB): 2020-02 Cumulative Update for .NET Framework 4.8 for Windows 10 Version 1803 for x64 (KB4537479)[0m
+2021/10/26 14:45:07 ui: [0;32m2021-10-26T14:45:07-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2020-03-04; 4.89 MB): Update for Windows Defender Antivirus antimalware platform - KB4052623 (Version 4.18.2001.10)[0m
+2021/10/26 14:45:07 ui: [0;32m2021-10-26T14:45:07-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2020-11-16; 5.92 MB): 2020-11 Update for Windows 10 Version 1803 for x64-based Systems (KB4023814)[0m
+2021/10/26 14:45:07 ui: [0;32m2021-10-26T14:45:07-07:00:     vsphere-iso.win_10_sysprep: Found Windows update (2021-10-06; 7.49 MB): Update for Microsoft Defender Antivirus antimalware platform - KB4052623 (Version 4.18.2109.6)[0m
+2021/10/26 14:45:07 ui: [0;32m2021-10-26T14:45:07-07:00:     vsphere-iso.win_10_sysprep: Skipped (filter) Windows update (2021-10-12; 110221.5 MB): Feature update to Windows 10, version 20H2[0m
+2021/10/26 14:45:07 ui: [0;32m2021-10-26T14:45:07-07:00:     vsphere-iso.win_10_sysprep: Downloading Windows updates (4 updates; 69.37 MB)...[0m
+2021/10/26 14:45:17 ui: [0;32m2021-10-26T14:45:17-07:00:     vsphere-iso.win_10_sysprep: Installing Windows updates...[0m
+2021/10/26 14:45:56 ui: [0;32m2021-10-26T14:45:56-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 61% cpu; 44% memory)...[0m
+2021/10/26 14:46:16 ui: [0;32m2021-10-26T14:46:16-07:00:     vsphere-iso.win_10_sysprep: Waiting for the Windows Modules Installer to exit...[0m
+2021/10/26 14:46:58 ui: [0;32m2021-10-26T14:46:58-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 2% cpu; 43% memory)...[0m
+2021/10/26 14:48:00 ui: [0;32m2021-10-26T14:48:00-07:00:     vsphere-iso.win_10_sysprep: Waiting for operation to complete (system performance: 1% cpu; 45% memory)...[0m
+2021/10/26 14:48:15 packer-builder-vsphere-iso plugin: [INFO] command 'PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-elevated.ps1' exited with code: 101
+2021/10/26 14:48:15 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 101
+2021/10/26 14:48:15 [INFO] 1058 bytes written for 'stdout'
+2021/10/26 14:48:15 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:15 [INFO] RPC client: Communicator ended with: 101
+2021/10/26 14:48:15 [INFO] RPC endpoint: Communicator ended with: 101
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 [INFO] 1058 bytes written for 'stdout'
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 [INFO] RPC client: Communicator ended with: 101
+2021/10/26 14:48:15 ui: [1;32m2021-10-26T14:48:15-07:00: ==> vsphere-iso.win_10_sysprep: Restarting the machine...[0m
+2021/10/26 14:48:15 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -f -r -t 0 -c "packer restart"
+2021/10/26 14:48:15 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -f -r -t 0 -c "packer restart"' exited with code: 0
+2021/10/26 14:48:15 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:48:15 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:15 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:15 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:48:15 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:48:15 ui: [1;32m2021-10-26T14:48:15-07:00: ==> vsphere-iso.win_10_sysprep: Waiting for machine to become available...[0m
+2021/10/26 14:48:15 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -f -r -t 60 -c "packer restart test"
+2021/10/26 14:48:15 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -f -r -t 60 -c "packer restart test"' exited with code: 1115
+2021/10/26 14:48:15 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:48:15 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:48:15 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:15 ui error: [1;31m2021-10-26T14:48:15-07:00: ==> vsphere-iso.win_10_sysprep: A system shutdown is in progress.(1115)[0m
+2021/10/26 14:48:15 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:48:15 [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:48:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:15 Retryable error: Machine not yet available (exit status 1115)
+2021/10/26 14:48:20 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -f -r -t 60 -c "packer restart test"
+2021/10/26 14:48:20 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -f -r -t 60 -c "packer restart test"' exited with code: 1115
+2021/10/26 14:48:20 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:48:20 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:20 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:48:20 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:48:20 [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:48:20 ui error: [1;31m2021-10-26T14:48:20-07:00: ==> vsphere-iso.win_10_sysprep: A system shutdown is in progress.(1115)[0m
+2021/10/26 14:48:20 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:20 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:20 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:20 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:48:20 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:20 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:48:20 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:20 Retryable error: Machine not yet available (exit status 1115)
+2021/10/26 14:48:26 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:26 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:26 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:26 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:26 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:26 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:26 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:26 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:48:39 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:39 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:39 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:39 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:39 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:39 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: operation timed out
+2021/10/26 14:48:39 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:39 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:45 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:45 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:45 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:48:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:51 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:51 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:51 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:51 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:51 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:48:57 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:57 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:57 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:57 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:48:57 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:57 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:48:57 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:48:57 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:03 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:03 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:03 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:03 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:03 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:03 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:03 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:03 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:09 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:09 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:09 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:09 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:09 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:09 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:09 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:09 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:15 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:15 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:15 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:15 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:15 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:21 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:21 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:21 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:21 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:21 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:21 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:21 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:21 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:27 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:27 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:27 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:27 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:27 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:27 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:27 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:27 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:33 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:33 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:33 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:33 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:33 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:33 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:33 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:33 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:39 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:39 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:39 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:39 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:39 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:39 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:39 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:39 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:45 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:45 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:45 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:51 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:51 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:51 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:51 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:51 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:51 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:57 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:57 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:49:57 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:57 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:49:57 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:57 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:49:57 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:49:57 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:03 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:03 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:03 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:03 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:03 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:03 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:03 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:03 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:50:09 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:09 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:09 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:09 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:09 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:09 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:09 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:09 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:50:15 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:15 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:15 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:15 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:15 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:15 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:50:21 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:21 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:21 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:21 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:21 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:21 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:21 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:21 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:50:27 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:27 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:27 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:27 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:27 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:27 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:27 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:27 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:50:33 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:33 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:33 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:33 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:33 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:33 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:33 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:33 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:50:39 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:39 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:39 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:39 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:39 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:39 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:39 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:39 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:50:45 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:45 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:45 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:45 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:45 Retryable error: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: connection refused
+2021/10/26 14:50:50 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -f -r -t 60 -c "packer restart test"
+2021/10/26 14:50:50 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -f -r -t 60 -c "packer restart test"' exited with code: 0
+2021/10/26 14:50:50 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:50:50 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:50 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:50 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:50:50 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:50:50 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:50 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:50 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:50 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:50 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:50 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:50:50 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown.exe -a
+2021/10/26 14:50:50 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown.exe -a' exited with code: 0
+2021/10/26 14:50:50 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:50:50 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:50 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:50 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:50:50 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:50:50 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:50 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:50:50 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:50 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:50 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:50 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:50:50 ui: [1;32m2021-10-26T14:50:50-07:00: ==> vsphere-iso.win_10_sysprep: Checking for pending restart...[0m
+2021/10/26 14:50:50 packer-builder-vsphere-iso plugin: [INFO] starting remote command: PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-pending-reboot-elevated.ps1
+2021/10/26 14:50:59 packer-builder-vsphere-iso plugin: [INFO] command 'PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-pending-reboot-elevated.ps1' exited with code: 0
+2021/10/26 14:50:59 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:50:59 [INFO] 28 bytes written for 'stdout'
+2021/10/26 14:50:59 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:59 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:50:59 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:50:59 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:59 [INFO] 28 bytes written for 'stdout'
+2021/10/26 14:50:59 ui: [0;32m2021-10-26T14:50:59-07:00:     vsphere-iso.win_10_sysprep: EDWARD-U1DJGNTB restarted.[0m
+2021/10/26 14:50:59 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:59 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:50:59 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:50:59 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:50:59 ui: [1;32m2021-10-26T14:50:59-07:00: ==> vsphere-iso.win_10_sysprep: Restart complete[0m
+2021/10/26 14:50:59 ui: [1;32m2021-10-26T14:50:59-07:00: ==> vsphere-iso.win_10_sysprep: Running Windows update...[0m
+2021/10/26 14:50:59 packer-builder-vsphere-iso plugin: [INFO] starting remote command: PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-elevated.ps1
+2021/10/26 14:51:06 ui: [0;32m2021-10-26T14:51:06-07:00:     vsphere-iso.win_10_sysprep: Searching for Windows updates...[0m
+2021/10/26 14:51:10 packer-builder-vsphere-iso plugin: [INFO] command 'PowerShell -ExecutionPolicy Bypass -OutputFormat Text -File C:/Windows/Temp/packer-windows-update-elevated.ps1' exited with code: 0
+2021/10/26 14:51:10 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:51:10 [INFO] 163 bytes written for 'stdout'
+2021/10/26 14:51:10 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:51:10 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:51:10 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:51:10 ui: [0;32m2021-10-26T14:51:10-07:00:     vsphere-iso.win_10_sysprep: Skipped (filter) Windows update (2021-10-12; 110221.5 MB): Feature update to Windows 10, version 20H2[0m
+2021/10/26 14:51:10 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:51:10 [INFO] 163 bytes written for 'stdout'
+2021/10/26 14:51:10 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:51:10 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:51:10 packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64 plugin: 2021/10/26 14:51:10 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:51:10 ui: [0;32m2021-10-26T14:51:10-07:00:     vsphere-iso.win_10_sysprep: No Windows updates found[0m
+2021/10/26 14:51:10 [INFO] (telemetry) ending windows-update
+2021/10/26 14:51:10 [INFO] (telemetry) Starting provisioner powershell
+2021/10/26 14:51:10 ui: [1;32m2021-10-26T14:51:10-07:00: ==> vsphere-iso.win_10_sysprep: Pausing 2m0s before the next provisioner...[0m
+2021/10/26 14:53:10 ui: [1;32m2021-10-26T14:53:10-07:00: ==> vsphere-iso.win_10_sysprep: Provisioning with Powershell...[0m
+2021/10/26 14:53:10 ui: [1;32m2021-10-26T14:53:10-07:00: ==> vsphere-iso.win_10_sysprep: Provisioning with powershell script: scripts/customise_win_10.ps1[0m
+2021/10/26 14:53:10 packer-provisioner-powershell plugin: Opening scripts/customise_win_10.ps1 for reading
+2021/10/26 14:53:10 packer-provisioner-powershell plugin: Uploading env vars to c:/Windows/Temp/packer-ps-env-vars-617878c6-492d-7004-0b54-e1fdd357baac.ps1
+2021/10/26 14:53:10 packer-provisioner-powershell plugin: [INFO] 184 bytes written for 'uploadData'
+2021/10/26 14:53:10 [INFO] 184 bytes written for 'uploadData'
+2021/10/26 14:53:10 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/packer-ps-env-vars-617878c6-492d-7004-0b54-e1fdd357baac.ps1'
+2021/10/26 14:53:13 packer-provisioner-powershell plugin: Building elevated command wrapper for: powershell -executionpolicy bypass "& { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value 'SilentlyContinue'};. c:/Windows/Temp/packer-ps-env-vars-617878c6-492d-7004-0b54-e1fdd357baac.ps1; &'c:/Windows/Temp/script-617878c6-2fd5-16a0-102d-3dda815a5c6e.ps1'; exit $LastExitCode }"
+2021/10/26 14:53:13 packer-provisioner-powershell plugin: Command [powershell -executionpolicy bypass "& { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value 'SilentlyContinue'};. c:/Windows/Temp/packer-ps-env-vars-617878c6-492d-7004-0b54-e1fdd357baac.ps1; &'c:/Windows/Temp/script-617878c6-2fd5-16a0-102d-3dda815a5c6e.ps1'; exit $LastExitCode }" > %SYSTEMROOT%/Temp/packer-617878c9-6c10-58dc-e26e-39048edb29b0.out 2>&1] converted to [powershell -executionpolicy bypass &#34;&amp; { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value &#39;SilentlyContinue&#39;};. c:/Windows/Temp/packer-ps-env-vars-617878c6-492d-7004-0b54-e1fdd357baac.ps1; &amp;&#39;c:/Windows/Temp/script-617878c6-2fd5-16a0-102d-3dda815a5c6e.ps1&#39;; exit $LastExitCode }&#34; &gt; %SYSTEMROOT%/Temp/packer-617878c9-6c10-58dc-e26e-39048edb29b0.out 2&gt;&amp;1] for use in XML string
+2021/10/26 14:53:13 packer-provisioner-powershell plugin: Uploading elevated shell wrapper for command [powershell -executionpolicy bypass "& { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value 'SilentlyContinue'};. c:/Windows/Temp/packer-ps-env-vars-617878c6-492d-7004-0b54-e1fdd357baac.ps1; &'c:/Windows/Temp/script-617878c6-2fd5-16a0-102d-3dda815a5c6e.ps1'; exit $LastExitCode }" > %SYSTEMROOT%/Temp/packer-617878c9-6c10-58dc-e26e-39048edb29b0.out 2>&1] to [C:/Windows/Temp/packer-elevated-shell-617878c9-1355-c1f8-d24d-9afff48ce8be.ps1]
+2021/10/26 14:53:13 packer-provisioner-powershell plugin: [INFO] 3512 bytes written for 'uploadData'
+2021/10/26 14:53:13 [INFO] 3512 bytes written for 'uploadData'
+2021/10/26 14:53:13 packer-builder-vsphere-iso plugin: Uploading file to 'C:/Windows/Temp/packer-elevated-shell-617878c9-1355-c1f8-d24d-9afff48ce8be.ps1'
+2021/10/26 14:53:16 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/script-617878c6-2fd5-16a0-102d-3dda815a5c6e.ps1'
+2021/10/26 14:53:16 [INFO] 1534 bytes written for 'uploadData'
+2021/10/26 14:53:16 packer-provisioner-powershell plugin: [INFO] 1534 bytes written for 'uploadData'
+2021/10/26 14:53:19 packer-builder-vsphere-iso plugin: [INFO] starting remote command: powershell -executionpolicy bypass -file "C:/Windows/Temp/packer-elevated-shell-617878c9-1355-c1f8-d24d-9afff48ce8be.ps1"
+2021/10/26 14:53:23 ui: [0;32m2021-10-26T14:53:23-07:00:     vsphere-iso.win_10_sysprep: Setting admin account to not expire...[0m
+2021/10/26 14:53:23 ui: [0;32m2021-10-26T14:53:23-07:00:     vsphere-iso.win_10_sysprep: Updating property(s) of '\\EDWARD-U1DJGNTB\ROOT\CIMV2:Win32_UserAccount.Domain="EDWARD-U1DJGNTB",Name="administrator"'[0m
+2021/10/26 14:53:23 ui: [0;32m2021-10-26T14:53:23-07:00:     vsphere-iso.win_10_sysprep:[0m
+2021/10/26 14:53:23 ui: [0;32m2021-10-26T14:53:23-07:00:     vsphere-iso.win_10_sysprep: Property(s) update successful.[0m
+2021/10/26 14:53:23 ui: [0;32m2021-10-26T14:53:23-07:00:     vsphere-iso.win_10_sysprep:[0m
+2021/10/26 14:53:23 ui: [0;32m2021-10-26T14:53:23-07:00:     vsphere-iso.win_10_sysprep: Setting power plan to high performance...[0m
+2021/10/26 14:53:24 ui: [0;32m2021-10-26T14:53:24-07:00:     vsphere-iso.win_10_sysprep: Enabling file extensions in Windows Explorer...[0m
+2021/10/26 14:53:24 ui: [0;32m2021-10-26T14:53:24-07:00:     vsphere-iso.win_10_sysprep: VERBOSE: Performing the operation "Set Property" on target "Item:[0m
+2021/10/26 14:53:24 ui: [0;32m2021-10-26T14:53:24-07:00:     vsphere-iso.win_10_sysprep: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced Property: HideFileExt".[0m
+2021/10/26 14:53:33 packer-builder-vsphere-iso plugin: [INFO] command 'powershell -executionpolicy bypass -file "C:/Windows/Temp/packer-elevated-shell-617878c9-1355-c1f8-d24d-9afff48ce8be.ps1"' exited with code: 0
+2021/10/26 14:53:33 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:53:33 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:53:33 [INFO] 459 bytes written for 'stdout'
+2021/10/26 14:53:33 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:53:33 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:53:33 packer-provisioner-powershell plugin: [INFO] 459 bytes written for 'stdout'
+2021/10/26 14:53:33 packer-provisioner-powershell plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:53:33 packer-provisioner-powershell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:53:33 packer-provisioner-powershell plugin: c:/Windows/Temp/script-617878c6-2fd5-16a0-102d-3dda815a5c6e.ps1 returned with exit code 0
+2021/10/26 14:53:33 packer-provisioner-powershell plugin: [INFO] 511 bytes written for 'uploadData'
+2021/10/26 14:53:33 [INFO] 511 bytes written for 'uploadData'
+2021/10/26 14:53:33 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/packer-cleanup-617878c6-47bf-1847-cf18-34d46afe2358.ps1'
+2021/10/26 14:53:36 packer-builder-vsphere-iso plugin: [INFO] starting remote command: powershell -executionpolicy bypass "& { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value 'SilentlyContinue'};. c:/Windows/Temp/packer-ps-env-vars-617878c6-492d-7004-0b54-e1fdd357baac.ps1; &'c:/Windows/Temp/packer-cleanup-617878c6-47bf-1847-cf18-34d46afe2358.ps1'; exit $LastExitCode }"
+2021/10/26 14:53:38 packer-builder-vsphere-iso plugin: [INFO] command 'powershell -executionpolicy bypass "& { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value 'SilentlyContinue'};. c:/Windows/Temp/packer-ps-env-vars-617878c6-492d-7004-0b54-e1fdd357baac.ps1; &'c:/Windows/Temp/packer-cleanup-617878c6-47bf-1847-cf18-34d46afe2358.ps1'; exit $LastExitCode }"' exited with code: 0
+2021/10/26 14:53:38 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:53:38 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:53:38 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:53:38 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:53:38 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:53:38 packer-provisioner-powershell plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:53:38 packer-provisioner-powershell plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:53:38 packer-provisioner-powershell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:53:38 [INFO] (telemetry) ending powershell
+2021/10/26 14:53:38 [INFO] (telemetry) Starting provisioner windows-restart
+2021/10/26 14:53:38 ui: [1;32m2021-10-26T14:53:38-07:00: ==> vsphere-iso.win_10_sysprep: Pausing 2m0s before the next provisioner...[0m
+2021/10/26 14:55:38 ui: [1;32m2021-10-26T14:55:38-07:00: ==> vsphere-iso.win_10_sysprep: Restarting Machine[0m
+2021/10/26 14:55:38 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown /r /f /t 0 /c "packer restart"
+2021/10/26 14:55:38 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown /r /f /t 0 /c "packer restart"' exited with code: 0
+2021/10/26 14:55:38 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:55:38 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:55:38 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:55:38 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:55:38 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:55:38 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:55:38 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:55:38 packer-provisioner-windows-restart plugin: [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:55:38 ui: [1;32m2021-10-26T14:55:38-07:00: ==> vsphere-iso.win_10_sysprep: Waiting for machine to restart...[0m
+2021/10/26 14:55:38 packer-provisioner-windows-restart plugin: Check if machine is rebooting...
+2021/10/26 14:55:38 packer-builder-vsphere-iso plugin: [INFO] starting remote command: shutdown /r /f /t 60 /c "packer restart test"
+2021/10/26 14:55:38 packer-builder-vsphere-iso plugin: [INFO] command 'shutdown /r /f /t 60 /c "packer restart test"' exited with code: 1115
+2021/10/26 14:55:38 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:55:38 [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:55:38 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:55:38 [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:55:38 [INFO] RPC endpoint: Communicator ended with: 1115
+2021/10/26 14:55:38 ui error: [1;31m2021-10-26T14:55:38-07:00: ==> vsphere-iso.win_10_sysprep: A system shutdown is in progress.(1115)[0m
+2021/10/26 14:55:38 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:55:38 packer-provisioner-windows-restart plugin: [INFO] 40 bytes written for 'stderr'
+2021/10/26 14:55:38 packer-provisioner-windows-restart plugin: [INFO] RPC client: Communicator ended with: 1115
+2021/10/26 14:55:38 packer-provisioner-windows-restart plugin: Reboot already in progress, waiting...
+2021/10/26 14:55:48 packer-provisioner-windows-restart plugin: Check if machine is rebooting...
+2021/10/26 14:55:56 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:55:56 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:55:56 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:55:56 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:55:56 packer-provisioner-windows-restart plugin: Waiting for machine to reboot with timeout: 1h0m0s
+2021/10/26 14:55:56 packer-provisioner-windows-restart plugin: Waiting for machine to become available...
+2021/10/26 14:55:56 packer-provisioner-windows-restart plugin: Checking that communicator is connected with: 'powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGUAYwBoAG8AIAAoACIAewAwAH0AIAByAGUAcwB0AGEAcgB0AGUAZAAuACIAIAAtAGYAIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBEAG4AcwBdADoAOgBHAGUAdABIAG8AcwB0AE4AYQBtAGUAKAApACkA'
+2021/10/26 14:56:02 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:02 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:02 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:02 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:02 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:08 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:08 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:08 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:08 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:08 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:14 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:14 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:14 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:14 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:14 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:20 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:20 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:20 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:20 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:20 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:26 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:26 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:26 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:26 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:26 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:32 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:32 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:32 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:32 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:32 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:38 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:38 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:38 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:38 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:38 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:44 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:44 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:44 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:44 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:44 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:50 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:50 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:50 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:50 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:50 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:56 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:56 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:56:56 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:56:56 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:56:56 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:02 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:02 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:02 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:02 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:02 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:57:08 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:08 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:08 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:08 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:08 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:57:14 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:14 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:14 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:14 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:14 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:57:20 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:20 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:20 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:57:20 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:20 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:26 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:26 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:26 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:26 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:57:26 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:32 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:32 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:32 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:32 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:57:32 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:38 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:38 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:38 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:38 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:57:38 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:44 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:44 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:44 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:44 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:44 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:57:50 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:50 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:50 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:50 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:50 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:57:56 [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:56 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:56 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stdout'
+2021/10/26 14:57:56 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:57:56 packer-provisioner-windows-restart plugin: echo didn't succeed; retrying...
+2021/10/26 14:58:01 packer-builder-vsphere-iso plugin: [INFO] starting remote command: powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGUAYwBoAG8AIAAoACIAewAwAH0AIAByAGUAcwB0AGEAcgB0AGUAZAAuACIAIAAtAGYAIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBEAG4AcwBdADoAOgBHAGUAdABIAG8AcwB0AE4AYQBtAGUAKAApACkA
+2021/10/26 14:58:03 packer-builder-vsphere-iso plugin: [INFO] command 'powershell.exe -EncodedCommand JABQAHIAbwBnAHIAZQBzAHMAUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7AGUAYwBoAG8AIAAoACIAewAwAH0AIAByAGUAcwB0AGEAcgB0AGUAZAAuACIAIAAtAGYAIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBEAG4AcwBdADoAOgBHAGUAdABIAG8AcwB0AE4AYQBtAGUAKAApACkA' exited with code: 0
+2021/10/26 14:58:03 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:58:03 [INFO] 28 bytes written for 'stdout'
+2021/10/26 14:58:03 [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:58:03 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:58:03 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 14:58:03 ui: [0;32m2021-10-26T14:58:03-07:00:     vsphere-iso.win_10_sysprep: EDWARD-U1DJGNTB restarted.[0m
+2021/10/26 14:58:03 packer-provisioner-windows-restart plugin: [INFO] 28 bytes written for 'stdout'
+2021/10/26 14:58:03 packer-provisioner-windows-restart plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 14:58:03 packer-provisioner-windows-restart plugin: [INFO] RPC client: Communicator ended with: 0
+2021/10/26 14:58:03 ui: [1;32m2021-10-26T14:58:03-07:00: ==> vsphere-iso.win_10_sysprep: Machine successfully restarted, moving on[0m
+2021/10/26 14:58:03 [INFO] (telemetry) ending windows-restart
+2021/10/26 14:58:03 [INFO] (telemetry) Starting provisioner powershell
+2021/10/26 14:58:03 ui: [1;32m2021-10-26T14:58:03-07:00: ==> vsphere-iso.win_10_sysprep: Pausing 2m0s before the next provisioner...[0m
+2021/10/26 15:00:03 ui: [1;32m2021-10-26T15:00:03-07:00: ==> vsphere-iso.win_10_sysprep: Provisioning with Powershell...[0m
+2021/10/26 15:00:03 ui: [1;32m2021-10-26T15:00:03-07:00: ==> vsphere-iso.win_10_sysprep: Provisioning with powershell script: scripts/sysprep_win_10.ps1[0m
+2021/10/26 15:00:03 packer-provisioner-powershell plugin: Opening scripts/sysprep_win_10.ps1 for reading
+2021/10/26 15:00:03 packer-provisioner-powershell plugin: Uploading env vars to c:/Windows/Temp/packer-ps-env-vars-61787a63-fdfa-4c9c-ea14-fcf1a386b94a.ps1
+2021/10/26 15:00:03 packer-provisioner-powershell plugin: [INFO] 184 bytes written for 'uploadData'
+2021/10/26 15:00:03 [INFO] 184 bytes written for 'uploadData'
+2021/10/26 15:00:03 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/packer-ps-env-vars-61787a63-fdfa-4c9c-ea14-fcf1a386b94a.ps1'
+2021/10/26 15:00:06 packer-provisioner-powershell plugin: Building elevated command wrapper for: powershell -executionpolicy bypass "& { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value 'SilentlyContinue'};. c:/Windows/Temp/packer-ps-env-vars-61787a63-fdfa-4c9c-ea14-fcf1a386b94a.ps1; &'c:/Windows/Temp/script-61787a63-56e3-1f1a-07a5-8e58c43540d1.ps1'; exit $LastExitCode }"
+2021/10/26 15:00:06 packer-provisioner-powershell plugin: Command [powershell -executionpolicy bypass "& { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value 'SilentlyContinue'};. c:/Windows/Temp/packer-ps-env-vars-61787a63-fdfa-4c9c-ea14-fcf1a386b94a.ps1; &'c:/Windows/Temp/script-61787a63-56e3-1f1a-07a5-8e58c43540d1.ps1'; exit $LastExitCode }" > %SYSTEMROOT%/Temp/packer-61787a66-fa6c-f062-2f9e-9633297dac6e.out 2>&1] converted to [powershell -executionpolicy bypass &#34;&amp; { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value &#39;SilentlyContinue&#39;};. c:/Windows/Temp/packer-ps-env-vars-61787a63-fdfa-4c9c-ea14-fcf1a386b94a.ps1; &amp;&#39;c:/Windows/Temp/script-61787a63-56e3-1f1a-07a5-8e58c43540d1.ps1&#39;; exit $LastExitCode }&#34; &gt; %SYSTEMROOT%/Temp/packer-61787a66-fa6c-f062-2f9e-9633297dac6e.out 2&gt;&amp;1] for use in XML string
+2021/10/26 15:00:06 packer-provisioner-powershell plugin: Uploading elevated shell wrapper for command [powershell -executionpolicy bypass "& { if (Test-Path variable:global:ProgressPreference){set-variable -name variable:global:ProgressPreference -value 'SilentlyContinue'};. c:/Windows/Temp/packer-ps-env-vars-61787a63-fdfa-4c9c-ea14-fcf1a386b94a.ps1; &'c:/Windows/Temp/script-61787a63-56e3-1f1a-07a5-8e58c43540d1.ps1'; exit $LastExitCode }" > %SYSTEMROOT%/Temp/packer-61787a66-fa6c-f062-2f9e-9633297dac6e.out 2>&1] to [C:/Windows/Temp/packer-elevated-shell-61787a66-c843-9fc7-041b-687e769616a1.ps1]
+2021/10/26 15:00:06 packer-provisioner-powershell plugin: [INFO] 3512 bytes written for 'uploadData'
+2021/10/26 15:00:06 [INFO] 3512 bytes written for 'uploadData'
+2021/10/26 15:00:06 packer-builder-vsphere-iso plugin: Uploading file to 'C:/Windows/Temp/packer-elevated-shell-61787a66-c843-9fc7-041b-687e769616a1.ps1'
+2021/10/26 15:00:09 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/script-61787a63-56e3-1f1a-07a5-8e58c43540d1.ps1'
+2021/10/26 15:00:09 [INFO] 678 bytes written for 'uploadData'
+2021/10/26 15:00:09 packer-provisioner-powershell plugin: [INFO] 678 bytes written for 'uploadData'
+2021/10/26 15:00:12 packer-builder-vsphere-iso plugin: [INFO] starting remote command: powershell -executionpolicy bypass -file "C:/Windows/Temp/packer-elevated-shell-61787a66-c843-9fc7-041b-687e769616a1.ps1"
+2021/10/26 15:00:16 ui: [0;32m2021-10-26T15:00:16-07:00:     vsphere-iso.win_10_sysprep: Ok.[0m
+2021/10/26 15:00:16 ui: [0;32m2021-10-26T15:00:16-07:00:     vsphere-iso.win_10_sysprep:[0m
+2021/10/26 15:05:16 packer-builder-vsphere-iso plugin: [INFO] command 'powershell -executionpolicy bypass -file "C:/Windows/Temp/packer-elevated-shell-61787a66-c843-9fc7-041b-687e769616a1.ps1"' exited with code: 0
+2021/10/26 15:05:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 15:05:16 [INFO] 7 bytes written for 'stdout'
+2021/10/26 15:05:16 [INFO] 0 bytes written for 'stderr'
+2021/10/26 15:05:16 [INFO] RPC client: Communicator ended with: 0
+2021/10/26 15:05:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/10/26 15:05:16 packer-provisioner-powershell plugin: [INFO] 7 bytes written for 'stdout'
+2021/10/26 15:05:16 packer-provisioner-powershell plugin: [INFO] 0 bytes written for 'stderr'
+2021/10/26 15:05:16 packer-provisioner-powershell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/10/26 15:05:16 packer-provisioner-powershell plugin: c:/Windows/Temp/script-61787a63-56e3-1f1a-07a5-8e58c43540d1.ps1 returned with exit code 0
+2021/10/26 15:05:16 packer-provisioner-powershell plugin: [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:05:16 [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:05:16 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1'
+2021/10/26 15:05:19 packer-provisioner-powershell plugin: failed to upload the remote cleanup script: "clean up script \"c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1\" failed to upload: Error uploading file to $env:TEMP\\winrmcp-14d19740-d010-4c9f-59e1-f8c4141d124e.tmp: Couldn't create shell: unknown error Post \"http://10.10.0.122:5985/wsman\": dial tcp 10.10.0.122:5985: connect: network is unreachable"
+2021/10/26 15:05:19 packer-provisioner-powershell plugin: Retryable error: clean up script "c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1" failed to upload: Error uploading file to $env:TEMP\winrmcp-14d19740-d010-4c9f-59e1-f8c4141d124e.tmp: Couldn't create shell: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: network is unreachable
+2021/10/26 15:05:29 packer-provisioner-powershell plugin: [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:05:29 [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:05:29 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1'
+2021/10/26 15:05:32 packer-provisioner-powershell plugin: failed to upload the remote cleanup script: "clean up script \"c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1\" failed to upload: Error uploading file to $env:TEMP\\winrmcp-1814568b-960e-4e46-7b04-e9f78f2e3bcb.tmp: Couldn't create shell: unknown error Post \"http://10.10.0.122:5985/wsman\": dial tcp 10.10.0.122:5985: connect: network is unreachable"
+2021/10/26 15:05:32 packer-provisioner-powershell plugin: Retryable error: clean up script "c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1" failed to upload: Error uploading file to $env:TEMP\winrmcp-1814568b-960e-4e46-7b04-e9f78f2e3bcb.tmp: Couldn't create shell: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: network is unreachable
+2021/10/26 15:05:42 packer-provisioner-powershell plugin: [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:05:42 [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:05:42 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1'
+2021/10/26 15:05:45 packer-provisioner-powershell plugin: failed to upload the remote cleanup script: "clean up script \"c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1\" failed to upload: Error uploading file to $env:TEMP\\winrmcp-7f219577-61c5-41c9-725f-b593bb96735a.tmp: Couldn't create shell: unknown error Post \"http://10.10.0.122:5985/wsman\": dial tcp 10.10.0.122:5985: connect: network is unreachable"
+2021/10/26 15:05:45 packer-provisioner-powershell plugin: Retryable error: clean up script "c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1" failed to upload: Error uploading file to $env:TEMP\winrmcp-7f219577-61c5-41c9-725f-b593bb96735a.tmp: Couldn't create shell: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: network is unreachable
+2021/10/26 15:05:55 packer-provisioner-powershell plugin: [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:05:55 [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:05:55 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1'
+2021/10/26 15:05:58 packer-provisioner-powershell plugin: failed to upload the remote cleanup script: "clean up script \"c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1\" failed to upload: Error uploading file to $env:TEMP\\winrmcp-3d38de6e-dd95-4c71-77eb-f113ebb86fc0.tmp: Couldn't create shell: unknown error Post \"http://10.10.0.122:5985/wsman\": dial tcp 10.10.0.122:5985: connect: network is unreachable"
+2021/10/26 15:05:58 packer-provisioner-powershell plugin: Retryable error: clean up script "c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1" failed to upload: Error uploading file to $env:TEMP\winrmcp-3d38de6e-dd95-4c71-77eb-f113ebb86fc0.tmp: Couldn't create shell: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: network is unreachable
+2021/10/26 15:06:08 packer-provisioner-powershell plugin: [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:06:08 [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:06:08 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1'
+2021/10/26 15:06:11 packer-provisioner-powershell plugin: failed to upload the remote cleanup script: "clean up script \"c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1\" failed to upload: Error uploading file to $env:TEMP\\winrmcp-53be1905-17a5-4135-78b8-b8660b444921.tmp: Couldn't create shell: unknown error Post \"http://10.10.0.122:5985/wsman\": dial tcp 10.10.0.122:5985: connect: network is unreachable"
+2021/10/26 15:06:11 packer-provisioner-powershell plugin: Retryable error: clean up script "c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1" failed to upload: Error uploading file to $env:TEMP\winrmcp-53be1905-17a5-4135-78b8-b8660b444921.tmp: Couldn't create shell: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: network is unreachable
+2021/10/26 15:06:21 packer-provisioner-powershell plugin: [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:06:21 [INFO] 511 bytes written for 'uploadData'
+2021/10/26 15:06:21 packer-builder-vsphere-iso plugin: Uploading file to 'c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1'
+2021/10/26 15:06:24 packer-provisioner-powershell plugin: failed to upload the remote cleanup script: "clean up script \"c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1\" failed to upload: Error uploading file to $env:TEMP\\winrmcp-82efdd34-4c2c-4168-5b54-4525140a1c75.tmp: Couldn't create shell: unknown error Post \"http://10.10.0.122:5985/wsman\": dial tcp 10.10.0.122:5985: connect: network is unreachable"
+2021/10/26 15:06:24 packer-provisioner-powershell plugin: Retryable error: clean up script "c:/Windows/Temp/packer-cleanup-61787a63-9419-f2a3-473f-a2fdbebe409b.ps1" failed to upload: Error uploading file to $env:TEMP\winrmcp-82efdd34-4c2c-4168-5b54-4525140a1c75.tmp: Couldn't create shell: unknown error Post "http://10.10.0.122:5985/wsman": dial tcp 10.10.0.122:5985: connect: network is unreachable
+2021/10/26 15:06:24 packer-provisioner-powershell plugin: remote cleanup script failed to upload; skipping the removal of temporary files: c:/Windows/Temp/packer-ps-env-vars-61787a63-fdfa-4c9c-ea14-fcf1a386b94a.ps1,c:/Windows/Temp/script-61787a63-56e3-1f1a-07a5-8e58c43540d1.ps1;
+2021/10/26 15:06:24 [INFO] (telemetry) ending powershell
+2021/10/26 15:06:24 ui: [1;32m2021-10-26T15:06:24-07:00: ==> vsphere-iso.win_10_sysprep: Shutting down VM...[0m
+2021/10/26 15:06:24 packer-builder-vsphere-iso plugin: Waiting max 5m0s for shutdown to complete
+2021/10/26 15:06:34 ui: [1;32m2021-10-26T15:06:34-07:00: ==> vsphere-iso.win_10_sysprep: Deleting Floppy drives...[0m
+2021/10/26 15:06:34 ui: [1;32m2021-10-26T15:06:34-07:00: ==> vsphere-iso.win_10_sysprep: Deleting Floppy image...[0m
+2021/10/26 15:06:35 ui: [1;32m2021-10-26T15:06:35-07:00: ==> vsphere-iso.win_10_sysprep: Eject CD-ROM drives...[0m
+2021/10/26 15:06:35 ui: [1;32m2021-10-26T15:06:35-07:00: ==> vsphere-iso.win_10_sysprep: Deleting CD-ROM drives...[0m
+2021/10/26 15:06:35 ui: [1;32m2021-10-26T15:06:35-07:00: ==> vsphere-iso.win_10_sysprep: Convert VM into template...[0m
+2021/10/26 15:06:35 ui: [1;32m2021-10-26T15:06:35-07:00: ==> vsphere-iso.win_10_sysprep: Clear boot order...[0m
+2021/10/26 15:06:35 packer-builder-vsphere-iso plugin: Deleting floppy disk: /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer653155196
+2021/10/26 15:06:35 [INFO] (telemetry) ending vsphere-iso.win_10_sysprep
+2021/10/26 15:06:35 ui: [1;32m2021-10-26T15:06:35-07:00: Build 'vsphere-iso.win_10_sysprep' finished after 1 hour 7 minutes.[0m
+2021/10/26 15:06:35 ui: 
+==> Wait completed after 1 hour 7 minutes
+2021/10/26 15:06:35 ui: 
+==> Builds finished. The artifacts of successful builds are:
+2021/10/26 15:06:35 machine readable: vsphere-iso.win_10_sysprep,artifact-count []string{"1"}
+2021/10/26 15:06:35 machine readable: vsphere-iso.win_10_sysprep,artifact []string{"0", "builder-id", "jetbrains.vsphere"}
+2021/10/26 15:06:35 machine readable: vsphere-iso.win_10_sysprep,artifact []string{"0", "id", "TMP-Win10_Packer_2021_10"}
+2021/10/26 15:06:35 machine readable: vsphere-iso.win_10_sysprep,artifact []string{"0", "string", "TMP-Win10_Packer_2021_10"}
+2021/10/26 15:06:35 machine readable: vsphere-iso.win_10_sysprep,artifact []string{"0", "files-count", "0"}
+2021/10/26 15:06:35 machine readable: vsphere-iso.win_10_sysprep,artifact []string{"0", "end"}
+2021/10/26 15:06:35 ui: --> vsphere-iso.win_10_sysprep: TMP-Win10_Packer_2021_10
+2021/10/26 15:06:35 [INFO] (telemetry) Finalizing.
+2021/10/26 15:06:36 waiting for all plugin processes to complete...
+2021/10/26 15:06:36 /Users/edwardingram/.config/packer/plugins/github.com/rgl/windows-update/packer-plugin-windows-update_v0.14.0_x5.0_darwin_amd64: plugin process exited
+2021/10/26 15:06:36 /usr/local/bin/packer: plugin process exited
+2021/10/26 15:06:36 /usr/local/bin/packer: plugin process exited
+2021/10/26 15:06:36 /usr/local/bin/packer: plugin process exited
+2021/10/26 15:06:36 /usr/local/bin/packer: plugin process exited
+2021/10/26 15:06:36 [ERR] Error decoding response stream 22: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 205: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 220: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 217: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 235: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 46: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 106: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 157: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 202: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 323: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 326: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 223: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 61: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 16: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 31: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 232: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 311: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 332: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 329: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 214: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 241: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 284: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 244: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 314: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 136: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 290: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 43: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 184: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 112: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 148: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 115: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 211: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 238: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 308: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 317: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 320: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 40: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 28: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 305: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 109: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 91: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 100: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 341: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 10: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 70: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 335: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 97: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 118: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 160: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 190: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 64: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 127: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 142: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 154: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 287: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 296: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 338: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 19: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 25: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 58: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 103: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 121: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 196: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 124: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 130: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 133: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 13: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 302: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 34: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 250: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 37: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 208: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 199: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 52: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 187: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 226: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 293: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 299: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 139: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 49: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 67: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 94: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 55: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 145: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 281: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 151: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 247: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 193: EOF
+2021/10/26 15:06:36 [ERR] Error decoding response stream 229: EOF
+2021/10/26 15:06:36 /usr/local/bin/packer: plugin process exited

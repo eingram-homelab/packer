@@ -47,6 +47,7 @@ source "vsphere-iso" "win_10_sysprep" {
   video_ram               = "8192"
   cdrom_type              = "sata"
   disk_controller_type    = ["lsilogic-sas"]
+  remove_cdrom            = true
     
   network_adapters {
     network               = var.vm_network
@@ -108,16 +109,17 @@ build {
   #   ]
   # }
 
-  # provisioner "windows-update" {
-  #   pause_before = "2m"
-  #   timeout = "1h"
-  #   search_criteria = "IsInstalled=0"
-  #   filters = [
-  #     #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-  #     "exclude:$_.Title -like '*Preview*'",
-  #     "include:$true"
-  #   ]
-  # }
+  provisioner "windows-update" {
+    pause_before = "2m"
+    timeout = "1h"
+    search_criteria = "IsInstalled=0"
+    filters = [
+      #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
+      "include:$true"
+    ]
+  }
   
   provisioner "powershell" {
     pause_before      = "2m"
