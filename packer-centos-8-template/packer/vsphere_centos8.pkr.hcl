@@ -93,10 +93,18 @@ build {
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
     scripts = [
-#        "scripts/ncpa.sh",
         "scripts/cockpit.sh",
         "scripts/yum_update.sh",
-        "scripts/cleanup.sh"
+        "scripts/sysprep-op-bash-history.sh",
+        "scripts/sysprep-op-crash-data.sh",
+        "scripts/sysprep-op-dhcp-client-state.sh",
+        "scripts/sysprep-op-logfiles.sh",
+        "scripts/sysprep-op-machine-id.sh",
+        "scripts/sysprep-op-package-manager-cache.sh",
+        "scripts/sysprep-op-rpm-db.sh",
+        "scripts/sysprep-op-ssh-hostkeys.sh",
+        "scripts/sysprep-op-tmp-files.sh",
+        "scripts/sysprep-op-yum-uuid.sh"
     ]
   }
 }

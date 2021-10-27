@@ -1,47 +1,47 @@
-2021/10/22 22:07:42 [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
-2021/10/22 22:07:42 [TRACE] discovering plugins in /usr/local/bin
-2021/10/22 22:07:42 [TRACE] discovering plugins in /Users/edwardingram/.config/packer/plugins
-2021/10/22 22:07:42 [TRACE] discovering plugins in .
-2021/10/22 22:07:42 [INFO] PACKER_CONFIG env var not set; checking the default config file path
-2021/10/22 22:07:42 [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
-2021/10/22 22:07:42 [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
-2021/10/22 22:07:42 [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vsphere_host, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vm_network, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for disk_size, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for mem_size, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vsphere_user, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for ssh_password, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vcenter_server, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vcenter_dc_name, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vm_folder, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vcenter_datastore, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vsphere_template_name, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for cpu_num, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vsphere_password, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for ssh_username, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for vcenter_cluster, so skipping
-2021/10/22 22:07:42 [TRACE] validateValue: not active for os_iso_path, so skipping
-2021/10/22 22:07:42 [TRACE] Starting internal plugin packer-builder-vsphere-iso
-2021/10/22 22:07:42 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-builder-vsphere-iso"}
-2021/10/22 22:07:42 Waiting for RPC address for: /usr/local/bin/packer
-2021/10/22 22:07:42 packer-builder-vsphere-iso plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
-2021/10/22 22:07:42 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
-2021/10/22 22:07:42 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
-2021/10/22 22:07:42 packer-builder-vsphere-iso plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
-2021/10/22 22:07:42 packer-builder-vsphere-iso plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
-2021/10/22 22:07:42 packer-builder-vsphere-iso plugin: args: []string{"packer-builder-vsphere-iso"}
-2021/10/22 22:07:42 packer-builder-vsphere-iso plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin3263897984
-2021/10/22 22:07:42 packer-builder-vsphere-iso plugin: Waiting for connection...
-2021/10/22 22:07:42 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin3263897984
-2021/10/22 22:07:42 packer-builder-vsphere-iso plugin: Serving a plugin connection...
-2021/10/22 22:07:42 ui error: Error: 1 error(s) occurred:
+2021/10/26 21:09:21 [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/26 21:09:21 [TRACE] discovering plugins in /usr/local/bin
+2021/10/26 21:09:21 [TRACE] discovering plugins in /Users/edwardingram/.config/packer/plugins
+2021/10/26 21:09:21 [TRACE] discovering plugins in .
+2021/10/26 21:09:21 [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/26 21:09:21 [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/26 21:09:21 [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/26 21:09:21 [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vsphere_password, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vcenter_server, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vcenter_dc_name, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vsphere_host, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vcenter_datastore, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vm_network, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vsphere_template_name, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for cpu_num, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for disk_size, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for mem_size, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vsphere_user, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for ssh_password, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vcenter_cluster, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for vm_folder, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for ssh_username, so skipping
+2021/10/26 21:09:21 [TRACE] validateValue: not active for os_iso_path, so skipping
+2021/10/26 21:09:21 [TRACE] Starting internal plugin packer-builder-vsphere-iso
+2021/10/26 21:09:21 Starting plugin: /usr/local/bin/packer []string{"/usr/local/bin/packer", "plugin", "packer-builder-vsphere-iso"}
+2021/10/26 21:09:21 Waiting for RPC address for: /usr/local/bin/packer
+2021/10/26 21:09:21 packer-builder-vsphere-iso plugin: [INFO] Packer version: 1.7.6 [go1.17.1 darwin amd64]
+2021/10/26 21:09:21 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/10/26 21:09:21 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/10/26 21:09:21 packer-builder-vsphere-iso plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/10/26 21:09:21 packer-builder-vsphere-iso plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/10/26 21:09:21 packer-builder-vsphere-iso plugin: args: []string{"packer-builder-vsphere-iso"}
+2021/10/26 21:09:21 Received unix RPC address for /usr/local/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2323810834
+2021/10/26 21:09:21 packer-builder-vsphere-iso plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2323810834
+2021/10/26 21:09:21 packer-builder-vsphere-iso plugin: Waiting for connection...
+2021/10/26 21:09:21 packer-builder-vsphere-iso plugin: Serving a plugin connection...
+2021/10/26 21:09:21 ui error: Error: 1 error(s) occurred:
 
 * 'password' is required
 
-  on packer/vsphere_centos8.pkr.hcl line 106:
+  on packer/vsphere_centos8.pkr.hcl line 114:
   (source code not available)
 
-2021/10/22 22:07:42 [INFO] (telemetry) Finalizing.
-2021/10/22 22:07:43 waiting for all plugin processes to complete...
-2021/10/22 22:07:43 /usr/local/bin/packer: plugin process exited
+2021/10/26 21:09:21 [INFO] (telemetry) Finalizing.
+2021/10/26 21:09:22 waiting for all plugin processes to complete...
+2021/10/26 21:09:22 /usr/local/bin/packer: plugin process exited
