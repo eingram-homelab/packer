@@ -123,7 +123,7 @@ source "vsphere-iso" "centos" {
   host                  = "${var.vsphere_host}"
   datastore             = "${var.vcenter_datastore}"
   folder                = "${var.vm_folder}"
-  vm_name               = "${var.vsphere_template_name}"
+  vm_name               = "${var.vsphere_template_name}_${formatdate ("YYYY_MM", timestamp())}"
   convert_to_template   = true
 
   # VM resource parameters 
