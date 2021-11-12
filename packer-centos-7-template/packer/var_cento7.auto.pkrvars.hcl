@@ -7,8 +7,8 @@ vsphere_user     = "administrator@vsphere.local"
 ssh_username = "eingram"
 #ssh_password = ""
 
-vsphere_template_name = "TMP-Centos8_Packer"
-m_folder        = "Templates"
+vsphere_template_name = "TMP-Centos7_Packer"
+vm_folder        = "Templates"
 
 cpu_num     = 2
 mem_size    = 4096
@@ -17,9 +17,9 @@ disk_size   = 61450
 vcenter_server          = "vcsa.local.lan"
 vcenter_dc_name         = "HomeLab Datacenter"
 vcenter_cluster         = "Intel NUC10 Cluster"
-vscenter_host           = "esxinuc1.local.lan"
+vsphere_host           = "esxinuc1.local.lan"
 vcenter_datastore       = "XN_iSCSI_SSD"
 vm_network  = "Lab-LAN1"
 
-os_iso_path = "[XN_iSCSI_HDD] Repo/CentOS-Stream-8-x86_64-latest-dvd1.iso"
+os_iso_path = "[XN_iSCSI_HDD] Repo/CentOS-7-x86_64-DVD-2009.iso"
 

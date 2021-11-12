@@ -139,11 +139,15 @@ do
             for LINE in $(df | tr -s ' ')
             do
                 # Sixth column of df output is the mountpoint
+                echo 'Debug 1'
                 MNTPNT="$(echo ${LINE} | cut -d' ' -f6 | grep ^${LOGD}$)"
+                echo 'Debug 2'
                 if [ "x${MNTPNT}" != "x" ]; then
                     # First column of df output is the device
+                    echo 'Debug 3'
                     LOGD_LOCATED_ON="$(echo $LINE | cut -d' ' -f1)"
                 fi
+                echo 'Debug 4'
                 unset MNTPNT
             done
             IFS=${DEFIFS} # Restore the default IFS and split behaviour

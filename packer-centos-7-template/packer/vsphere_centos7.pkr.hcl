@@ -93,18 +93,18 @@ build {
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
     scripts = [
-        "scripts/cockpit.sh",
-        "scripts/yum_update.sh",
-        "scripts/sysprep-op-bash-history.sh",
-        "scripts/sysprep-op-crash-data.sh",
-        "scripts/sysprep-op-dhcp-client-state.sh",
-        "scripts/sysprep-op-logfiles.sh",
-        "scripts/sysprep-op-machine-id.sh",
-        "scripts/sysprep-op-package-manager-cache.sh",
-        "scripts/sysprep-op-rpm-db.sh",
-        "scripts/sysprep-op-ssh-hostkeys.sh",
-        "scripts/sysprep-op-tmp-files.sh",
-        "scripts/sysprep-op-yum-uuid.sh"
+      "scripts/yum_update.sh",
+      "scripts/package_install.sh",
+      "scripts/sysprep-op-bash-history.sh",
+      "scripts/sysprep-op-crash-data.sh",
+      "scripts/sysprep-op-dhcp-client-state.sh",
+#      "scripts/sysprep-op-logfiles.sh",
+      "scripts/sysprep-op-machine-id.sh",
+      "scripts/sysprep-op-package-manager-cache.sh",
+      "scripts/sysprep-op-rpm-db.sh",
+      "scripts/sysprep-op-ssh-hostkeys.sh",
+#      "scripts/sysprep-op-tmp-files.sh",
+      "scripts/sysprep-op-yum-uuid.sh"
     ]
   }
 }
@@ -127,7 +127,7 @@ source "vsphere-iso" "centos" {
   convert_to_template   = true
 
   # VM resource parameters 
-  guest_os_type         = "centos8_64Guest"
+  guest_os_type         = "centos7_64Guest"
   CPUs                  = "${var.cpu_num}"
   CPU_hot_plug          = true
   RAM                   = "${var.mem_size}"
