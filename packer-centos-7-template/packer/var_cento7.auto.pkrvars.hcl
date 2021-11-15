@@ -1,12 +1,6 @@
 # Assign values to override their default values (default values are found in the vsphere_centos8.pkr.hcl file).
 # All values are automatically used and persist through the entire Packer process.
 
-vsphere_user     = "administrator@vsphere.local"
-#vsphere_password = ""
-
-ssh_username = "eingram"
-#ssh_password = ""
-
 vsphere_template_name = "TMP-Centos7_Packer"
 vm_folder        = "Templates"
 

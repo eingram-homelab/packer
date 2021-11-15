@@ -1,97 +1,30 @@
-# Delcared variables. 
-
-variable "vsphere_template_name" {
-  type    = string
-}
-
-variable "vm_folder" {
-  type    = string
-  default = "${env("vm_folder")}"
-}
-
-variable "cpu_num" {
-  type    = number
-}
-
-variable "disk_size" {
-  type    = number
-}
-
-variable "mem_size" {
-  type    = number
-}
-
-variable "vsphere_user" {
-  type    = string
-  default = "${env("vsphere_user")}"
-}
-
-variable "vsphere_password" {
-  type    = string
-  default = "${env("VSPHERE_PASS")}"
-}
-
-variable "ssh_username" {
-  type    = string
-  default = "${env("ssh_username")}"
-}
-
-variable "ssh_password" {
-  type    = string
-  default = "${env("SSH_PASS")}"
-}
-
-variable "vcenter_server" {
-  type    = string
-  default = "${env("vcenter_server")}"
-}
-
-variable "vcenter_dc_name" {
-  type    = string
-  default = "${env("vcenter_dc_name")}"
-}
-
-variable "vcenter_cluster" {
-  type    = string
-  default = "${env("vcenter_cluster")}"
-}
-
-variable "vsphere_host" {
-  type    = string
-  default = "${env("vsphere_host")}"
-}
-
-variable "vcenter_datastore" {
-  type    = string
-  default = "${env("vcenter_datastore")}"
-}
-
-variable "vm_network" {
-  type    = string
-  default = "${env("vm_network")}"
-}
-
-variable "os_iso_path" {
-  type    = string
-}
-
-#variable "ks_iso" {
-#  type    = string
-#}
-
-#variable "builder_ipv4"{
-#  type = string
-#  description = "This variable is used to manually assign the IPv4 address to serve the HTTP directory. Use this to override Packer if it utilising the wrong interface."
-#}
-
 # Provisioner configuration runs after the main source builder.
+local "vsphere_user" {
+  expression     = vault("/secret/data/vsphere/vcsa", "vsphere_username")
+  sensitive      = true
+}
+
+local "vsphere_password" {
+  expression     = vault("/secret/data/vsphere/vcsa", "vsphere_password")
+  sensitive      = true
+}
+
+local "ssh_username" {
+  expression      = vault("/secret/data/ssh/eingram", "ssh_username")
+  sensitive       = true
+}
+
+local "ssh_password" {
+  expression      = vault("/secret/data/ssh/eingram", "ssh_password")
+  sensitive       = true
+}
 
 build {
   sources = ["source.vsphere-iso.centos"]
 
   # Upload and execute scripts using Shell
   provisioner "shell" {
-    execute_command = "echo '${var.ssh_password}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
+    execute_command = "echo '${local.ssh_password}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
     scripts = [
       "scripts/yum_update.sh",
       "scripts/package_install.sh",
@@ -115,8 +48,8 @@ source "vsphere-iso" "centos" {
 
   # vCenter parameters
   insecure_connection   = "true"
-  username              = "${var.vsphere_user}"
-  password              = "${var.vsphere_password}"
+  username              = "${local.vsphere_user}"
+  password              = "${local.vsphere_password}"
   vcenter_server        = "${var.vcenter_server}"
   cluster               = "${var.vcenter_cluster}"
   datacenter            = "${var.vcenter_dc_name}"
@@ -154,8 +87,8 @@ source "vsphere-iso" "centos" {
   # CentOS OS parameters
   boot_order            = "disk,cdrom,floppy"
   boot_wait             = "10s"
-  ssh_password          = "${var.ssh_password}"
-  ssh_username          = "${var.ssh_username}"
+  ssh_password          = "${local.ssh_password}"
+  ssh_username          = "${local.ssh_username}"
 
   #http_ip = "${var.builder_ipv4}"
   http_directory    = "scripts"
