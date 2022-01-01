@@ -1,0 +1,88 @@
+2021/12/31 17:42:06 [INFO] Packer version: 1.7.8 [go1.17.2 darwin amd64]
+2021/12/31 17:42:06 [TRACE] discovering plugins in /usr/local/Cellar/packer/1.7.8/libexec/bin
+2021/12/31 17:42:06 [TRACE] discovering plugins in /Users/edwardingram/.config/packer/plugins
+2021/12/31 17:42:06 [TRACE] discovering plugins in .
+2021/12/31 17:42:06 [TRACE] discovering plugins in 
+2021/12/31 17:42:06 [TRACE] discovering plugins in /usr/local/bin
+2021/12/31 17:42:06 [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/12/31 17:42:06 [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/12/31 17:42:06 [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/12/31 17:42:06 [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/12/31 17:42:06 [TRACE] validateValue: not active for vcenter_server, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for vcenter_cluster, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for os_iso_path, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for vsphere_template_name, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for vm_folder, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for cpu_num, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for disk_size, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for mem_size, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for vcenter_dc_name, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for vsphere_host, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for vcenter_datastore, so skipping
+2021/12/31 17:42:06 [TRACE] validateValue: not active for vm_network, so skipping
+2021/12/31 17:42:06 [TRACE] Starting internal plugin packer-builder-vsphere-iso
+2021/12/31 17:42:06 Starting plugin: /usr/local/Cellar/packer/1.7.8/libexec/bin/packer []string{"/usr/local/Cellar/packer/1.7.8/libexec/bin/packer", "plugin", "packer-builder-vsphere-iso"}
+2021/12/31 17:42:06 Waiting for RPC address for: /usr/local/Cellar/packer/1.7.8/libexec/bin/packer
+2021/12/31 17:42:06 packer-builder-vsphere-iso plugin: [INFO] Packer version: 1.7.8 [go1.17.2 darwin amd64]
+2021/12/31 17:42:06 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/12/31 17:42:06 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/12/31 17:42:06 packer-builder-vsphere-iso plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/12/31 17:42:06 packer-builder-vsphere-iso plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/12/31 17:42:06 packer-builder-vsphere-iso plugin: args: []string{"packer-builder-vsphere-iso"}
+2021/12/31 17:42:06 Received unix RPC address for /usr/local/Cellar/packer/1.7.8/libexec/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2814488233
+2021/12/31 17:42:06 packer-builder-vsphere-iso plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin2814488233
+2021/12/31 17:42:06 packer-builder-vsphere-iso plugin: Waiting for connection...
+2021/12/31 17:42:06 packer-builder-vsphere-iso plugin: Serving a plugin connection...
+2021/12/31 17:42:06 [TRACE] Starting internal plugin packer-provisioner-shell
+2021/12/31 17:42:06 Starting plugin: /usr/local/Cellar/packer/1.7.8/libexec/bin/packer []string{"/usr/local/Cellar/packer/1.7.8/libexec/bin/packer", "plugin", "packer-provisioner-shell"}
+2021/12/31 17:42:06 Waiting for RPC address for: /usr/local/Cellar/packer/1.7.8/libexec/bin/packer
+2021/12/31 17:42:06 packer-provisioner-shell plugin: [INFO] Packer version: 1.7.8 [go1.17.2 darwin amd64]
+2021/12/31 17:42:06 packer-provisioner-shell plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/12/31 17:42:06 packer-provisioner-shell plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/12/31 17:42:06 packer-provisioner-shell plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/12/31 17:42:06 packer-provisioner-shell plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/12/31 17:42:06 packer-provisioner-shell plugin: args: []string{"packer-provisioner-shell"}
+2021/12/31 17:42:06 packer-provisioner-shell plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin1652139712
+2021/12/31 17:42:06 Received unix RPC address for /usr/local/Cellar/packer/1.7.8/libexec/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin1652139712
+2021/12/31 17:42:06 packer-provisioner-shell plugin: Waiting for connection...
+2021/12/31 17:42:06 packer-provisioner-shell plugin: Serving a plugin connection...
+2021/12/31 17:42:06 ui error: Error: Failed preparing provisioner-block "shell" ""
+
+  on vsphere_rhel85.pkr.hcl line 26:
+  (source code not available)
+
+10 error(s) occurred:
+
+* Bad script 'scripts/yum_update.sh': stat scripts/yum_update.sh: no such file
+or directory
+* Bad script 'scripts/package_install.sh': stat scripts/package_install.sh: no
+such file or directory
+* Bad script 'scripts/sysprep-op-bash-history.sh': stat
+scripts/sysprep-op-bash-history.sh: no such file or directory
+* Bad script 'scripts/sysprep-op-crash-data.sh': stat
+scripts/sysprep-op-crash-data.sh: no such file or directory
+* Bad script 'scripts/sysprep-op-dhcp-client-state.sh': stat
+scripts/sysprep-op-dhcp-client-state.sh: no such file or directory
+* Bad script 'scripts/sysprep-op-machine-id.sh': stat
+scripts/sysprep-op-machine-id.sh: no such file or directory
+* Bad script 'scripts/sysprep-op-package-manager-cache.sh': stat
+scripts/sysprep-op-package-manager-cache.sh: no such file or directory
+* Bad script 'scripts/sysprep-op-rpm-db.sh': stat scripts/sysprep-op-rpm-db.sh:
+no such file or directory
+* Bad script 'scripts/sysprep-op-ssh-hostkeys.sh': stat
+scripts/sysprep-op-ssh-hostkeys.sh: no such file or directory
+* Bad script 'scripts/sysprep-op-yum-uuid.sh': stat
+scripts/sysprep-op-yum-uuid.sh: no such file or directory
+
+2021/12/31 17:42:06 Build debug mode: false
+2021/12/31 17:42:06 Force build: false
+2021/12/31 17:42:06 On error: 
+2021/12/31 17:42:06 Waiting on builds to complete...
+2021/12/31 17:42:06 ui: 
+==> Wait completed after 4 microseconds
+2021/12/31 17:42:06 ui: 
+==> Builds finished but no artifacts were created.
+2021/12/31 17:42:06 [INFO] (telemetry) Finalizing.
+2021/12/31 17:42:07 waiting for all plugin processes to complete...
+2021/12/31 17:42:07 /usr/local/Cellar/packer/1.7.8/libexec/bin/packer: plugin process exited
+2021/12/31 17:42:07 /usr/local/Cellar/packer/1.7.8/libexec/bin/packer: plugin process exited

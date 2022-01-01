@@ -1,0 +1,495 @@
+2021/12/31 20:01:53 [INFO] Packer version: 1.7.8 [go1.17.2 darwin amd64]
+2021/12/31 20:01:53 [TRACE] discovering plugins in /usr/local/Cellar/packer/1.7.8/libexec/bin
+2021/12/31 20:01:53 [TRACE] discovering plugins in /Users/edwardingram/.config/packer/plugins
+2021/12/31 20:01:53 [TRACE] discovering plugins in .
+2021/12/31 20:01:53 [TRACE] discovering plugins in 
+2021/12/31 20:01:53 [TRACE] discovering plugins in /usr/local/bin
+2021/12/31 20:01:53 [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/12/31 20:01:53 [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/12/31 20:01:53 [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/12/31 20:01:53 [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/12/31 20:01:53 [TRACE] validateValue: not active for cpu_num, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for disk_size, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for mem_size, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for vm_network, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for vsphere_template_name, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for vm_folder, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for vcenter_server, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for vcenter_dc_name, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for vcenter_cluster, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for vsphere_host, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for vcenter_datastore, so skipping
+2021/12/31 20:01:53 [TRACE] validateValue: not active for os_iso_path, so skipping
+2021/12/31 20:01:54 [TRACE] Starting internal plugin packer-builder-vsphere-iso
+2021/12/31 20:01:54 Starting plugin: /usr/local/Cellar/packer/1.7.8/libexec/bin/packer []string{"/usr/local/Cellar/packer/1.7.8/libexec/bin/packer", "plugin", "packer-builder-vsphere-iso"}
+2021/12/31 20:01:54 Waiting for RPC address for: /usr/local/Cellar/packer/1.7.8/libexec/bin/packer
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: [INFO] Packer version: 1.7.8 [go1.17.2 darwin amd64]
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: args: []string{"packer-builder-vsphere-iso"}
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin1146743457
+2021/12/31 20:01:54 Received unix RPC address for /usr/local/Cellar/packer/1.7.8/libexec/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin1146743457
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: Waiting for connection...
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: Serving a plugin connection...
+2021/12/31 20:01:54 [TRACE] Starting internal plugin packer-provisioner-shell
+2021/12/31 20:01:54 Starting plugin: /usr/local/Cellar/packer/1.7.8/libexec/bin/packer []string{"/usr/local/Cellar/packer/1.7.8/libexec/bin/packer", "plugin", "packer-provisioner-shell"}
+2021/12/31 20:01:54 Waiting for RPC address for: /usr/local/Cellar/packer/1.7.8/libexec/bin/packer
+2021/12/31 20:01:54 packer-provisioner-shell plugin: [INFO] Packer version: 1.7.8 [go1.17.2 darwin amd64]
+2021/12/31 20:01:54 packer-provisioner-shell plugin: [INFO] PACKER_CONFIG env var not set; checking the default config file path
+2021/12/31 20:01:54 packer-provisioner-shell plugin: [INFO] PACKER_CONFIG env var set; attempting to open config file: /Users/edwardingram/.packerconfig
+2021/12/31 20:01:54 packer-provisioner-shell plugin: [WARN] Config file doesn't exist: /Users/edwardingram/.packerconfig
+2021/12/31 20:01:54 packer-provisioner-shell plugin: [INFO] Setting cache directory: /Users/edwardingram/.cache/packer
+2021/12/31 20:01:54 packer-provisioner-shell plugin: args: []string{"packer-provisioner-shell"}
+2021/12/31 20:01:54 Received unix RPC address for /usr/local/Cellar/packer/1.7.8/libexec/bin/packer: addr is /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin3519080691
+2021/12/31 20:01:54 packer-provisioner-shell plugin: Plugin address: unix /var/folders/09/02b30jsd2vnb7wtfq9vvg3br0000gn/T/packer-plugin3519080691
+2021/12/31 20:01:54 packer-provisioner-shell plugin: Waiting for connection...
+2021/12/31 20:01:54 packer-provisioner-shell plugin: Serving a plugin connection...
+2021/12/31 20:01:54 ui: [1;32mvsphere-iso.rhel: output will be in this color.[0m
+2021/12/31 20:01:54 ui: 
+2021/12/31 20:01:54 Build debug mode: false
+2021/12/31 20:01:54 Force build: false
+2021/12/31 20:01:54 On error: 
+2021/12/31 20:01:54 Waiting on builds to complete...
+2021/12/31 20:01:54 Starting build run: vsphere-iso.rhel
+2021/12/31 20:01:54 Running builder: 
+2021/12/31 20:01:54 [INFO] (telemetry) Starting builder vsphere-iso.rhel
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: No URLs were provided to Step Download. Continuing...
+2021/12/31 20:01:54 packer-builder-vsphere-iso plugin: No CD files specified. CD disk will not be made.
+2021/12/31 20:01:54 ui: [1;32m==> vsphere-iso.rhel: Creating VM...[0m
+2021/12/31 20:01:55 ui: [1;32m==> vsphere-iso.rhel: Customizing hardware...[0m
+2021/12/31 20:01:55 ui: [1;32m==> vsphere-iso.rhel: Mounting ISO images...[0m
+2021/12/31 20:01:55 packer-builder-vsphere-iso plugin: Check if ISO path is a Content Library path
+2021/12/31 20:01:55 packer-builder-vsphere-iso plugin: ISO path not identified as a Content Library path
+2021/12/31 20:01:55 packer-builder-vsphere-iso plugin: Using [XN_iSCSI_HDD] Repo/rhel-8.5-x86_64-dvd.iso as the datastore path
+2021/12/31 20:01:55 packer-builder-vsphere-iso plugin: Creating CD-ROM on controller '&{{{} 200 0xc000dbcb80 <nil> <nil> <nil> 0 <nil>} 0 []}' with iso '[XN_iSCSI_HDD] Repo/rhel-8.5-x86_64-dvd.iso'
+2021/12/31 20:01:55 ui: [1;32m==> vsphere-iso.rhel: Adding configuration parameters...[0m
+2021/12/31 20:01:55 packer-builder-vsphere-iso plugin: No floppy files specified. Floppy disk will not be made.
+2021/12/31 20:01:55 packer-builder-vsphere-iso plugin: Found available port: 8814 on IP: 0.0.0.0
+2021/12/31 20:01:55 ui: [1;32m==> vsphere-iso.rhel: Starting HTTP server on port 8814[0m
+2021/12/31 20:01:55 ui: [1;32m==> vsphere-iso.rhel: Set boot order...[0m
+2021/12/31 20:01:56 ui: [1;32m==> vsphere-iso.rhel: Power on VM...[0m
+2021/12/31 20:01:57 ui: [1;32m==> vsphere-iso.rhel: Waiting 10s for boot...[0m
+2021/12/31 20:02:07 ui: [1;32m==> vsphere-iso.rhel: HTTP server is working at http://192.168.1.23:8814/[0m
+2021/12/31 20:02:07 ui: [1;32m==> vsphere-iso.rhel: Typing boot command...[0m
+2021/12/31 20:02:07 packer-builder-vsphere-iso plugin: Special code '<up>' found, replacing with: CodeUpArrow
+2021/12/31 20:02:07 packer-builder-vsphere-iso plugin: [INFO] Waiting 1s
+2021/12/31 20:02:08 packer-builder-vsphere-iso plugin: Special code '<tab>' found, replacing with: CodeTab
+2021/12/31 20:02:08 packer-builder-vsphere-iso plugin: [INFO] Waiting 1s
+2021/12/31 20:02:09 packer-builder-vsphere-iso plugin: Sending char ' ', code CodeSpacebar, shift false
+2021/12/31 20:02:09 packer-builder-vsphere-iso plugin: Sending char 't', code CodeT, shift false
+2021/12/31 20:02:09 packer-builder-vsphere-iso plugin: Sending char 'e', code CodeE, shift false
+2021/12/31 20:02:10 packer-builder-vsphere-iso plugin: Sending char 'x', code CodeX, shift false
+2021/12/31 20:02:10 packer-builder-vsphere-iso plugin: Sending char 't', code CodeT, shift false
+2021/12/31 20:02:10 packer-builder-vsphere-iso plugin: Sending char ' ', code CodeSpacebar, shift false
+2021/12/31 20:02:10 packer-builder-vsphere-iso plugin: Sending char 'k', code CodeK, shift false
+2021/12/31 20:02:10 packer-builder-vsphere-iso plugin: Sending char 's', code CodeS, shift false
+2021/12/31 20:02:10 packer-builder-vsphere-iso plugin: Sending char '=', code CodeEqualSign, shift false
+2021/12/31 20:02:10 packer-builder-vsphere-iso plugin: Sending char 'h', code CodeH, shift false
+2021/12/31 20:02:10 packer-builder-vsphere-iso plugin: Sending char 't', code CodeT, shift false
+2021/12/31 20:02:10 packer-builder-vsphere-iso plugin: Sending char 't', code CodeT, shift false
+2021/12/31 20:02:11 packer-builder-vsphere-iso plugin: Sending char 'p', code CodeP, shift false
+2021/12/31 20:02:11 packer-builder-vsphere-iso plugin: Sending char ':', code CodeSemicolon, shift true
+2021/12/31 20:02:11 packer-builder-vsphere-iso plugin: Sending char '/', code CodeSlash, shift false
+2021/12/31 20:02:11 packer-builder-vsphere-iso plugin: Sending char '/', code CodeSlash, shift false
+2021/12/31 20:02:11 packer-builder-vsphere-iso plugin: Sending char '1', code Code1, shift false
+2021/12/31 20:02:11 packer-builder-vsphere-iso plugin: Sending char '9', code Code9, shift false
+2021/12/31 20:02:11 packer-builder-vsphere-iso plugin: Sending char '2', code Code2, shift false
+2021/12/31 20:02:11 packer-builder-vsphere-iso plugin: Sending char '.', code CodeFullStop, shift false
+2021/12/31 20:02:12 packer-builder-vsphere-iso plugin: Sending char '1', code Code1, shift false
+2021/12/31 20:02:12 packer-builder-vsphere-iso plugin: Sending char '6', code Code6, shift false
+2021/12/31 20:02:12 packer-builder-vsphere-iso plugin: Sending char '8', code Code8, shift false
+2021/12/31 20:02:12 packer-builder-vsphere-iso plugin: Sending char '.', code CodeFullStop, shift false
+2021/12/31 20:02:12 packer-builder-vsphere-iso plugin: Sending char '1', code Code1, shift false
+2021/12/31 20:02:12 packer-builder-vsphere-iso plugin: Sending char '.', code CodeFullStop, shift false
+2021/12/31 20:02:12 packer-builder-vsphere-iso plugin: Sending char '2', code Code2, shift false
+2021/12/31 20:02:12 packer-builder-vsphere-iso plugin: Sending char '3', code Code3, shift false
+2021/12/31 20:02:13 packer-builder-vsphere-iso plugin: Sending char ':', code CodeSemicolon, shift true
+2021/12/31 20:02:13 packer-builder-vsphere-iso plugin: Sending char '8', code Code8, shift false
+2021/12/31 20:02:13 packer-builder-vsphere-iso plugin: Sending char '8', code Code8, shift false
+2021/12/31 20:02:13 packer-builder-vsphere-iso plugin: Sending char '1', code Code1, shift false
+2021/12/31 20:02:13 packer-builder-vsphere-iso plugin: Sending char '4', code Code4, shift false
+2021/12/31 20:02:13 packer-builder-vsphere-iso plugin: Sending char '/', code CodeSlash, shift false
+2021/12/31 20:02:13 packer-builder-vsphere-iso plugin: Sending char 'k', code CodeK, shift false
+2021/12/31 20:02:13 packer-builder-vsphere-iso plugin: Sending char 's', code CodeS, shift false
+2021/12/31 20:02:13 packer-builder-vsphere-iso plugin: Sending char '.', code CodeFullStop, shift false
+2021/12/31 20:02:14 packer-builder-vsphere-iso plugin: Sending char 'c', code CodeC, shift false
+2021/12/31 20:02:14 packer-builder-vsphere-iso plugin: Sending char 'f', code CodeF, shift false
+2021/12/31 20:02:14 packer-builder-vsphere-iso plugin: Sending char 'g', code CodeG, shift false
+2021/12/31 20:02:14 packer-builder-vsphere-iso plugin: Special code '<enter>' found, replacing with: CodeReturnEnter
+2021/12/31 20:02:14 packer-builder-vsphere-iso plugin: [INFO] Waiting 1s
+2021/12/31 20:02:15 packer-builder-vsphere-iso plugin: [INFO] Waiting for IP, up to total timeout: 30m0s, settle timeout: 5s
+2021/12/31 20:02:15 ui: [1;32m==> vsphere-iso.rhel: Waiting for IP...[0m
+2021/12/31 20:07:11 packer-builder-vsphere-iso plugin: VM IP aquired: 10.10.0.107
+2021/12/31 20:07:11 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.107
+2021/12/31 20:07:12 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.107
+2021/12/31 20:07:13 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.107
+2021/12/31 20:07:14 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.107
+2021/12/31 20:07:15 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.107
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: VM IP is still the same: 10.10.0.107
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: VM IP seems stable enough: 10.10.0.107
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: IP address: 10.10.0.107[0m
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Using SSH communicator to connect: 10.10.0.107[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] Waiting for SSH, up to timeout: 5m0s
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Waiting for SSH to become available...[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] Attempting SSH connection to 10.10.0.107:22...
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] reconnecting to TCP connection for SSH
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] handshaking with SSH
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] handshake complete!
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] agent forwarding enabled
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Connected to SSH![0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: Running the provision hook
+2021/12/31 20:07:16 [INFO] (telemetry) Starting provisioner shell
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Provisioning with shell script: scripts/sysprep-op-bash-history.sh[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: Opening scripts/sysprep-op-bash-history.sh for reading
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Starting remote scp process:  scp -vt /tmp
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Started SCP session, beginning transfers...
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Copying input data into temporary file so we can read the length
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 241 bytes written for 'uploadData'
+2021/12/31 20:07:16 [INFO] 241 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp: Uploading script_8625.sh: perms=C0644 size=241
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] SCP session complete, closing stdin pipe.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Waiting for SSH session to complete.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp stderr (length 31): Sink: C0644 241 script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: chmod 0755 /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: echo '<sensitive>' | PACKER_BUILDER_TYPE='vsphere-iso' PACKER_BUILD_NAME='rhel' PACKER_HTTP_ADDR='192.168.1.23:8814' PACKER_HTTP_IP='192.168.1.23' PACKER_HTTP_PORT='8814'  sudo -S -E sh -eux '/tmp/script_8625.sh'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel:[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: We trust you have received the usual lecture from the local System[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: Administrator. It usually boils down to these three things:[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel:[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel:     #1) Respect the privacy of others.[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel:     #2) Think before you type.[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel:     #3) With great power comes great responsibility.[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel:[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: [sudo] password for <sensitive>: ++ find /root -type f -name .bash_history[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + ROOTS_HIST=[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: ++ tr -s '\n' ' '[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: ++ find /home -type f -name .bash_history[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + USERS_HIST=[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + rm -f[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + exit 0[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 [INFO] 429 bytes written for 'stderr'
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 429 bytes written for 'stderr'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: rm -f /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Provisioning with shell script: scripts/sysprep-op-crash-data.sh[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: Opening scripts/sysprep-op-crash-data.sh for reading
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Starting remote scp process:  scp -vt /tmp
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Started SCP session, beginning transfers...
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 279 bytes written for 'uploadData'
+2021/12/31 20:07:16 [INFO] 279 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Copying input data into temporary file so we can read the length
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp: Uploading script_8625.sh: perms=C0644 size=279
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] SCP session complete, closing stdin pipe.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Waiting for SSH session to complete.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp stderr (length 31): Sink: C0644 279 script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: chmod 0755 /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: echo '<sensitive>' | PACKER_BUILDER_TYPE='vsphere-iso' PACKER_BUILD_NAME='rhel' PACKER_HTTP_ADDR='192.168.1.23:8814' PACKER_HTTP_IP='192.168.1.23' PACKER_HTTP_PORT='8814'  sudo -S -E sh -eux '/tmp/script_8625.sh'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: [sudo] password for <sensitive>: + CRASH_DATA_LOCATIONS=("/var/crash/*" "/var/log/dump/*")[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + shopt -s nullglob dotglob[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 [INFO] 124 bytes written for 'stderr'
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + exit 0[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 124 bytes written for 'stderr'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: rm -f /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Provisioning with shell script: scripts/sysprep-op-dhcp-client-state.sh[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: Opening scripts/sysprep-op-dhcp-client-state.sh for reading
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 [INFO] 280 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 280 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Starting remote scp process:  scp -vt /tmp
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Started SCP session, beginning transfers...
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Copying input data into temporary file so we can read the length
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp: Uploading script_8625.sh: perms=C0644 size=280
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] SCP session complete, closing stdin pipe.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Waiting for SSH session to complete.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp stderr (length 31): Sink: C0644 280 script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: chmod 0755 /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: echo '<sensitive>' | PACKER_BUILDER_TYPE='vsphere-iso' PACKER_BUILD_NAME='rhel' PACKER_HTTP_ADDR='192.168.1.23:8814' PACKER_HTTP_IP='192.168.1.23' PACKER_HTTP_PORT='8814'  sudo -S -E sh -eux '/tmp/script_8625.sh'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: [sudo] password for <sensitive>: + LEASE_DATA_LOCATIONS=("/var/lib/dhclient/*" "/var/lib/dhcp/*")[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] 131 bytes written for 'stderr'
+2021/12/31 20:07:16 [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + shopt -s nullglob dotglob[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 131 bytes written for 'stderr'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + exit 0[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: rm -f /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Provisioning with shell script: scripts/sysprep-op-machine-id.sh[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: Opening scripts/sysprep-op-machine-id.sh for reading
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Starting remote scp process:  scp -vt /tmp
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Started SCP session, beginning transfers...
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Copying input data into temporary file so we can read the length
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 2400 bytes written for 'uploadData'
+2021/12/31 20:07:16 [INFO] 2400 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp: Uploading script_8625.sh: perms=C0644 size=2400
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] SCP session complete, closing stdin pipe.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Waiting for SSH session to complete.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp stderr (length 32): Sink: C0644 2400 script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: chmod 0755 /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: echo '<sensitive>' | PACKER_BUILDER_TYPE='vsphere-iso' PACKER_BUILD_NAME='rhel' PACKER_HTTP_ADDR='192.168.1.23:8814' PACKER_HTTP_IP='192.168.1.23' PACKER_HTTP_PORT='8814'  sudo -S -E sh -eux '/tmp/script_8625.sh'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: [sudo] password for <sensitive>: + SYSD_ID=/etc/machine-id[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + DBUS_ID=/var/lib/dbus/machine-id[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 [INFO] 250 bytes written for 'stderr'
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + '[' -e /etc/machine-id ']'[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + rm -f /etc/machine-id[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 250 bytes written for 'stderr'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + touch /etc/machine-id[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + [[ -e /var/lib/dbus/machine-id ]][0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + [[ ! -h /var/lib/dbus/machine-id ]][0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + exit 0[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: rm -f /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Provisioning with shell script: scripts/sysprep-op-package-manager-cache.sh[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: Opening scripts/sysprep-op-package-manager-cache.sh for reading
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 674 bytes written for 'uploadData'
+2021/12/31 20:07:16 [INFO] 674 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Starting remote scp process:  scp -vt /tmp
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Started SCP session, beginning transfers...
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Copying input data into temporary file so we can read the length
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp: Uploading script_8625.sh: perms=C0644 size=674
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] SCP session complete, closing stdin pipe.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Waiting for SSH session to complete.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp stderr (length 31): Sink: C0644 674 script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: chmod 0755 /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: echo '<sensitive>' | PACKER_BUILDER_TYPE='vsphere-iso' PACKER_BUILD_NAME='rhel' PACKER_HTTP_ADDR='192.168.1.23:8814' PACKER_HTTP_IP='192.168.1.23' PACKER_HTTP_PORT='8814'  sudo -S -E sh -eux '/tmp/script_8625.sh'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: [sudo] password for <sensitive>: + CACHE_LOCATIONS=("/var/cache/apt/archives/" "/var/cache/dnf/" "/var/cache/yum/" "/var/cache/zypp*")[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + for CACHE_DIR in ${CACHE_LOCATIONS[@]}[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + '[' -d /var/cache/apt/archives/ ']'[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + for CACHE_DIR in ${CACHE_LOCATIONS[@]}[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 [INFO] 490 bytes written for 'stderr'
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + '[' -d /var/cache/dnf/ ']'[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 490 bytes written for 'stderr'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + find /var/cache/dnf/ -type f[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + xargs -I FILE rm -f FILE[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + for CACHE_DIR in ${CACHE_LOCATIONS[@]}[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + '[' -d /var/cache/yum/ ']'[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + for CACHE_DIR in ${CACHE_LOCATIONS[@]}[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + '[' -d '/var/cache/zypp*' ']'[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + exit 0[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: rm -f /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Provisioning with shell script: scripts/sysprep-op-rpm-db.sh[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: Opening scripts/sysprep-op-rpm-db.sh for reading
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Starting remote scp process:  scp -vt /tmp
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 161 bytes written for 'uploadData'
+2021/12/31 20:07:16 [INFO] 161 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Started SCP session, beginning transfers...
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Copying input data into temporary file so we can read the length
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp: Uploading script_8625.sh: perms=C0644 size=161
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] SCP session complete, closing stdin pipe.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Waiting for SSH session to complete.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp stderr (length 31): Sink: C0644 161 script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: chmod 0755 /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: echo '<sensitive>' | PACKER_BUILDER_TYPE='vsphere-iso' PACKER_BUILD_NAME='rhel' PACKER_HTTP_ADDR='192.168.1.23:8814' PACKER_HTTP_IP='192.168.1.23' PACKER_HTTP_PORT='8814'  sudo -S -E sh -eux '/tmp/script_8625.sh'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: [sudo] password for <sensitive>: + rm -f '/var/lib/rpm/__db.*'[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + exit 0[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 [INFO] 68 bytes written for 'stderr'
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 68 bytes written for 'stderr'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: rm -f /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Provisioning with shell script: scripts/sysprep-op-ssh-hostkeys.sh[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: Opening scripts/sysprep-op-ssh-hostkeys.sh for reading
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Starting remote scp process:  scp -vt /tmp
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Started SCP session, beginning transfers...
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 3030 bytes written for 'uploadData'
+2021/12/31 20:07:16 [INFO] 3030 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Copying input data into temporary file so we can read the length
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp: Uploading script_8625.sh: perms=C0644 size=3030
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] SCP session complete, closing stdin pipe.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Waiting for SSH session to complete.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp stderr (length 32): Sink: C0644 3030 script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: chmod 0755 /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: echo '<sensitive>' | PACKER_BUILDER_TYPE='vsphere-iso' PACKER_BUILD_NAME='rhel' PACKER_HTTP_ADDR='192.168.1.23:8814' PACKER_HTTP_IP='192.168.1.23' PACKER_HTTP_PORT='8814'  sudo -S -E sh -eux '/tmp/script_8625.sh'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: [sudo] password for <sensitive>: + rm -f /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_ecdsa_key.pub /etc/ssh/ssh_host_ed25519_key /etc/ssh/ssh_host_ed25519_key.pub /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key.pub[0m
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: ++ command -v dpkg-reconfigure[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 [INFO] 276 bytes written for 'stderr'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + '[' x '!=' x ']'[0m
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 276 bytes written for 'stderr'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + exit 0[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: rm -f /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Provisioning with shell script: scripts/sysprep-op-yum-uuid.sh[0m
+2021/12/31 20:07:16 packer-provisioner-shell plugin: Opening scripts/sysprep-op-yum-uuid.sh for reading
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Starting remote scp process:  scp -vt /tmp
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 226 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Started SCP session, beginning transfers...
+2021/12/31 20:07:16 [INFO] 226 bytes written for 'uploadData'
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Copying input data into temporary file so we can read the length
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp: Uploading script_8625.sh: perms=C0644 size=226
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] SCP session complete, closing stdin pipe.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Waiting for SSH session to complete.
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] scp stderr (length 31): Sink: C0644 226 script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: chmod 0755 /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: echo '<sensitive>' | PACKER_BUILDER_TYPE='vsphere-iso' PACKER_BUILD_NAME='rhel' PACKER_HTTP_ADDR='192.168.1.23:8814' PACKER_HTTP_IP='192.168.1.23' PACKER_HTTP_PORT='8814'  sudo -S -E sh -eux '/tmp/script_8625.sh'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: [sudo] password for <sensitive>: + UUID=/var/lib/yum/uuid[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 [INFO] 92 bytes written for 'stderr'
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + [[ -e /var/lib/yum/uuid ]][0m
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 0 bytes written for 'stdout'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] 92 bytes written for 'stderr'
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 ui error: [1;31m==> vsphere-iso.rhel: + exit 0[0m
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: rm -f /tmp/script_8625.sh
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] Opening new ssh session
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [DEBUG] starting remote command: rm -f
+2021/12/31 20:07:16 packer-builder-vsphere-iso plugin: [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] RPC endpoint: Communicator ended with: 0
+2021/12/31 20:07:16 packer-provisioner-shell plugin: [INFO] RPC client: Communicator ended with: 0
+2021/12/31 20:07:16 [INFO] (telemetry) ending shell
+2021/12/31 20:07:16 ui: [1;32m==> vsphere-iso.rhel: Shutting down VM...[0m
+2021/12/31 20:07:17 packer-builder-vsphere-iso plugin: Waiting max 5m0s for shutdown to complete
+2021/12/31 20:07:21 ui: [1;32m==> vsphere-iso.rhel: Deleting Floppy drives...[0m
+2021/12/31 20:07:21 ui: [1;32m==> vsphere-iso.rhel: Eject CD-ROM drives...[0m
+2021/12/31 20:07:21 ui: [1;32m==> vsphere-iso.rhel: Convert VM into template...[0m
+2021/12/31 20:07:21 [INFO] (telemetry) ending vsphere-iso.rhel
+2021/12/31 20:07:21 ui: [1;32mBuild 'vsphere-iso.rhel' finished after 5 minutes 27 seconds.[0m
+2021/12/31 20:07:21 ui: 
+==> Wait completed after 5 minutes 27 seconds
+2021/12/31 20:07:21 ui: 
+==> Builds finished. The artifacts of successful builds are:
+2021/12/31 20:07:21 machine readable: vsphere-iso.rhel,artifact-count []string{"1"}
+2021/12/31 20:07:21 machine readable: vsphere-iso.rhel,artifact []string{"0", "builder-id", "jetbrains.vsphere"}
+2021/12/31 20:07:21 machine readable: vsphere-iso.rhel,artifact []string{"0", "id", "TMP-RHEL85_Packer_2022_01"}
+2021/12/31 20:07:21 machine readable: vsphere-iso.rhel,artifact []string{"0", "string", "TMP-RHEL85_Packer_2022_01"}
+2021/12/31 20:07:21 machine readable: vsphere-iso.rhel,artifact []string{"0", "files-count", "0"}
+2021/12/31 20:07:21 machine readable: vsphere-iso.rhel,artifact []string{"0", "end"}
+2021/12/31 20:07:21 ui: --> vsphere-iso.rhel: TMP-RHEL85_Packer_2022_01
+2021/12/31 20:07:21 [INFO] (telemetry) Finalizing.
+2021/12/31 20:07:21 waiting for all plugin processes to complete...
+2021/12/31 20:07:21 /usr/local/Cellar/packer/1.7.8/libexec/bin/packer: plugin process exited
+2021/12/31 20:07:21 /usr/local/Cellar/packer/1.7.8/libexec/bin/packer: plugin process exited
