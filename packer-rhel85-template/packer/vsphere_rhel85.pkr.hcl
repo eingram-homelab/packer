@@ -19,15 +19,28 @@ local "ssh_password" {
   sensitive       = true
 }
 
+local "sub_email" {
+  expression      = vault("/secret/data/rhel/dev", "sub_email")
+  sensitive       = true
+}
+
+local "sub_password" {
+  expression      = vault("/secret/data/rhel/dev", "sub_password")
+  sensitive       = true
+}
+
 build {
   sources = ["source.vsphere-iso.rhel"]
+
+  provisioner "shell" {
+    inline = ["echo '${local.ssh_password}' | sudo -S subscription-manager register --username ${local.sub_email} --password ${local.sub_password} --auto-attach"]
+  }
 
   # Upload and execute scripts using Shell
   provisioner "shell" {
     execute_command = "echo '${local.ssh_password}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
     scripts = [
-#      "scripts/yum_update.sh",
-#      "scripts/package_install.sh",
+      "scripts/package_install.sh",
       "scripts/sysprep-op-bash-history.sh",
       "scripts/sysprep-op-crash-data.sh",
       "scripts/sysprep-op-dhcp-client-state.sh",
