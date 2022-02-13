@@ -5,17 +5,17 @@ I have use environment variables from GitLab. You may use them from elsewhere.
 */ 
 
 
-variable "vcenter_username" {
-    description = "vCenter username."
-    type    = string
-    default = env("VSPHERE_USER") # Example of using evironment variables.
-}
-variable "vcenter_password" {
-    description = "vCenter password."
-    type    = string
-    default = env("VSPHERE_PASS") # Example of using evironment variables.
-    sensitive = true
-}
+# variable "vcenter_username" {
+#     description = "vCenter username."
+#     type    = string
+#     default = env("VSPHERE_USER") # Example of using evironment variables.
+# }
+# variable "vcenter_password" {
+#     description = "vCenter password."
+#     type    = string
+#     default = env("VSPHERE_PASS") # Example of using evironment variables.
+#     sensitive = true
+# }
 variable "os_username" {
     description = "Local OS Username for WinRM or SSH etc."
     type    = string   

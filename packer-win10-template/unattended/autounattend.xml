@@ -10,7 +10,14 @@
 -->
 <unattend xmlns="urn:schemas-microsoft-com:unattend">
     <servicing/>
-    <settings pass="windowsPE">    
+    <settings pass="windowsPE">  
+        <component name="Microsoft-Windows-PnpCustomizationsWinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DriverPaths>
+                <PathAndCredentials wcm:action="add" wcm:keyValue="A">
+                    <Path>A:\</Path>
+                </PathAndCredentials>
+            </DriverPaths>
+        </component>  
         <component xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
             <DiskConfiguration>
                 <WillShowUI>OnError</WillShowUI>
@@ -120,7 +127,7 @@
                 <LocalAccounts>
                     <LocalAccount wcm:action="add">
                         <Password>
-                            <Value>NL2B1r13</Value>
+                            <Value>temppassword</Value>
                             <PlainText>true</PlainText>
                         </Password>
                         <Description>Local administrator account.</Description>
@@ -132,7 +139,7 @@
             </UserAccounts>
             <AutoLogon>
                 <Password>
-                    <Value>NL2B1r13</Value>
+                    <Value>temppassword</Value>
                     <PlainText>true</PlainText>
                 </Password>
                 <Enabled>true</Enabled>
@@ -160,6 +167,16 @@
                     <CommandLine>PowerShell reg add "HKLM\System\CurrentControlSet\Control\Network\NewNetworkWindowOff"</CommandLine>
                     <Description>Disable network window prompt when Windows first connects to a network.</Description>
                     <Order>3</Order>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>%SystemRoot%\System32\reg.exe ADD HKLM\SYSTEM\CurrentControlSet\Control\Power\ /v HibernateFileSizePercent /t REG_DWORD /d 0 /f</CommandLine>
+                    <Order>8</Order>
+                    <Description>Zero Hibernation File</Description>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>%SystemRoot%\System32\reg.exe ADD HKLM\SYSTEM\CurrentControlSet\Control\Power\ /v HibernateEnabled /t REG_DWORD /d 0 /f</CommandLine>
+                    <Order>9</Order>
+                    <Description>Disable Hibernation Mode</Description>
                 </SynchronousCommand>
                <SynchronousCommand wcm:action="add">
                     <CommandLine>Powershell -ExecutionPolicy Bypass -File a:\scripts\install_vmware_tools.ps1</CommandLine>

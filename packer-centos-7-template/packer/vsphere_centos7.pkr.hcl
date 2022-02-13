@@ -1,5 +1,5 @@
 # Provisioner configuration runs after the main source builder.
-local "vsphere_user" {
+local "vsphere_username" {
   expression     = vault("/secret/data/vsphere/vcsa", "vsphere_username")
   sensitive      = true
 }
@@ -48,7 +48,7 @@ source "vsphere-iso" "centos" {
 
   # vCenter parameters
   insecure_connection   = "true"
-  username              = "${local.vsphere_user}"
+  username              = "${local.vsphere_username}"
   password              = "${local.vsphere_password}"
   vcenter_server        = "${var.vcenter_server}"
   cluster               = "${var.vcenter_cluster}"

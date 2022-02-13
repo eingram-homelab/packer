@@ -1,3 +1,13 @@
+local "vsphere_username" {
+  expression     = vault("/secret/data/vsphere/vcsa", "vsphere_username")
+  sensitive      = true
+}
+
+local "vsphere_password" {
+  expression     = vault("/secret/data/vsphere/vcsa", "vsphere_password")
+  sensitive      = true
+}
+
 packer {
   required_version = ">= 1.7.4"
 
@@ -10,12 +20,12 @@ packer {
   }
 }
 
-source "vsphere-iso" "win_10_sysprep" {
+source "vsphere-iso" "win2019" {
   insecure_connection     = true
 
   vcenter_server          = var.vcenter_server
-  username                = var.vcenter_username
-  password                = var.vcenter_password
+  username                = local.vsphere_username
+  password                = local.vsphere_password
 
   cluster                 = var.vcenter_cluster
   datacenter              = var.vcenter_datacenter
@@ -24,17 +34,16 @@ source "vsphere-iso" "win_10_sysprep" {
   folder                  = var.vcenter_folder
 
   convert_to_template     = true
-  notes                   = "Windows 10 Pro x64 VM template built using Packer.\nThis template is syspred and can be used for domain deployments."
+  notes                   = "Windows Server 2019 Datacenter x64 VM template built using Packer."
 
   ip_wait_timeout         = "60m"
   ip_settle_timeout       = "1m"
   communicator            = "winrm"
   #winrm_port             = "5985"
   winrm_timeout           = "10m"
-  pause_before_connecting = "5m"
+  pause_before_connecting = "2m"
   winrm_username          = var.os_username
-  winrm_password          = var.os_password_workstation
-
+  winrm_password          = var.os_password
   vm_name                 = "${var.vm_name}_${formatdate ("YYYY_MM", timestamp())}"
   vm_version              = var.vm_version
   firmware                = var.vm_firmware
@@ -46,7 +55,8 @@ source "vsphere-iso" "win_10_sysprep" {
   RAM_hot_plug            = true
   video_ram               = "8192"
   cdrom_type              = "sata"
-  disk_controller_type    = ["lsilogic-sas"]
+  # disk_controller_type    = ["lsilogic-sas"]
+  disk_controller_type    = ["pvscsi"]
   remove_cdrom            = true
     
   network_adapters {
@@ -65,7 +75,8 @@ source "vsphere-iso" "win_10_sysprep" {
   ]
 
   floppy_dirs = ["scripts",]
-  floppy_files = ["unattended/autounattend.xml"]
+  # floppy_files = ["unattended/autounattend.xml"]
+  floppy_files = ["unattended/autounattend.xml","drivers/PVSCSI.CAT","drivers/PVSCSI.INF","drivers/PVSCSI.SYS","drivers/TXTSETUP.OEM"]
 
   boot_wait    = "3s"
   boot_command = [
@@ -80,65 +91,65 @@ build {
   to be enough to install all available Windows updates. Do check yourself though!
   */
 
-  sources = ["source.vsphere-iso.win_10_sysprep"]
+  sources = ["source.vsphere-iso.win2019"]
 
   provisioner "windows-restart" { # A restart to settle Windows prior to updates
-    pause_before    = "2m"
+    pause_before    = "1m"
     restart_timeout = "15m"
   }
-
-  # provisioner "windows-update" {
-  #   pause_before = "2m"
-  #   timeout = "1h"
-  #   search_criteria = "IsInstalled=0"
-  #   filters = [
-  #     #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-  #     "exclude:$_.Title -like '*Preview*'",
-  #     "include:$true"
-  #   ]
-  # }
-
-  # provisioner "windows-update" {
-  #   pause_before = "2m"
-  #   timeout = "1h"
-  #   search_criteria = "IsInstalled=0"
-  #   filters = [
-  #     #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-  #     "exclude:$_.Title -like '*Preview*'",
-  #     "include:$true"
-  #   ]
-  # }
 
   provisioner "windows-update" {
     pause_before = "2m"
     timeout = "1h"
     search_criteria = "IsInstalled=0"
     filters = [
-      #"exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      "exclude:$_.Title -like '*Preview*'",
-      "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+      #"exclude:$_.Title -like '*Preview*'",
+      "include:$true"
+    ]
+  }
+
+  provisioner "windows-update" {
+    pause_before = "1m"
+    timeout = "1h"
+    search_criteria = "IsInstalled=0"
+    filters = [
+      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+      #"exclude:$_.Title -like '*Preview*'",
+      "include:$true"
+    ]
+  }
+
+  provisioner "windows-update" {
+    pause_before = "1m"
+    timeout = "1h"
+    search_criteria = "IsInstalled=0"
+    filters = [
+      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+      # "exclude:$_.Title -like '*Preview*'",
+      # "exclude:$_.Title -like '*Feature*'",
       "include:$true"
     ]
   }
   
   provisioner "powershell" {
-    pause_before      = "2m"
+    pause_before      = "1m"
     elevated_user     = var.os_username
-    elevated_password = var.os_password_workstation
-    script            = "scripts/customise_win_10.ps1"
+    elevated_password = var.os_password
+    script            = "scripts/customize_win2019.ps1"
     timeout           = "15m"
   }
 
   provisioner "windows-restart" { # A restart before sysprep to settle the VM once more.
-    pause_before    = "2m"
+    pause_before    = "1m"
     restart_timeout = "1h"
   }
 
   provisioner "powershell" {
-    pause_before      = "2m"
+    pause_before      = "1m"
     elevated_user     = var.os_username
-    elevated_password = var.os_password_workstation
-    script            = "scripts/sysprep_win_10.ps1"
+    elevated_password = var.os_password
+    script            = "scripts/sysprep_win2019.ps1"
     timeout           = "15m"
   }
 }
