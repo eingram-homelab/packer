@@ -11,7 +11,7 @@ vcenter_server          = "vcsa.local.lan"
 vcenter_datacenter      = "HomeLab Datacenter"
 vcenter_cluster         = "Intel NUC10 Cluster"
 vcenter_host            = "esxinuc1.local.lan"
-vcenter_datastore       = "XN_iSCSI_SSD"
+vcenter_datastore       = "esxinuc1:datastore1"
 
 vm_name                 = "TMP-Win10_Packer"
 vm_network              = "Lab-LAN1"

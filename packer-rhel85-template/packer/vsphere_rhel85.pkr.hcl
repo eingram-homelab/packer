@@ -70,6 +70,7 @@ source "vsphere-iso" "rhel" {
   datastore             = "${var.vcenter_datastore}"
   folder                = "${var.vm_folder}"
   vm_name               = "${var.vsphere_template_name}_${formatdate ("YYYY_MM", timestamp())}"
+  firmware              = "efi"
   convert_to_template   = true
 
   # VM resource parameters 
@@ -106,7 +107,7 @@ source "vsphere-iso" "rhel" {
   #http_ip = "${var.builder_ipv4}"
   http_directory    = "scripts"
   boot_command      = [
-    "<up><wait><tab><wait> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+    "<up>e<wait><down><wait><down><wait><end> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
   ]
 
   # Uncomment the below to kickstar via an ISO (the ISO you will need to make manually by simply saving the ks.cfg file into an iso file). 

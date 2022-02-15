@@ -145,11 +145,11 @@ build {
     restart_timeout = "1h"
   }
 
-  provisioner "powershell" {
-    pause_before      = "1m"
-    elevated_user     = var.os_username
-    elevated_password = var.os_password
-    script            = "scripts/sysprep_win2019.ps1"
-    timeout           = "15m"
-  }
+  # provisioner "powershell" {
+  #   pause_before      = "1m"
+  #   elevated_user     = var.os_username
+  #   elevated_password = var.os_password
+  #   script            = "scripts/sysprep_win2019.ps1"
+  #   timeout           = "15m"
+  # }
 }
