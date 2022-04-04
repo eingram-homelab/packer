@@ -12,7 +12,7 @@ vcenter_server          = "vcsa.local.lan"
 vcenter_dc_name         = "HomeLab Datacenter"
 vcenter_cluster         = "Intel NUC10 Cluster"
 vsphere_host           = "esxinuc1.local.lan"
-vcenter_datastore       = "XN_iSCSI_SSD"
+vcenter_datastore       = "esxinuc1:datastore1"
 vm_network  = "Lab-LAN1"
 
 os_iso_path = "[XN_iSCSI_HDD] Repo/rhel-8.5-x86_64-dvd.iso"

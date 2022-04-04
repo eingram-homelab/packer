@@ -20,7 +20,7 @@ packer {
   }
 }
 
-source "vsphere-iso" "win2019" {
+source "vsphere-iso" "win2016" {
   insecure_connection     = true
 
   vcenter_server          = var.vcenter_server
@@ -34,7 +34,7 @@ source "vsphere-iso" "win2019" {
   folder                  = var.vcenter_folder
 
   convert_to_template     = true
-  notes                   = "Windows Server 2019 Datacenter x64 VM template built using Packer."
+  notes                   = "Windows Server 2016 Datacenter x64 VM template built using Packer."
 
   ip_wait_timeout         = "60m"
   ip_settle_timeout       = "1m"
@@ -55,7 +55,7 @@ source "vsphere-iso" "win2019" {
   RAM_hot_plug            = true
   video_ram               = "8192"
   cdrom_type              = "sata"
-
+  # disk_controller_type    = ["lsilogic-sas"]
   disk_controller_type    = ["pvscsi"]
   remove_cdrom            = true
     
@@ -91,7 +91,7 @@ build {
   to be enough to install all available Windows updates. Do check yourself though!
   */
 
-  sources = ["source.vsphere-iso.win2019"]
+  sources = ["source.vsphere-iso.win2016"]
 
   provisioner "windows-restart" { # A restart to settle Windows prior to updates
     pause_before    = "1m"
@@ -136,7 +136,7 @@ build {
     pause_before      = "1m"
     elevated_user     = var.os_username
     elevated_password = var.os_password
-    script            = "scripts/customize_win2019.ps1"
+    script            = "scripts/customize.ps1"
     timeout           = "15m"
   }
 
