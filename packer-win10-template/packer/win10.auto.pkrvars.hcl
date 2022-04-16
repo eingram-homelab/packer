@@ -3,25 +3,25 @@ Specify any declared variables from the file of, variables.pkr.hcl, to override 
 Example of default value of var cpu_name is 2 cores. We override that with 4 cores below.
 */
 
-os_username             = "administrator"
-os_password             = "temppassword"
+os_username = "administrator"
+os_password = "temppassword"
 
-vcenter_folder          = "Templates"
-vcenter_server          = "vcsa.local.lan"
-vcenter_datacenter      = "HomeLab Datacenter"
-vcenter_cluster         = "Intel NUC10 Cluster"
-vcenter_host            = "esxinuc1.local.lan"
-vcenter_datastore       = "esxinuc1:datastore1"
+vcenter_folder     = "Templates"
+vcenter_server     = "vcsa.local.lan"
+vcenter_datacenter = "HomeLab Datacenter"
+vcenter_cluster    = "Intel NUC10 Cluster"
+vcenter_host       = "esxinuc1.local.lan"
+vcenter_datastore  = "esxinuc1:datastore1"
 
-vm_name                 = "TMP-Win10_Packer"
-vm_network              = "Lab-LAN1"
+vm_name    = "TMP-Win10_Packer"
+vm_network = "Lab-LAN1"
 
-vm_guest_os_type        = "windows9_64Guest" # Refer to https://code.vmware.com/apis/704/vcenter/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for guest OS types.
-vm_version              = "19" # Refer to https://kb.vmware.com/s/article/1003746 for specific VM versions.
+vm_guest_os_type = "windows9_64Guest" # Refer to https://code.vmware.com/apis/704/vcenter/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for guest OS types.
+vm_version       = "19"               # Refer to https://kb.vmware.com/s/article/1003746 for specific VM versions.
 
-os_iso_path             = "[XN_iSCSI_HDD] Repo/Win10_21H2_English_x64.iso"
-vmtools_iso_path        = "[XN_iSCSI_HDD] Repo/windows.iso"
+os_iso_path      = "[XN_iSCSI_HDD] Repo/Win10_21H2_English_x64.iso"
+vmtools_iso_path = "[XN_iSCSI_HDD] Repo/windows.iso"
 
-cpu_num                 = 2
-ram                     = 4096
-disk_size               = 40960
+cpu_num   = 2
+ram       = 4096
+disk_size = 40960

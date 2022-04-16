@@ -1,7 +1,7 @@
 # Declared variables. 
 
 variable "vsphere_template_name" {
-  type    = string
+  type = string
 }
 
 variable "vm_folder" {
@@ -10,17 +10,17 @@ variable "vm_folder" {
 }
 
 variable "cpu_num" {
-  type    = number
+  type = number
 }
 
 variable "disk_size" {
-  type    = number
+  type = number
 }
 
 variable "mem_size" {
-  type    = number
+  type = number
 }
-  
+
 # variable "vsphere_user" {
 #   type    = string
 #   default = "${env("vsphere_user")}"
@@ -74,6 +74,6 @@ variable "vm_network" {
 }
 
 variable "os_iso_path" {
-  type    = string
+  type = string
 }
 
