@@ -19,22 +19,8 @@ local "ssh_password" {
   sensitive  = true
 }
 
-local "sub_email" {
-  expression = vault("/secret/data/rhel/dev", "sub_email")
-  sensitive  = true
-}
-
-local "sub_password" {
-  expression = vault("/secret/data/rhel/dev", "sub_password")
-  sensitive  = true
-}
-
 build {
-  sources = ["source.vsphere-iso.rhel"]
-
-  provisioner "shell" {
-    inline = ["echo '${local.ssh_password}' | sudo -S subscription-manager register --username ${local.sub_email} --password ${local.sub_password} --auto-attach"]
-  }
+  sources = ["source.vsphere-iso.rocky"]
 
   # Upload and execute scripts using Shell
   provisioner "shell" {
@@ -50,14 +36,14 @@ build {
       "scripts/sysprep-op-rpm-db.sh",
       "scripts/sysprep-op-ssh-hostkeys.sh",
       #      "scripts/sysprep-op-tmp-files.sh",
-      # "scripts/sysprep-op-yum-uuid.sh"
+      "scripts/sysprep-op-yum-uuid.sh"
     ]
   }
 }
 
 # Builder configuration, responsible for VM provisioning.
 
-source "vsphere-iso" "rhel" {
+source "vsphere-iso" "rocky" {
 
   # vCenter parameters
   insecure_connection = "true"
