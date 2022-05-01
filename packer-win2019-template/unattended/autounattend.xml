@@ -201,6 +201,18 @@
                     <Value>temppassword</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
+                <LocalAccounts>
+                    <LocalAccount wcm:action="add">
+                        <Password>
+                            <Value>TgBMADIAQgAxAHIAMQAzAFAAYQBzAHMAdwBvAHIAZAA=</Value>
+                            <PlainText>false</PlainText>
+                        </Password>
+                        <Description>Ansible service account</Description>
+                        <DisplayName>Ansible</DisplayName>
+                        <Group>Administrators</Group>
+                        <Name>ansible</Name>
+                    </LocalAccount>
+                </LocalAccounts>
             </UserAccounts>
         </component>
     </settings>

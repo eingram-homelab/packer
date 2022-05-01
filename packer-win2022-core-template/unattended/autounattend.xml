@@ -76,7 +76,7 @@
                     <InstallFrom>
                         <MetaData wcm:action="add">
                             <Key>/IMAGE/NAME</Key>
-                            <Value>Windows Server 2016 SERVERDATACENTER</Value>
+                            <Value>Windows Server 2022 SERVERDATACENTERCORE</Value>
                         </MetaData>
                     </InstallFrom>
                     <InstallTo>
@@ -216,5 +216,5 @@
             </UserAccounts>
         </component>
     </settings>
-    <cpi:offlineImage cpi:source="wim:c:/wim/install.wim#Windows Server 2016 SERVERDATACENTER" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+    <cpi:offlineImage cpi:source="wim:c:/wim/install.wim#Windows Server 2022 SERVERDATACENTERCORE" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 </unattend>
