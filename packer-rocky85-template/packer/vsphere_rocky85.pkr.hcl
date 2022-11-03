@@ -1,21 +1,21 @@
 # Provisioner configuration runs after the main source builder.
 local "vsphere_user" {
-  expression = vault("/secret/data/vsphere/vcsa", "vsphere_username")
+  expression = vault("/secret/vsphere/vcsa", "vsphere_username")
   sensitive  = true
 }
 
 local "vsphere_password" {
-  expression = vault("/secret/data/vsphere/vcsa", "vsphere_password")
+  expression = vault("/secret/vsphere/vcsa", "vsphere_password")
   sensitive  = true
 }
 
 local "ssh_username" {
-  expression = vault("/secret/data/ssh/ansible", "ssh_username")
+  expression = vault("/secret/ssh/ansible", "ssh_username")
   sensitive  = true
 }
 
 local "ssh_password" {
-  expression = vault("/secret/data/ssh/ansible", "ssh_password")
+  expression = vault("/secret/ssh/ansible", "ssh_password")
   sensitive  = true
 }
 
