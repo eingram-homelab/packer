@@ -66,7 +66,7 @@ source "vsphere-iso" "rocky" {
   RAM             = "${var.mem_size}"
   RAM_hot_plug    = true
   RAM_reserve_all = false
-  notes           = "Packer built. Access Cockpit on port 9090."
+  notes           = "Packer build ${formatdate("YYYY_MM_DD", timestamp())}. Access Cockpit on port 9090."
 
   network_adapters {
     network      = "${var.vm_network}"
