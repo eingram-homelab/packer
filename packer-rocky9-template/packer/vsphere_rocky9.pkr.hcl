@@ -1,32 +1,31 @@
 # Provisioner configuration runs after the main source builder.
-local "vsphere_username" {
-  expression = vault("/secret/data/vsphere/vcsa", "vsphere_username")
+local "vsphere_user" {
+  expression = vault("/secret/vsphere/vcsa", "vsphere_username")
   sensitive  = true
 }
 
 local "vsphere_password" {
-  expression = vault("/secret/data/vsphere/vcsa", "vsphere_password")
+  expression = vault("/secret/vsphere/vcsa", "vsphere_password")
   sensitive  = true
 }
 
 local "ssh_username" {
-  expression = vault("/secret/data/ssh/eingram", "ssh_username")
+  expression = vault("/secret/ssh/ansible", "ssh_username")
   sensitive  = true
 }
 
 local "ssh_password" {
-  expression = vault("/secret/data/ssh/eingram", "ssh_password")
+  expression = vault("/secret/ssh/ansible", "ssh_password")
   sensitive  = true
 }
 
 build {
-  sources = ["source.vsphere-iso.centos"]
+  sources = ["source.vsphere-iso.rocky"]
 
   # Upload and execute scripts using Shell
   provisioner "shell" {
     execute_command = "echo '${local.ssh_password}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
     scripts = [
-      "scripts/yum_update.sh",
       "scripts/package_install.sh",
       "scripts/sysprep-op-bash-history.sh",
       "scripts/sysprep-op-crash-data.sh",
@@ -44,11 +43,11 @@ build {
 
 # Builder configuration, responsible for VM provisioning.
 
-source "vsphere-iso" "centos" {
+source "vsphere-iso" "rocky" {
 
   # vCenter parameters
   insecure_connection = "true"
-  username            = "${local.vsphere_username}"
+  username            = "${local.vsphere_user}"
   password            = "${local.vsphere_password}"
   vcenter_server      = "${var.vcenter_server}"
   cluster             = "${var.vcenter_cluster}"
@@ -57,16 +56,17 @@ source "vsphere-iso" "centos" {
   datastore           = "${var.vcenter_datastore}"
   folder              = "${var.vm_folder}"
   vm_name             = "${var.vsphere_template_name}_${formatdate("YYYY_MM", timestamp())}"
+  firmware            = "efi"
   convert_to_template = true
 
   # VM resource parameters 
-  guest_os_type   = "centos7_64Guest"
+  guest_os_type   = "rhel9_64Guest"
   CPUs            = "${var.cpu_num}"
   CPU_hot_plug    = true
   RAM             = "${var.mem_size}"
   RAM_hot_plug    = true
   RAM_reserve_all = false
-  notes           = "Packer built. Access Cockpit on port 9090."
+  notes           = "Packer build ${formatdate("YYYY_MM_DD", timestamp())}. Access Cockpit on port 9090."
 
   network_adapters {
     network      = "${var.vm_network}"
@@ -93,7 +93,7 @@ source "vsphere-iso" "centos" {
   #http_ip = "${var.builder_ipv4}"
   http_directory = "scripts"
   boot_command = [
-    "<up><wait><tab><wait> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+    "<up>e<wait><down><wait><down><wait><end> text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
   ]
 
   # Uncomment the below to kickstar via an ISO (the ISO you will need to make manually by simply saving the ks.cfg file into an iso file). 
