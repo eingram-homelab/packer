@@ -8,7 +8,7 @@ cpu_num   = 2
 mem_size  = 2048
 disk_size = 61450
 
-vcenter_server    = "vcsa.local.lan"
+vcenter_server    = "vcsa-1.local.lan"
 vcenter_dc_name   = "HomeLab Datacenter"
 vcenter_cluster   = "Intel NUC10 Cluster"
 vsphere_host      = "esxinuc1.local.lan"

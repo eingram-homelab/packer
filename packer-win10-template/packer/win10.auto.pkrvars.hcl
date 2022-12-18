@@ -7,7 +7,7 @@ os_username = "administrator"
 os_password = "temppassword"
 
 vcenter_folder     = "Templates"
-vcenter_server     = "vcsa.local.lan"
+vcenter_server     = "vcsa-1.local.lan"
 vcenter_datacenter = "HomeLab Datacenter"
 vcenter_cluster    = "Intel NUC10 Cluster"
 vcenter_host       = "esxinuc1.local.lan"
