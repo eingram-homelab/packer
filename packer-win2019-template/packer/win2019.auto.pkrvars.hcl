@@ -19,8 +19,8 @@ vm_network = "Lab-LAN1"
 vm_guest_os_type = "windows9Server64Guest" # Refer to https://code.vmware.com/apis/704/vcenter/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for guest OS types.
 vm_version       = "19"                    # Refer to https://kb.vmware.com/s/article/1003746 for specific VM versions.
 
-os_iso_path      = "[XN_iSCSI_HDD] Repo/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso"
-vmtools_iso_path = "[XN_iSCSI_HDD] Repo/windows.iso"
+os_iso_path      = "[esxinuc1:datastore1] Repo/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso"
+vmtools_iso_path = "[esxinuc1:datastore1] Repo/windows.iso"
 
 cpu_num   = 2
 ram       = 4096
