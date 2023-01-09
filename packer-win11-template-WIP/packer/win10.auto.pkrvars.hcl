@@ -13,14 +13,15 @@ vcenter_cluster    = "Intel NUC10 Cluster"
 vcenter_host       = "esxinuc1.local.lan"
 vcenter_datastore  = "esxinuc1:datastore1"
 
-vm_name    = "TMP-Win2016_Packer"
-vm_network = "Lab-LAN1"
+vm_name    = "TMP-Win10_Packer"
+vm_network = "DPG-Lab-LAN1"
 
-vm_guest_os_type = "windows9Server64Guest" # Refer to https://code.vmware.com/apis/704/vcenter/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for guest OS types.
-vm_version       = "20"                    # Refer to https://kb.vmware.com/s/article/1003746 for specific VM versions.
+vm_guest_os_type = "windows9_64Guest" # Refer to https://code.vmware.com/apis/704/vcenter/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for guest OS types.
+vm_version       = "20"               # Refer to https://kb.vmware.com/s/article/1003746 for specific VM versions.
 
-os_iso_path      = "[esxinuc1:datastore1] Repo/Windows_Server_2016_Datacenter_EVAL_en-us_14393_refresh.ISO"
+os_iso_path      = "[esxinuc1:datastore1] Repo/Win10_21H2_English_x64.iso"
 vmtools_iso_path = "[esxinuc1:datastore1] Repo/windows.iso"
+floppy_img_path = "[esxinuc1:datastore1] Repo/pvscsi-Windows8.flp"
 
 cpu_num   = 2
 ram       = 4096
