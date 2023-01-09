@@ -98,3 +98,6 @@ variable "vmtools_iso_path" {
   description = "ISO Path for VMware Tools Windows exe. Used for drivers, performance etc."
   type        = string
 }
+variable "floppy_img_path" {
+  type        = string
+}

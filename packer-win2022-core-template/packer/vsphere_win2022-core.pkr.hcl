@@ -77,7 +77,7 @@ source "vsphere-iso" "win2022core" {
   floppy_dirs = ["scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
   floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
-
+  floppy_img_path = var.floppy_img_path
   boot_wait = "3s"
   boot_command = [
     "<spacebar><spacebar>"
