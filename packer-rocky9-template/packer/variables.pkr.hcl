@@ -77,3 +77,7 @@ variable "os_iso_path" {
   type = string
 }
 
+variable "vm_version" {
+  description = "Defaults to most current VM hardware supported by vCenter."
+  type        = number
+}

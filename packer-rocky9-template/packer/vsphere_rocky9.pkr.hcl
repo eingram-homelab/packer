@@ -56,6 +56,7 @@ source "vsphere-iso" "rocky" {
   datastore           = "${var.vcenter_datastore}"
   folder              = "${var.vm_folder}"
   vm_name             = "${var.vsphere_template_name}_${formatdate("YYYY_MM", timestamp())}"
+  vm_version          = var.vm_version
   firmware            = "efi"
   convert_to_template = true
 

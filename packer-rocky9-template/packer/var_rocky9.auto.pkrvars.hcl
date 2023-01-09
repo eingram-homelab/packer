@@ -16,4 +16,5 @@ vcenter_datastore = "esxinuc1:datastore1"
 vm_network        = "DPG-Lab-LAN1"
 
 os_iso_path = "[esxinuc1:datastore1] Repo/Rocky-9.1-x86_64-dvd.iso"
+vm_version  = "20" 
 
