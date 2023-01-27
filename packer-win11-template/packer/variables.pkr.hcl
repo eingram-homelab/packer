@@ -73,7 +73,7 @@ variable "network_card" {
 variable "vm_firmware" {
   description = "Packer by default uses BIOS."
   type        = string
-  default     = "efi"
+  default     = "efi-secure"
 }
 variable "cpu_num" {
   description = "Number of CPU cores."

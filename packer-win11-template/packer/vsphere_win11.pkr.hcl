@@ -20,7 +20,7 @@ packer {
   }
 }
 
-source "vsphere-iso" "win_10" {
+source "vsphere-iso" "win_11" {
   insecure_connection = true
 
   vcenter_server = var.vcenter_server
@@ -91,7 +91,7 @@ build {
   to be enough to install all available Windows updates. Do check yourself though!
   */
 
-  sources = ["source.vsphere-iso.win_10"]
+  sources = ["source.vsphere-iso.win_11"]
 
   provisioner "windows-restart" { # A restart to settle Windows prior to updates
     pause_before    = "1m"
@@ -138,7 +138,7 @@ build {
     pause_before      = "1m"
     elevated_user     = var.os_username
     elevated_password = var.os_password
-    script            = "scripts/customize_win_10.ps1"
+    script            = "scripts/customize_win_11.ps1"
     timeout           = "15m"
   }
 
@@ -151,7 +151,7 @@ build {
   #   pause_before      = "1m"
   #   elevated_user     = var.os_username
   #   elevated_password = var.os_password
-  #   script            = "scripts/sysprep_win_10.ps1"
+  #   script            = "scripts/sysprep_win_11.ps1"
   #   timeout           = "15m"
   # }
 }
