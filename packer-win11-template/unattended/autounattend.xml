@@ -15,39 +15,52 @@
                 <Disk wcm:action="add">
                     <CreatePartitions>
                         <CreatePartition wcm:action="add">
-                            <Type>EFI</Type>
-                            <Size>512</Size>
                             <Order>1</Order>
+                            <Size>1000</Size>
+                            <Type>Primary</Type>
                         </CreatePartition>
                         <CreatePartition wcm:action="add">
-                            <Extend>false</Extend>
-                            <Type>MSR</Type>
                             <Order>2</Order>
-                            <Size>128</Size>
+                            <Size>100</Size>
+                            <Type>EFI</Type>
                         </CreatePartition>
                         <CreatePartition wcm:action="add">
                             <Order>3</Order>
-                            <Type>Primary</Type>
-                            <Extend>true</Extend>
+                            <Size>128</Size>
+                            <Type>MSR</Type>
                         </CreatePartition>
-                    </CreatePartitions>
+                        <CreatePartition wcm:action="add">
+                            <Order>4</Order>
+                            <Extend>true</Extend>
+                            <Type>Primary</Type>
+                        </CreatePartition>
+				    </CreatePartitions>
                     <ModifyPartitions>
                         <ModifyPartition wcm:action="add">
-                            <Format>FAT32</Format>
                             <Order>1</Order>
                             <PartitionID>1</PartitionID>
+                            <Format>NTFS</Format>
+                            <Label>WindowsRecovery</Label>
+                            <TypeID>DE94BBA4-06D1-4D40-A16A-BFD50179D6AC</TypeID>
                         </ModifyPartition>
                         <ModifyPartition wcm:action="add">
                             <Order>2</Order>
                             <PartitionID>2</PartitionID>
+                            <Label>System</Label>
+                            <Format>FAT32</Format>
                         </ModifyPartition>
                         <ModifyPartition wcm:action="add">
-                            <Format>NTFS</Format>
-                            <Label>Windows</Label>
                             <Order>3</Order>
                             <PartitionID>3</PartitionID>
                         </ModifyPartition>
-                    </ModifyPartitions>
+                        <ModifyPartition wcm:action="add">
+                            <Order>4</Order>
+                            <PartitionID>4</PartitionID>
+                            <Letter>C</Letter>
+                            <Label>Windows</Label>
+                            <Format>NTFS</Format>
+                        </ModifyPartition>
+				    </ModifyPartitions>
                     <DiskID>0</DiskID>
                     <WillWipeDisk>true</WillWipeDisk>
                 </Disk>
@@ -57,24 +70,35 @@
                     <InstallFrom>
                         <MetaData wcm:action="add">
                             <Key>/IMAGE/NAME</Key>
-                            <Value>Windows 10 Pro</Value>
+                            <Value>Windows 11 Pro</Value>
                         </MetaData>
                     </InstallFrom>
                     <InstallTo>
                         <DiskID>0</DiskID>
-                        <PartitionID>3</PartitionID>
+                        <PartitionID>4</PartitionID>
                     </InstallTo>
                     <WillShowUI>OnError</WillShowUI>
                     <InstallToAvailablePartition>false</InstallToAvailablePartition>
                 </OSImage>
             </ImageInstall>
+                <RunSynchronous>
+                    <RunSynchronousCommand>
+                        <Order>1</Order>
+                        <!-- This sets the power scheme to high performance in WinPE for faster imaging -->
+                        <Path>cmd /c powercfg.exe /s 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c</Path>
+                    </RunSynchronousCommand>
+                    <RunSynchronousCommand>
+                        <Order>2</Order>
+                        <!-- This sets a bypass for TPM 2.0 check -->
+                        <Path>cmd /c reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /f /v BypassTPMCheck /t REG_DWORD /d 1</Path>
+                    </RunSynchronousCommand>		
+                </RunSynchronous>
             <UserData>
                 <AcceptEula>true</AcceptEula>
                 <FullName>Edward Ingram</FullName>
                 <Organization>HomeLab</Organization>
 				<ProductKey>
                   <Key>6VN47-GCJC7-7YH2W-YRHHG-6F4DB</Key>
-                  <WillShowUI>Never</WillShowUI>
                </ProductKey>
             </UserData>
         </component>
@@ -134,10 +158,7 @@
                 <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
                 <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
                 <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
-                <NetworkLocation>Work</NetworkLocation>
-                <ProtectYourPC>1</ProtectYourPC>
-                <SkipUserOOBE>true</SkipUserOOBE>
-                <SkipMachineOOBE>true</SkipMachineOOBE>
+                <ProtectYourPC>3</ProtectYourPC>
             </OOBE>
 			<FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
@@ -171,7 +192,7 @@
                     <Order>4</Order>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>Powershell -ExecutionPolicy Bypass -File a:\scripts\configure_winrm_win10.ps1</CommandLine>
+                    <CommandLine>Powershell -ExecutionPolicy Bypass -File a:\scripts\configure_winrm_11.ps1</CommandLine>
                     <Description>Configure WinRM connectivity. Required for Packer connectivity.</Description>
                     <Order>5</Order>
                 </SynchronousCommand>

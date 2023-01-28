@@ -34,7 +34,7 @@ source "vsphere-iso" "win_10" {
   folder     = var.vcenter_folder
 
   convert_to_template = true
-  notes               = "Windows 10 Pro x64 VM template built using Packer.\nThis template is syspred and can be used for domain deployments."
+  notes               = "Windows 10 Pro x64 build ${formatdate("YYYY_MM_DD", timestamp())}.\nThis template is syspred and can be used for domain deployments."
 
   ip_wait_timeout   = "60m"
   ip_settle_timeout = "1m"

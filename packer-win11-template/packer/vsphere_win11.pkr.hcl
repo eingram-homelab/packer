@@ -34,7 +34,7 @@ source "vsphere-iso" "win_11" {
   folder     = var.vcenter_folder
 
   convert_to_template = true
-  notes               = "Windows 10 Pro x64 VM template built using Packer.\nThis template is syspred and can be used for domain deployments."
+  notes               = "Windows 11 Pro x64 build ${formatdate("YYYY_MM_DD", timestamp())}.\nThis template is syspred and can be used for domain deployments."
 
   ip_wait_timeout   = "60m"
   ip_settle_timeout = "1m"
@@ -142,16 +142,8 @@ build {
     timeout           = "15m"
   }
 
-  provisioner "windows-restart" { # A restart before sysprep to settle the VM once more.
+  provisioner "windows-restart" { 
     pause_before    = "1m"
     restart_timeout = "1h"
   }
-
-  # provisioner "powershell" {
-  #   pause_before      = "1m"
-  #   elevated_user     = var.os_username
-  #   elevated_password = var.os_password
-  #   script            = "scripts/sysprep_win_11.ps1"
-  #   timeout           = "15m"
-  # }
 }
