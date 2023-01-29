@@ -22,6 +22,6 @@ vm_version       = "20"                    # Refer to https://kb.vmware.com/s/ar
 os_iso_path      = "[esxinuc1:datastore1] Repo/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso"
 vmtools_iso_path = "[esxinuc1:datastore1] Repo/windows.iso"
 
-cpu_num   = 2
+cpu_num   = 4
 ram       = 4096
 disk_size = 40960

@@ -23,6 +23,6 @@ os_iso_path      = "[esxinuc1:datastore1] Repo/SERVER_EVAL_x64FRE_en-us.iso"
 vmtools_iso_path = "[esxinuc1:datastore1] Repo/windows.iso"
 floppy_img_path = "[esxinuc1:datastore1] Repo/pvscsi-Windows8.flp"
 
-cpu_num   = 2
+cpu_num   = 4
 ram       = 4096
 disk_size = 40960

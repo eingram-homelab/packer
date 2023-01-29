@@ -4,8 +4,8 @@
 vsphere_template_name = "TMP-Rocky9_Packer"
 vm_folder             = "Templates"
 
-cpu_num   = 2
-mem_size  = 2048
+cpu_num   = 4
+mem_size  = 4096
 disk_size = 61450
 
 vcenter_server    = "vcsa-1.local.lan"
