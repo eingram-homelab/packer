@@ -139,11 +139,19 @@ build {
     elevated_user     = var.os_username
     elevated_password = var.os_password
     script            = "scripts/customize_win_11.ps1"
-    timeout           = "15m"
+    timeout           = "5m"
+  }
+
+  provisioner "powershell" {
+    pause_before      = "1m"
+    elevated_user     = var.os_username
+    elevated_password = var.os_password
+    script            = "scripts/uninstall_uwp.ps1"
+    timeout           = "5m"
   }
 
   provisioner "windows-restart" { 
     pause_before    = "1m"
-    restart_timeout = "1h"
+    restart_timeout = "15m"
   }
 }
