@@ -24,7 +24,7 @@ build {
 
   # Upload and execute scripts using Shell
   provisioner "shell" {
-    execute_command = "echo '${local.ssh_password}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
+    execute_command = "echo 'temppassword' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
     scripts = [
       "scripts/package_install.sh",
       "scripts/sysprep-op-bash-history.sh",
@@ -88,7 +88,7 @@ source "vsphere-iso" "rocky" {
   # CentOS OS parameters
   boot_order   = "disk,cdrom,floppy"
   boot_wait    = "10s"
-  ssh_password = "${local.ssh_password}"
+  ssh_password = "temppassword"
   ssh_username = "${local.ssh_username}"
 
   #http_ip = "${var.builder_ipv4}"
