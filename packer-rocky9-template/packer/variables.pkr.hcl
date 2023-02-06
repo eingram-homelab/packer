@@ -21,28 +21,6 @@ variable "mem_size" {
   type = number
 }
 
-# variable "vsphere_user" {
-#   type    = string
-#   default = "${env("vsphere_user")}"
-# }
-
-# variable "vsphere_password" {
-#   type    = string
-#   default = "${env("VSPHERE_PASS")}"
-#   sensitive = true
-# }
-
-# variable "ssh_username" {
-#   type    = string
-#   default = "${env("ssh_username")}"
-# }
-
-# variable "ssh_password" {
-#   type    = string
-#   default = "${env("SSH_PASS")}"
-#   sensitive = true
-# }
-
 variable "vcenter_server" {
   type    = string
   default = "${env("vcenter_server")}"

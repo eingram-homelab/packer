@@ -14,10 +14,10 @@ local "ssh_username" {
   sensitive  = true
 }
 
-local "ssh_password" {
-  expression = vault("/secret/ssh/ansible", "ssh_password")
-  sensitive  = true
-}
+# local "ssh_password" {
+#   expression = vault("/secret/ssh/ansible", "ssh_password")
+#   sensitive  = true
+# }
 
 build {
   sources = ["source.vsphere-iso.rocky"]
@@ -67,7 +67,7 @@ source "vsphere-iso" "rocky" {
   RAM             = "${var.mem_size}"
   RAM_hot_plug    = true
   RAM_reserve_all = false
-  notes           = "Packer build ${formatdate("YYYY_MM_DD", timestamp())}. Access Cockpit on port 9090."
+  notes           = "Packer build ${formatdate("YYYY_MM_DD", timestamp())}." 
 
   network_adapters {
     network      = "${var.vm_network}"
@@ -82,10 +82,9 @@ source "vsphere-iso" "rocky" {
 
   iso_paths = [
     "${var.os_iso_path}"
-    # "${var.ks_iso}" 
   ]
 
-  # CentOS OS parameters
+  # Rocky OS parameters
   boot_order   = "disk,cdrom,floppy"
   boot_wait    = "10s"
   ssh_password = "temppassword"
