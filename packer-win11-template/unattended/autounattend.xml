@@ -143,8 +143,8 @@
                     </LocalAccount>
                     <LocalAccount wcm:action="add">
                         <Password>
-                            <Value>TgBMADIAQgAxAHIAMQAzAFAAYQBzAHMAdwBvAHIAZAA=</Value>
-                            <PlainText>false</PlainText>
+                            <Value>temppassword</Value>
+                            <PlainText>true</PlainText>
                         </Password>
                         <Description>Ansible service account</Description>
                         <DisplayName>Ansible</DisplayName>
