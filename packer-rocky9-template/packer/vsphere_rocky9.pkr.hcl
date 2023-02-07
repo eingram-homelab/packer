@@ -93,7 +93,7 @@ source "vsphere-iso" "rocky" {
   #http_ip = "${var.builder_ipv4}"
   http_directory = "scripts"
   boot_command = [
-    "<up>e<wait><down><wait><down><wait><end> text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
+    "<up>e<wait><down><wait><down><wait><end> inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
   ]
 
   # Uncomment the below to kickstar via an ISO (the ISO you will need to make manually by simply saving the ks.cfg file into an iso file). 
