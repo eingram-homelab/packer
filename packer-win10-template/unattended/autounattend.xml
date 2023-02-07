@@ -135,16 +135,6 @@
                         <Group>Administrators</Group>
                         <Name>administrator</Name>
                     </LocalAccount>
-                    <LocalAccount wcm:action="add">
-                        <Password>
-                            <Value>temppassword</Value>
-                            <PlainText>true</PlainText>
-                        </Password>
-                        <Description>Ansible service account</Description>
-                        <DisplayName>Ansible</DisplayName>
-                        <Group>Administrators</Group>
-                        <Name>ansible</Name>
-                    </LocalAccount>
                 </LocalAccounts>
             </UserAccounts>
             <AutoLogon>
