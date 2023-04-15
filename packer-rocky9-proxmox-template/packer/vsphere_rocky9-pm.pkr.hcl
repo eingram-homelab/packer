@@ -67,6 +67,8 @@ source "proxmox-iso" "rocky" {
   ssh_password = "temppassword"
   ssh_username = "root"
 
+  ssh_timeout = "10m"
+
   #http_ip = "${var.builder_ipv4}"
   http_directory = "scripts"
   boot_command = [
