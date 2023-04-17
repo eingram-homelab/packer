@@ -30,13 +30,13 @@ build {
 
 source "proxmox-iso" "rocky" {
 
-  # vCenter parameters
+  # Proxmox parameters
   insecure_skip_tls_verify = "true"
   username                 = "${var.proxmox_user}"
   password                 = "${local.proxmox_password}"
-  proxmox_url = "${var.proxmox_url}"
-  node        = var.node
-  template_name = var.proxmox_template_name
+  proxmox_url              = "${var.proxmox_url}"
+  node                     = var.node
+  template_name            = var.proxmox_template_name
 
   # VM resource parameters 
   os                   = var.os
@@ -59,8 +59,12 @@ source "proxmox-iso" "rocky" {
   }
 
   scsi_controller = "virtio-scsi-single"
-  iso_file    = var.os_iso_path
-  unmount_iso = "true"
+  iso_file        = var.os_iso_path
+  unmount_iso     = "true"
+
+  # Create cloud-init cdrom 
+  cloud_init = "true"
+  cloud_init_storage_pool = "zpool0"
 
   # Rocky OS parameters
   boot_wait    = "10s"
