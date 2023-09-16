@@ -67,7 +67,7 @@ source "vsphere-iso" "rocky" {
   RAM             = "${var.mem_size}"
   RAM_hot_plug    = true
   RAM_reserve_all = false
-  notes           = "Packer build ${formatdate("YYYY_MM_DD", timestamp())}." 
+  notes           = "Packer build ${formatdate("YYYY_MM_DD", timestamp())}."
 
   network_adapters {
     network      = "${var.vm_network}"
