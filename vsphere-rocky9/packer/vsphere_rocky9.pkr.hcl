@@ -1,3 +1,12 @@
+packer {
+  required_plugins {
+    vsphere = {
+      source  = "github.com/hashicorp/vsphere"
+      version = "~> 1"
+    }
+  }
+}
+
 # Provisioner configuration runs after the main source builder.
 local "vsphere_user" {
   expression = vault("/secret/vsphere/vcsa", "vsphere_username")
