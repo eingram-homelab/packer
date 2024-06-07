@@ -14,7 +14,7 @@ vcenter_host       = "esxinuc1.local.lan"
 vcenter_datastore  = "esxinuc1:datastore1"
 
 vm_name    = "TMP-Win2016_Packer"
-vm_network = "Lab-LAN1"
+vm_network = "DPG-Lab-LAN1"
 
 vm_guest_os_type = "windows9Server64Guest" # Refer to https://code.vmware.com/apis/704/vcenter/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for guest OS types.
 vm_version       = "20"                    # Refer to https://kb.vmware.com/s/article/1003746 for specific VM versions.
