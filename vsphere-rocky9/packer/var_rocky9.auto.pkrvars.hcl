@@ -15,6 +15,6 @@ vsphere_host      = "esxinuc1.local.lan"
 vcenter_datastore = "esxinuc1:datastore1"
 vm_network        = "DPG-Services"
 
-os_iso_path = "[esxinuc1:datastore1] Repo/Rocky-9.1-x86_64-dvd.iso"
+os_iso_path = "[esxinuc1:datastore1] Repo/Rocky-9.5-x86_64-dvd.iso"
 vm_version  = "20"
 
