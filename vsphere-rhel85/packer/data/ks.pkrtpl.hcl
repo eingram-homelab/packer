@@ -40,7 +40,7 @@ logvol /home --fstype="xfs" --size=10728 --name=home --vgname=rhel
 timezone America/Los_Angeles --isUtc --ntpservers=2.rhel.pool.ntp.org,2.rhel.pool.ntp.org,2.rhel.pool.ntp.org,2.rhel.pool.ntp.org
 
 # Root password
-rootpw --iscrypted --allow-ssh $6$ch8JLG8BE7BTaGkl$1YzlpBU1FNPFxpP6aHhWnYL6peJOeOZv55RMfctgkYRW5FR3Xgey5uBe8aCQTEv0AFD7y.8XMtx59Om097hG31
+rootpw --iscrypted --allow-ssh ${password}
 
 %addon com_redhat_kdump --enable --reserve-mb='auto'
 

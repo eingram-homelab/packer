@@ -4,7 +4,6 @@ Example of default value of var cpu_name is 2 cores. We override that with 4 cor
 */
 
 os_username = "administrator"
-os_password = "temppassword"
 
 vcenter_folder     = "Templates"
 vcenter_server     = "vcsa-1.local.lan"

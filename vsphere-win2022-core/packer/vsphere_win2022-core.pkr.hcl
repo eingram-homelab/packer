@@ -8,6 +8,11 @@ local "vsphere_password" {
   sensitive  = true
 }
 
+local "ssh_password" {
+  expression = vault("/secret/ssh/eingram", "ssh_password")
+  sensitive  = true
+}
+
 packer {
   required_version = ">= 1.7.4"
 
@@ -43,7 +48,7 @@ source "vsphere-iso" "win2022core" {
   winrm_timeout           = "10m"
   pause_before_connecting = "2m"
   winrm_username          = var.os_username
-  winrm_password          = var.os_password
+  winrm_password          = local.ssh_password
   vm_name                 = "${var.vm_name}_${formatdate("YYYY_MM", timestamp())}"
   vm_version              = var.vm_version
   firmware                = var.vm_firmware
@@ -74,9 +79,17 @@ source "vsphere-iso" "win2022core" {
     var.vmtools_iso_path
   ]
 
+  # cd_files = [
+  #   "${abspath(path.cwd)}/scripts/*"
+  # ]
+  cd_content = {
+    "autounattend.xml" = templatefile("${abspath(path.root)}/data/autounattend.pkrtpl.hcl", {
+      password = local.ssh_password
+    })
+  }
   floppy_dirs = ["scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
-  floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
+  # floppy_files = ["drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
   floppy_img_path = var.floppy_img_path
   boot_wait = "3s"
   boot_command = [
@@ -135,7 +148,7 @@ build {
   provisioner "powershell" {
     pause_before      = "1m"
     elevated_user     = var.os_username
-    elevated_password = var.os_password
+    elevated_password = local.ssh_password
     script            = "scripts/customize_win.ps1"
     timeout           = "15m"
   }

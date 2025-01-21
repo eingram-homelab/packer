@@ -21,12 +21,7 @@ variable "os_username" {
   type        = string
   default     = "Packer"
 }
-variable "os_password" {
-  description = "Local workstation password for login, WinRM or SSH etc."
-  type        = string
-  default     = "${env("W10_PASS")}" # Example of using evironment variables.
-  sensitive   = true
-}
+
 variable "vcenter_server" {
   description = "vCenter server to connect."
   type        = string

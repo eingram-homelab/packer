@@ -29,6 +29,14 @@ local "sub_password" {
   sensitive  = true
 }
 
+locals {
+  data_source_content = {
+    "/ks.cfg" = templatefile("${abspath(path.root)}/data/ks.pkrtpl.hcl", {
+      password = local.encrypted_password
+    })
+  }
+}
+
 build {
   sources = ["source.vsphere-iso.rhel"]
 
@@ -103,9 +111,11 @@ source "vsphere-iso" "rhel" {
   boot_wait    = "10s"
   ssh_password = "${local.ssh_password}"
   ssh_username = "${local.ssh_username}"
+  
 
   #http_ip = "${var.builder_ipv4}"
-  http_directory = "scripts"
+  # http_directory = "scripts"
+  http_content =  local.data_source_content
   boot_command = [
     "<up>e<wait><down><wait><down><wait><end> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
   ]

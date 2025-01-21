@@ -8,6 +8,11 @@ local "vsphere_password" {
   sensitive  = true
 }
 
+local "ssh_password" {
+  expression = vault("/secret/ssh/eingram", "ssh_password")
+  sensitive  = true
+}
+
 packer {
   required_version = ">= 1.7.4"
 
@@ -73,6 +78,12 @@ source "vsphere-iso" "win_11" {
     var.os_iso_path,
     var.vmtools_iso_path
   ]
+
+  cd_content = {
+    "autounattend.xml" = templatefile("${abspath(path.root)}/data/autounattend.pkrtpl.hcl", {
+      password = local.ssh_password
+    })
+  }
 
   floppy_dirs = ["scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
