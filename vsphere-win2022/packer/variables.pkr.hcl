@@ -4,28 +4,10 @@ Packer documentation for variables and so on: https://www.packer.io/docs/builder
 I have use environment variables from GitLab. You may use them from elsewhere.
 */
 
-
-# variable "vcenter_username" {
-#     description = "vCenter username."
-#     type    = string
-#     default = env("VSPHERE_USER") # Example of using evironment variables.
-# }
-# variable "vcenter_password" {
-#     description = "vCenter password."
-#     type    = string
-#     default = env("VSPHERE_PASS") # Example of using evironment variables.
-#     sensitive = true
-# }
 variable "os_username" {
   description = "Local OS Username for WinRM or SSH etc."
   type        = string
   default     = "Packer"
-}
-variable "os_password" {
-  description = "Local workstation password for login, WinRM or SSH etc."
-  type        = string
-  default     = "${env("W10_PASS")}" # Example of using evironment variables.
-  sensitive   = true
 }
 variable "vcenter_server" {
   description = "vCenter server to connect."
@@ -96,5 +78,9 @@ variable "os_iso_path" {
 }
 variable "vmtools_iso_path" {
   description = "ISO Path for VMware Tools Windows exe. Used for drivers, performance etc."
+  type        = string
+}
+variable "floppy_img_path" {
+  description = "Floppy image path for drivers etc."
   type        = string
 }

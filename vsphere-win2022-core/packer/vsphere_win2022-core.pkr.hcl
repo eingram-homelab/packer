@@ -44,7 +44,7 @@ source "vsphere-iso" "win2022core" {
   ip_wait_timeout   = "60m"
   ip_settle_timeout = "1m"
   communicator      = "winrm"
-  #winrm_port             = "5985"
+  winrm_port             = "5985"
   winrm_timeout           = "10m"
   pause_before_connecting = "2m"
   winrm_username          = var.os_username
@@ -91,6 +91,7 @@ source "vsphere-iso" "win2022core" {
   # floppy_files = ["unattended/autounattend.xml"]
   # floppy_files = ["drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
   floppy_img_path = var.floppy_img_path
+
   boot_wait = "3s"
   boot_command = [
     "<spacebar><spacebar>"

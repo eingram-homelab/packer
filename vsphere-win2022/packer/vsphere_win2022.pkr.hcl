@@ -44,11 +44,11 @@ source "vsphere-iso" "win2022" {
   ip_wait_timeout   = "60m"
   ip_settle_timeout = "1m"
   communicator      = "winrm"
-  #winrm_port             = "5985"
+  winrm_port             = "5985"
   winrm_timeout           = "10m"
   pause_before_connecting = "2m"
   winrm_username          = var.os_username
-  winrm_password          = var.os_password
+  winrm_password          = local.ssh_password
   vm_name                 = "${var.vm_name}_${formatdate("YYYY_MM", timestamp())}"
   vm_version              = var.vm_version
   firmware                = var.vm_firmware
@@ -86,7 +86,8 @@ source "vsphere-iso" "win2022" {
 
   floppy_dirs = ["scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
-  floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
+  # floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
+  floppy_img_path = var.floppy_img_path
 
   boot_wait = "3s"
   boot_command = [
@@ -145,7 +146,7 @@ build {
   provisioner "powershell" {
     pause_before      = "1m"
     elevated_user     = var.os_username
-    elevated_password = var.os_password
+    elevated_password = local.ssh_password
     script            = "scripts/customize_win.ps1"
     timeout           = "15m"
   }

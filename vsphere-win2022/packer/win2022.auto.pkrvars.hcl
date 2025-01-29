@@ -4,7 +4,6 @@ Example of default value of var cpu_name is 2 cores. We override that with 4 cor
 */
 
 os_username = "administrator"
-os_password = "temppassword"
 
 vcenter_folder     = "Templates"
 vcenter_server     = "vcsa-1.local.lan"
@@ -21,6 +20,7 @@ vm_version       = "20"                    # Refer to https://kb.vmware.com/s/ar
 
 os_iso_path      = "[esxinuc1:datastore1] Repo/SERVER_EVAL_x64FRE_en-us.iso"
 vmtools_iso_path = "[esxinuc1:datastore1] Repo/windows.iso"
+floppy_img_path  = "[esxinuc1:datastore1] Repo/pvscsi-Windows8.flp"
 
 cpu_num   = 4
 ram       = 4096
