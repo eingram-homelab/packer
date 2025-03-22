@@ -38,6 +38,12 @@ locals {
 build {
   sources = ["source.vsphere-iso.rocky"]
 
+  # Copy root ca cert to VM
+  provisioner "file" {
+    source      = "packer/data/homelab_ca.crt"
+    destination = "/etc/pki/ca-trust/source/anchors/homelab_ca.crt"
+  }
+  
   # Upload and execute scripts using Shell
   provisioner "shell" {
     # execute_command = "echo 'temppassword' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
