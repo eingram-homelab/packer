@@ -30,6 +30,9 @@ jobs:
           files: |
             **/*.pkr.hcl
 
+      - name: pause
+        run: sleep 99999
+        
       - name: Check Format for changed files
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
