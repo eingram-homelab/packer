@@ -1,4 +1,4 @@
-name: Packer Validation
+name: Packer Validation and Build
 
 on:
   push:
@@ -50,7 +50,7 @@ jobs:
             packer init "$dir"
           done 
 
-      - name: Validate Changed Templates
+      - name: Run packer validate
         env:
           VAULT_ADDR: ${{ vars.VAULT_ADDR}}
           VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
@@ -60,4 +60,16 @@ jobs:
             dir=$(dirname "$file")
             echo "Validating $dir"
             packer validate "$dir"
+          done
+
+      - name: Run packer build
+        env:
+          VAULT_ADDR: ${{ vars.VAULT_ADDR}}
+          VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
+        if: steps.changed-files.outputs.all_changed_files != ''
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            dir=$(dirname "$file")
+            echo "Building $dir"
+            packer build "$dir"
           done
