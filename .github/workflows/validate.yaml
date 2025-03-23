@@ -30,27 +30,25 @@ jobs:
           files: |
             **/*.pkr.hcl
 
-      - name: Verify packer version
-        run: packer version
-        
-      - name: List changed files
-        run: ls -l ${{ steps.changed-files.outputs.all_changed_files }}
-        
       - name: Check Format for changed files
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "Checking format for $file"
-            dir=$(dirname "$file")
             packer fmt -check "$file"
           done
-        
+      
+      - name: Run packer init
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "Running packer init for $file"
+            packer init "$file"
+          done 
+
       - name: Validate Changed Templates
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [[ "$file" == *.pkr.hcl || "$file" == *.json ]]; then
-              echo "Validating $file"
-              packer validate "$file"
-            fi
+            echo "Validating $file"
+            packer validate "$file"
           done
