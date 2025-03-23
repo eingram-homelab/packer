@@ -114,7 +114,7 @@ source "vsphere-iso" "rocky" {
 
   #http_ip = "${var.builder_ipv4}"
   # http_directory = "/"
-  http_content =  local.data_source_content
+  http_content = local.data_source_content
   boot_command = [
     "<up>e<wait><down><wait><down><wait><end> inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
   ]
