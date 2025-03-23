@@ -40,7 +40,7 @@ build {
 
   # Copy root ca cert to VM
   provisioner "file" {
-    source      = "packer/data/homelab_ca.crt"
+    source      = "${abspath(path.root)}/data/homelab_ca.crt"
     destination = "/etc/pki/ca-trust/source/anchors/homelab_ca.crt"
   }
   # trigger 5
@@ -48,17 +48,17 @@ build {
   provisioner "shell" {
     # execute_command = "echo 'temppassword' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
     scripts = [
-      "scripts/env_setup.sh",
-      "scripts/sysprep-op-bash-history.sh",
-      "scripts/sysprep-op-crash-data.sh",
-      "scripts/sysprep-op-dhcp-client-state.sh",
-      #      "scripts/sysprep-op-logfiles.sh",
-      "scripts/sysprep-op-machine-id.sh",
-      "scripts/sysprep-op-package-manager-cache.sh",
-      "scripts/sysprep-op-rpm-db.sh",
-      "scripts/sysprep-op-ssh-hostkeys.sh",
-      #      "scripts/sysprep-op-tmp-files.sh",
-      "scripts/sysprep-op-yum-uuid.sh"
+      "${abspath(path.root)}/scripts/env_setup.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-bash-history.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-crash-data.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-dhcp-client-state.sh",
+      #      "${abspath(path.root)}/scripts/sysprep-op-logfiles.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-machine-id.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-package-manager-cache.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-rpm-db.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-ssh-hostkeys.sh",
+      #      "${abspath(path.root)}/scripts/sysprep-op-tmp-files.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-yum-uuid.sh"
     ]
   }
 }
