@@ -44,7 +44,7 @@ build {
     destination = "/etc/pki/ca-trust/source/anchors/homelab_ca.crt"
   }
 
-  # Upload and execute scripts using Shell test
+  # Upload and execute scripts using Shell
   provisioner "shell" {
     # execute_command = "echo 'temppassword' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
     scripts = [
