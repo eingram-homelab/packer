@@ -39,6 +39,9 @@ jobs:
           done
       
       - name: Run packer init
+        env:
+          VAULT_ADDR: ${{ vars.VAULT_ADDR}}
+          VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "Running packer init for $file"
