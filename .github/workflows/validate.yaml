@@ -49,6 +49,9 @@ jobs:
           done 
 
       - name: Validate Changed Templates
+        env:
+          VAULT_ADDR: ${{ vars.VAULT_ADDR}}
+          VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
