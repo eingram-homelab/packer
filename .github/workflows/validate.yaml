@@ -33,6 +33,9 @@ jobs:
       - name: Verify packer version
         run: packer version
         
+      - name: List changed files
+        run: ls -l ${{ steps.changed-files.outputs.all_changed_files }}
+        
       - name: Check Format for changed files
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
@@ -41,9 +44,6 @@ jobs:
             dir=$(dirname "$file")
             packer fmt -check "$file"
           done
-        
-      - name: List changed files
-        run: ls -l ${{ steps.changed-files.outputs.all_changed_files }}
         
       - name: Validate Changed Templates
         if: steps.changed-files.outputs.all_changed_files != ''
