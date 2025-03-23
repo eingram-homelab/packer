@@ -34,8 +34,9 @@ jobs:
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "Checking format for $file"
-            packer fmt -check "$file"
+            dir=$(dirname "$file")
+            echo "Checking format for $dir"
+            packer fmt -check "$dir"
           done
       
       - name: Run packer init
@@ -44,8 +45,9 @@ jobs:
           VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "Running packer init for $file"
-            packer init "$file"
+            dir=$(dirname "$file")
+            echo "Running packer init for $dir"
+            packer init "$dir"
           done 
 
       - name: Validate Changed Templates
@@ -55,6 +57,7 @@ jobs:
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "Validating $file"
-            packer validate "$file"
+            dir=$(dirname "$file")
+            echo "Validating $dir"
+            packer validate "$dir"
           done
