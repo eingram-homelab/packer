@@ -42,6 +42,9 @@ jobs:
             packer fmt -check "$file"
           done
         
+      - name: List changed files
+        run: ls -l ${{ steps.changed-files.outputs.all_changed_files }}
+        
       - name: Validate Changed Templates
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
