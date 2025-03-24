@@ -27,13 +27,13 @@ local "ssh_password" {
   sensitive  = true
 }
 
-locals {
-  data_source_content = {
-    "/ks.cfg" = templatefile("${abspath(path.root)}/data/ks.pkrtpl.hcl", {
-      password = local.encrypted_password
-    })
-  }
-}
+# locals {
+#   data_source_content = {
+#     "/ks.cfg" = templatefile("${abspath(path.root)}/data/ks.pkrtpl.hcl", {
+#       password = local.encrypted_password
+#     })
+#   }
+# }
 
 build {
   sources = ["source.vsphere-iso.rocky"]
@@ -114,9 +114,9 @@ source "vsphere-iso" "rocky" {
 
   #http_ip = "${var.builder_ipv4}"
   # http_directory = "/"
-  http_content = local.data_source_content
+  # http_content = local.data_source_content
   boot_command = [
-    "<up>e<wait><down><wait><down><wait><end> inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
+    "<up>e<wait><down><wait><down><wait><end> inst.text inst.ks=http://kickstart.local.lan/ks-rocky9-rke.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
   ]
 
   # Uncomment the below to kickstar via an ISO (the ISO you will need to make manually by simply saving the ks.cfg file into an iso file). 
