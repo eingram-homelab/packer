@@ -1,17 +1,18 @@
 name: Packer Validation and Build
 
 on:
-  push:
-    branches: [ develop ]
-    paths:
-      - '**.pkr.hcl'
-  pull_request:
-    branches: [ develop ]
-    paths:
-      - '**.pkr.hcl'
+  # push:
+  #   branches: [ develop ]
+  #   paths:
+  #     - '**.pkr.hcl'
+  # pull_request:
+  #   branches: [ develop ]
+  #   paths:
+  #     - '**.pkr.hcl'
+  workflow_dispatch:
 
 jobs:
-  validate:
+  validate_and_build:
     name: Validate Packer Templates
     runs-on: arc-runners
     steps:
