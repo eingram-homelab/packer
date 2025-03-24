@@ -109,7 +109,7 @@ source "vsphere-iso" "rocky" {
   # Rocky OS parameters
   boot_order   = "disk,cdrom,floppy"
   boot_wait    = "10s"
-  ssh_password = "${local.ssh_password}"
+  ssh_password = "temppassword"
   ssh_username = "root"
 
   #http_ip = "${var.builder_ipv4}"
