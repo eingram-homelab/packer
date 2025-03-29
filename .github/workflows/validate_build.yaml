@@ -13,7 +13,7 @@ on:
 
 jobs:
   validate_and_build:
-    name: Validate Packer Templates
+    name: Validate and Build Packer Templates
     runs-on: arc-runners
     steps:
       - name: Checkout Code

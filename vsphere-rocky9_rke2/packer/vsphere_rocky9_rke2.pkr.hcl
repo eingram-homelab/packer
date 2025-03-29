@@ -43,7 +43,7 @@ build {
     source      = "${abspath(path.root)}/data/homelab_ca.crt"
     destination = "/etc/pki/ca-trust/source/anchors/homelab_ca.crt"
   }
-  # trigger 7
+ 
   # Upload and execute scripts using Shell
   provisioner "shell" {
     # execute_command = "echo 'temppassword' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
@@ -61,6 +61,18 @@ build {
       "${abspath(path.root)}/scripts/sysprep-op-yum-uuid.sh"
     ]
   }
+  
+  # Output build details including artifact ID
+  post-processor "manifest" {
+    output     = "build-manifest.json"
+    strip_path = true
+    custom_data = {
+      build_timestamp   = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
+      build_date        = "${formatdate("YYYY_MM_DD", timestamp())}"
+      vm_name           = "${var.vsphere_template_name}_${formatdate("YYYY_MM_DD", timestamp())}"
+      os_version        = "Rocky Linux 9"
+    }
+  }
 }
 
 # Builder configuration, responsible for VM provisioning.
@@ -77,7 +89,7 @@ source "vsphere-iso" "rocky" {
   host                = "${var.vsphere_host}"
   datastore           = "${var.vcenter_datastore}"
   folder              = "${var.vm_folder}"
-  vm_name             = "${var.vsphere_template_name}_${formatdate("YYYY_MM", timestamp())}"
+  vm_name             = "${var.vsphere_template_name}_${formatdate("YYYY_MM_DD", timestamp())}"
   vm_version          = var.vm_version
   firmware            = "efi"
   convert_to_template = true
@@ -118,14 +130,5 @@ source "vsphere-iso" "rocky" {
   boot_command = [
     "<up>e<wait><down><wait><down><wait><end> inst.text inst.ks=http://kickstart.local.lan/ks-rocky9-rke.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
   ]
-
-  # Uncomment the below to kickstar via an ISO (the ISO you will need to make manually by simply saving the ks.cfg file into an iso file). 
-  # I used this in the interim as the box I was running from had issues as Packer kept using a private non-routed network.
-  # boot_command = [ 
-  #   "<wait15>",
-  #   "<tab>",
-  #   "linux inst.ks=hd:/dev/sr1:ks.cfg", # Run kickstart off optical drive 2
-  #   "<enter>"
-  # ]
-
 }
+
