@@ -64,7 +64,7 @@ build {
   
   # Output build details including artifact ID
   post-processor "manifest" {
-    output     = "build-manifest.json"
+    output     = "${abspath(path.root)}/build-manifest.json"
     strip_path = true
     custom_data = {
       build_timestamp   = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
