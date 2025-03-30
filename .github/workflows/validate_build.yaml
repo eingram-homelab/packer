@@ -74,3 +74,21 @@ jobs:
             echo "Building $dir"
             packer build "$dir"
           done
+
+      - name: Set Github env vars from artifact info
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            dir=$(dirname "$file")
+            echo "Setting Github env vars for $dir"
+            echo "TMPL_NAME=$(cat "$dir/build-manifest.json" | jq -r '.builds[0].artifact_id')" >> $GITHUB_ENV
+          done
+
+  trigger_terraform:
+    runs-on: arc-runners
+    steps:
+      - name: Trigger Terraform workflow to build VM from Templates
+        run: |
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/https://github.com/eingram-homelab/terraform.git/actions/workflows/vsphere_tmpl_verify.yaml/dispatches \
+          -d '{"ref":"main"}'
