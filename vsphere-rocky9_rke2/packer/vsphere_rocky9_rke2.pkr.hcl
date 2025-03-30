@@ -43,7 +43,7 @@ build {
     source      = "${abspath(path.root)}/data/homelab_ca.crt"
     destination = "/etc/pki/ca-trust/source/anchors/homelab_ca.crt"
   }
- 
+
   # Upload and execute scripts using Shell
   provisioner "shell" {
     # execute_command = "echo 'temppassword' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
@@ -61,16 +61,16 @@ build {
       "${abspath(path.root)}/scripts/sysprep-op-yum-uuid.sh"
     ]
   }
-  
+
   # Output build details including artifact ID
   post-processor "manifest" {
     output     = "${abspath(path.root)}/build-manifest.json"
     strip_path = true
     custom_data = {
-      build_timestamp   = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
-      build_date        = "${formatdate("YYYY_MM_DD", timestamp())}"
-      vm_name           = "${var.vsphere_template_name}_${formatdate("YYYY_MM_DD", timestamp())}"
-      os_version        = "Rocky Linux 9"
+      build_timestamp = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
+      build_date      = "${formatdate("YYYY_MM_DD", timestamp())}"
+      vm_name         = "${var.vsphere_template_name}_${formatdate("YYYY_MM_DD", timestamp())}"
+      os_version      = "Rocky Linux 9"
     }
   }
 }
