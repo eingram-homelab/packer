@@ -89,7 +89,7 @@ source "vsphere-iso" "rocky" {
   host                = "${var.vsphere_host}"
   datastore           = "${var.vcenter_datastore}"
   folder              = "${var.vm_folder}"
-  vm_name             = "${var.vsphere_template_name}_${formatdate("YYYY_MM_DD", timestamp())}"
+  vm_name             = "${var.vsphere_template_name}_${formatdate("YYYYMMDDHHmmss", timestamp())}"
   vm_version          = var.vm_version
   firmware            = "efi"
   convert_to_template = true
@@ -101,7 +101,7 @@ source "vsphere-iso" "rocky" {
   RAM             = "${var.mem_size}"
   RAM_hot_plug    = true
   RAM_reserve_all = false
-  notes           = "Packer build ${formatdate("YYYY_MM_DD", timestamp())}."
+  notes           = "Packer build ${formatdate("YYYYMMDDHHmmss", timestamp())}."
 
   network_adapters {
     network      = "${var.vm_network}"
