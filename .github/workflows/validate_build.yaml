@@ -15,6 +15,9 @@ jobs:
   validate_and_build:
     name: Validate and Build Packer Templates
     runs-on: arc-runners
+    env:
+      VAULT_ADDR: ${{ vars.VAULT_ADDR }}
+      VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -39,22 +42,16 @@ jobs:
             echo "Checking format for $dir"
             packer fmt -check "$dir"
           done
-      
+
       - name: Run packer init
-        env:
-          VAULT_ADDR: ${{ vars.VAULT_ADDR}}
-          VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             dir=$(dirname "$file")
             echo "Running packer init for $dir"
             packer init "$dir"
-          done 
+          done
 
       - name: Run packer validate
-        env:
-          VAULT_ADDR: ${{ vars.VAULT_ADDR}}
-          VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
@@ -64,9 +61,6 @@ jobs:
           done
 
       - name: Run packer build
-        env:
-          VAULT_ADDR: ${{ vars.VAULT_ADDR}}
-          VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
         if: steps.changed-files.outputs.all_changed_files != ''
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
