@@ -69,26 +69,30 @@ jobs:
             packer build "$dir"
           done
 
-      - name: Set Github env vars from artifact info
+      - name: Set vars from artifact info
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             dir=$(dirname "$file")
-            echo "Setting Github env vars for $dir"
+            echo "Setting vars for $dir"
             echo "TMPL_NAME=$(cat "$dir/build-manifest.json" | jq -r '.builds[0].artifact_id')" >> $GITHUB_OUTPUT
           done
 
-  trigger_terraform:
-    needs: validate_and_build
-    runs-on: arc-runners
-    steps:
-      - name: Trigger Terraform workflow to build VM from Templates
-        run: |
-          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/eingram-homelab/terraform/actions/workflows/vsphere-tmpl-verify.yaml/dispatches \
-          -d '{
-            "ref": "main",
-            "inputs": {
-              "template_name": "${{ needs.validate_and_build.outputs.TMPL_NAME }}"
-            }
-          }'
+  # trigger_terraform:
+  #   needs: validate_and_build
+  #   runs-on: arc-runners
+  #   steps:
+  #     - name: Trigger Terraform workflow to build VM from Templates
+  #       run: |
+  #         curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+  #         -H "Accept: application/vnd.github.v3+json" \
+  #         https://api.github.com/repos/eingram-homelab/terraform/actions/workflows/vsphere-tmpl-verify.yaml/dispatches \
+  #         -d '{
+  #           "ref": "main",
+  #           "inputs": {
+  #             "template_name": "${{ needs.validate_and_build.outputs.TMPL_NAME }}"
+  #           }
+  #         }'
+  call_terraform_vsphere-tmpl-verify:
+    uses: eingram-homelab/terraform/.github/workflows/vsphere-tmpl-verify.yaml
+    with:
+      TMPL_NAME: ${{ needs.validate_and_build.outputs.TMPL_NAME }}
