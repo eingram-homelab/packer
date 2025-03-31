@@ -1,15 +1,15 @@
 name: Packer Validation and Build
 
 on:
-  # push:
-  #   branches: [ develop ]
-  #   paths:
-  #     - '**.pkr.hcl'
+  push:
+    branches: [ main ]
+    paths:
+      - '**.pkr.hcl'
   # pull_request:
   #   branches: [ develop ]
   #   paths:
   #     - '**.pkr.hcl'
-  workflow_dispatch:
+  # workflow_dispatch:
 
 jobs:
   validate_and_build:
