@@ -13,6 +13,10 @@ jobs:
         run: |
           echo "output_var=Hello from the first workflow" >> $GITHUB_OUTPUT
 
+      - name: Print output variable
+        run: |
+          echo "Output variable set in the first workflow: ${{ steps.set_output.outputs.output_var }}"
+
   call_workflow:
     needs: test_set_var
     uses: eingram-homelab/terraform/.github/workflows/test_reusable.yaml@main
