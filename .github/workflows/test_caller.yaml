@@ -15,7 +15,7 @@ jobs:
 
       - name: Print output variable
         run: |
-          echo "Output variable set in the first workflow: ${{ steps.set_output.outputs.output_var }}"
+          echo "Output variable set in the first step: ${{ steps.set_output.outputs.output_var }}"
 
   call_workflow:
     needs: test_set_var
