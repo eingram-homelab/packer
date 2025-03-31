@@ -1,3 +1,5 @@
+# Change this line to trigger new build
+
 packer {
   required_plugins {
     vsphere = {
