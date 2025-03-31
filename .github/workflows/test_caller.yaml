@@ -21,4 +21,4 @@ jobs:
     needs: set_test_var
     uses: eingram-homelab/terraform/.github/workflows/test_reusable.yaml@main
     with:
-      input_var: ${{ needs.set_test_var.outputs.test_var }}
+      input_var: "test"
