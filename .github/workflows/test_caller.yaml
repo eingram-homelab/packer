@@ -8,17 +8,17 @@ jobs:
     name: Set and pass variable between workflows
     runs-on: arc-runners
     steps:
-      - name: Set output variable
-        id: set_output
+      - name: Set test variable
+        id: set_test_var
         run: |
-          echo "output_var=Hello from the first workflow" >> $GITHUB_OUTPUT
+          echo "test_var=Hello from the first workflow" >> $GITHUB_ENV
 
-      - name: Print output variable
+      - name: Print test variable
         run: |
-          echo "Output variable set in the first step: ${{ steps.set_output.outputs.output_var }}"
+          echo "Test variable set in the first step: ${{ env.test_var }}"
 
   call_workflow:
     needs: test_set_var
     uses: eingram-homelab/terraform/.github/workflows/test_reusable.yaml@main
     with:
-      input_var: ${{ needs.test_set_var.outputs.output_var }}
+      input_var: ${{ needs.test_set_var.env.test_var }}
