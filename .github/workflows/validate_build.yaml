@@ -93,6 +93,6 @@ jobs:
   #           }
   #         }'
   call_terraform_vsphere-tmpl-verify:
-    uses: eingram-homelab/terraform/.github/workflows/vsphere-tmpl-verify.yaml
+    uses: eingram-homelab/terraform/.github/workflows/vsphere-tmpl-verify.yaml@main
     with:
       TMPL_NAME: ${{ needs.validate_and_build.outputs.TMPL_NAME }}
