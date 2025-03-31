@@ -13,6 +13,8 @@ on:
 
 jobs:
   validate_and_build:
+    outputs:
+      TMPL_NAME: ${{ steps.set_TMPL_NAME.outputs.TMPL_NAME }}
     name: Validate and Build Packer Templates
     runs-on: arc-runners
     env:
@@ -73,6 +75,7 @@ jobs:
           done
 
       - name: Set vars from artifact info
+        id: set_TMPL_NAME
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             dir=$(dirname "$file")
@@ -80,21 +83,6 @@ jobs:
             echo "TMPL_NAME=$(cat "$dir/build-manifest.json" | jq -r '.builds[0].artifact_id')" >> $GITHUB_OUTPUT
           done
 
-  # trigger_terraform:
-  #   needs: validate_and_build
-  #   runs-on: arc-runners
-  #   steps:
-  #     - name: Trigger Terraform workflow to build VM from Templates
-  #       run: |
-  #         curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-  #         -H "Accept: application/vnd.github.v3+json" \
-  #         https://api.github.com/repos/eingram-homelab/terraform/actions/workflows/vsphere-tmpl-verify.yaml/dispatches \
-  #         -d '{
-  #           "ref": "main",
-  #           "inputs": {
-  #             "template_name": "${{ needs.validate_and_build.outputs.TMPL_NAME }}"
-  #           }
-  #         }'
   call_terraform_vsphere-tmpl-verify:
     needs: validate_and_build
     uses: eingram-homelab/terraform/.github/workflows/vsphere-tmpl-verify.yaml@main
