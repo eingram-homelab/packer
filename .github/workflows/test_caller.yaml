@@ -17,8 +17,8 @@ jobs:
         run: |
           echo "Test variable set in the first step: ${{ env.test_var }}"
 
-  call_workflow:
-    needs: test_set_var
-    uses: eingram-homelab/terraform/.github/workflows/test_reusable.yaml@main
-    with:
-      input_var: ${{ needs.test_set_var.env.test_var }}
+  # call_workflow:
+  #   needs: test_set_var
+  #   uses: eingram-homelab/terraform/.github/workflows/test_reusable.yaml@main
+  #   with:
+  #     input_var: ${{ needs.test_set_var.env.test_var }}
