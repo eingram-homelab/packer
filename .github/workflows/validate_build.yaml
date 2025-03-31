@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          repository: eingram-homelab/packer
+          ref: main
 
       - name: Setup Packer
         uses: hashicorp/setup-packer@main
