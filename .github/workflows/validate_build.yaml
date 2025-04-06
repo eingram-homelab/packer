@@ -75,6 +75,7 @@ jobs:
           done
 
       - name: Set vars from artifact info
+        id: set_TMPL_NAME
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             dir=$(dirname "$file")
