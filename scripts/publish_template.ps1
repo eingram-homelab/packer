@@ -35,14 +35,36 @@ function Get-VaultSecret {
     }
 }
 
-function Delete-OldTemplate ($oldTemplateName) {
-    Remove-Template -Template $oldTemplateName -DeletePermanently -Confirm:$false
-}
-
 # Start Script
 $vaultToken = $env:VAULT_TOKEN
 $vaultAddress = "http://vault.local.lan:8200"
 $username = Get-VaultSecret $vaultAddress "secret/vsphere/vcsa" "vsphere_username" $vaultToken
 $password = Get-VaultSecret $vaultAddress "secret/vsphere/vcsa" "vsphere_password" $vaultToken 
 $cred = New-Object System.Management.Automation.PSCredential($username, (ConvertTo-SecureString $password -AsPlainText -Force))
-Connect-VIServer -Server vcsa-1.local.lan -Credential $cred
+
+Try {
+    Connect-VIServer -Server vcsa-1.local.lan -Credential $cred
+} Catch {
+    Write-Error "Failed to connect to vCenter: $($_.Exception.Message)"
+    Exit 1
+}
+# Remove the old template
+Write-Host "Removing old template: $oldTemplateName"
+Try {
+    Remove-Template -Template $oldTemplateName -DeletePermanently -Confirm:$false
+} Catch {
+    Write-Error "Failed to remove old template: $($_.Exception.Message)"
+    Disconnect-VIServer -Server vcsa-1.local.lan -Confirm:$false
+    Exit 1
+}
+Write-Host "Renaming new template: $newTemplateName to $oldTemplateName"
+Try {
+    Set-Template -Template $newTemplateName -Name $oldTemplateName -Confirm:$false
+} Catch {
+    Write-Error "Failed to rename template: $($_.Exception.Message)"
+    Disconnect-VIServer -Server vcsa-1.local.lan -Confirm:$false
+    Exit 1
+}
+
+# Disconnect from vCenter
+Disconnect-VIServer -Server vcsa-1.local.lan -Confirm:$false
