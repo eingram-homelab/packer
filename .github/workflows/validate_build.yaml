@@ -75,7 +75,6 @@ jobs:
           done
 
       - name: Set vars from artifact info
-        id: set_TMPL_NAME
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             dir=$(dirname "$file")
@@ -116,6 +115,6 @@ jobs:
         uses: PSModule/GitHub-Script@v1
         with:
           Script: |
-            ./scripts/publish_template.ps1 
-              -TemplateName ${{ needs.validate_and_build.outputs.TMPL_NAME }} 
-              -OldTemplateName ${{ steps.oldTemplateName.outputs.oldTemplateName }}
+            ./scripts/publish_template.ps1 `
+              -newTemplateName ${{ needs.validate_and_build.outputs.TMPL_NAME }} `
+              -oldTemplateName ${{ steps.oldTemplateName.outputs.oldTemplateName }}
