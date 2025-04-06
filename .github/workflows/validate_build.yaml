@@ -91,3 +91,31 @@ jobs:
     secrets:
       VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
       GCP_STORAGE: ${{ secrets.GCP_STORAGE }}
+
+  publish_template:
+    needs: call_terraform_vsphere-tmpl-verify
+    runs-on: arc-runners
+    env:
+      VAULT_ADDR: ${{ vars.VAULT_ADDR }}
+      VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          repository: eingram-homelab/packer
+          ref: main
+
+      - name: Set oldTemplateName var
+        id: oldTemplateName
+        run: |
+          if [[ ${{ needs.validate_and_build.outputs.TMPL_NAME }} =~ (.*)__ ]]; then
+            echo oldTemplateName="${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish Template
+        uses: PSModule/GitHub-Script@v1
+        with:
+          Script: |
+            ./scripts/publish_template.ps1 
+              -TemplateName ${{ needs.validate_and_build.outputs.TMPL_NAME }} 
+              -OldTemplateName ${{ steps.oldTemplateName.outputs.oldTemplateName }}
