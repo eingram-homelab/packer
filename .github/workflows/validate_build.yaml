@@ -93,7 +93,9 @@ jobs:
       GCP_STORAGE: ${{ secrets.GCP_STORAGE }}
 
   publish_template:
-    needs: call_terraform_vsphere-tmpl-verify
+    needs:
+      - call_terraform_vsphere-tmpl-verify
+      - validate_and_build
     runs-on: arc-runners
     env:
       VAULT_ADDR: ${{ vars.VAULT_ADDR }}
