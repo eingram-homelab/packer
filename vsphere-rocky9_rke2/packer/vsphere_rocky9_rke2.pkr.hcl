@@ -70,8 +70,7 @@ build {
     strip_path = true
     custom_data = {
       build_timestamp = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
-      build_date      = "${formatdate("YYYY_MM_DD", timestamp())}"
-      vm_name         = "${var.vsphere_template_name}_${formatdate("YYYY_MM_DD", timestamp())}"
+      vm_name         = "${var.vsphere_template_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
       os_version      = "Rocky Linux 9"
     }
   }
@@ -91,7 +90,7 @@ source "vsphere-iso" "rocky" {
   host                = "${var.vsphere_host}"
   datastore           = "${var.vcenter_datastore}"
   folder              = "${var.vm_folder}"
-  vm_name             = "${var.vsphere_template_name}_${formatdate("YYYYMMDDHHmmss", timestamp())}"
+  vm_name             = "${var.vsphere_template_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
   vm_version          = var.vm_version
   firmware            = "efi"
   convert_to_template = true
