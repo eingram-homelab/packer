@@ -126,9 +126,8 @@ jobs:
           fi
 
       - name: Publish Template
-        uses: PSModule/GitHub-Script@v1
-        with:
-          Script: |
-            ./scripts/publish_template.ps1 `
-              -newTemplateName ${{ needs.validate_and_build.outputs.TMPL_NAME }} `
-              -oldTemplateName ${{ steps.oldTemplateName.outputs.oldTemplateName }}
+        run: |
+          ./scripts/publish_template.ps1 `
+            -newTemplateName ${{ needs.validate_and_build.outputs.TMPL_NAME }} `
+            -oldTemplateName ${{ steps.oldTemplateName.outputs.oldTemplateName }}
+        shell: pwsh
