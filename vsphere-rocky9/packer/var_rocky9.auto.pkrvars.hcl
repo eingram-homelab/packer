@@ -13,7 +13,7 @@ vcenter_dc_name   = "HomeLab Datacenter"
 vcenter_cluster   = "Intel NUC10 Cluster"
 vsphere_host      = "esxinuc1.local.lan"
 vcenter_datastore = "esxinuc1:datastore1"
-vm_network        = "DPG-Services"
+vm_network        = "DPG-Lab-LAN1"
 
 os_iso_path = "[esxinuc1:datastore1] Repo/Rocky-9.5-x86_64-dvd.iso"
 vm_version  = "20"

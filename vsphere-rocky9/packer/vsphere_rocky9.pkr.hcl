@@ -1,3 +1,5 @@
+# Change this line to trigger new build 
+
 packer {
   required_plugins {
     vsphere = {
@@ -27,39 +29,50 @@ local "ssh_password" {
   sensitive  = true
 }
 
-locals {
-  data_source_content = {
-    "/ks.cfg" = templatefile("${abspath(path.root)}/data/ks.pkrtpl.hcl", {
-      password = local.encrypted_password
-    })
-  }
-}
+# locals {
+#   data_source_content = {
+#     "/ks.cfg" = templatefile("${abspath(path.root)}/data/ks.pkrtpl.hcl", {
+#       password = local.encrypted_password
+#     })
+#   }
+# }
 
 build {
   sources = ["source.vsphere-iso.rocky"]
 
   # Copy root ca cert to VM
   provisioner "file" {
-    source      = "packer/data/homelab_ca.crt"
+    source      = "${abspath(path.root)}/data/homelab_ca.crt"
     destination = "/etc/pki/ca-trust/source/anchors/homelab_ca.crt"
   }
-  
+
   # Upload and execute scripts using Shell
   provisioner "shell" {
     # execute_command = "echo 'temppassword' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'" # This runs the scripts with sudo
     scripts = [
-      "scripts/env_setup.sh",
-      "scripts/sysprep-op-bash-history.sh",
-      "scripts/sysprep-op-crash-data.sh",
-      "scripts/sysprep-op-dhcp-client-state.sh",
-      #      "scripts/sysprep-op-logfiles.sh",
-      "scripts/sysprep-op-machine-id.sh",
-      "scripts/sysprep-op-package-manager-cache.sh",
-      "scripts/sysprep-op-rpm-db.sh",
-      "scripts/sysprep-op-ssh-hostkeys.sh",
-      #      "scripts/sysprep-op-tmp-files.sh",
-      "scripts/sysprep-op-yum-uuid.sh"
+      "${abspath(path.root)}/scripts/env_setup.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-bash-history.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-crash-data.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-dhcp-client-state.sh",
+      #      "${abspath(path.root)}/scripts/sysprep-op-logfiles.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-machine-id.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-package-manager-cache.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-rpm-db.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-ssh-hostkeys.sh",
+      #      "${abspath(path.root)}/scripts/sysprep-op-tmp-files.sh",
+      "${abspath(path.root)}/scripts/sysprep-op-yum-uuid.sh"
     ]
+  }
+
+  # Output build details including artifact ID
+  post-processor "manifest" {
+    output     = "${abspath(path.root)}/build-manifest.json"
+    strip_path = true
+    custom_data = {
+      build_timestamp = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
+      vm_name         = "${var.vsphere_template_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
+      os_version      = "Rocky Linux 9"
+    }
   }
 }
 
@@ -77,7 +90,7 @@ source "vsphere-iso" "rocky" {
   host                = "${var.vsphere_host}"
   datastore           = "${var.vcenter_datastore}"
   folder              = "${var.vm_folder}"
-  vm_name             = "${var.vsphere_template_name}_${formatdate("YYYY_MM", timestamp())}"
+  vm_name             = "${var.vsphere_template_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
   vm_version          = var.vm_version
   firmware            = "efi"
   convert_to_template = true
@@ -89,7 +102,7 @@ source "vsphere-iso" "rocky" {
   RAM             = "${var.mem_size}"
   RAM_hot_plug    = true
   RAM_reserve_all = false
-  notes           = "Packer build ${formatdate("YYYY_MM_DD", timestamp())}."
+  notes           = "Packer build ${formatdate("YYYYMMDDHHmmss", timestamp())}."
 
   network_adapters {
     network      = "${var.vm_network}"
@@ -109,23 +122,14 @@ source "vsphere-iso" "rocky" {
   # Rocky OS parameters
   boot_order   = "disk,cdrom,floppy"
   boot_wait    = "10s"
-  ssh_password = "${local.ssh_password}"
+  ssh_password = "temppassword"
   ssh_username = "root"
 
   #http_ip = "${var.builder_ipv4}"
   # http_directory = "/"
-  http_content =  local.data_source_content
+  # http_content = local.data_source_content
   boot_command = [
-    "<up>e<wait><down><wait><down><wait><end> inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
+    "<up>e<wait><down><wait><down><wait><end> inst.text inst.ks=http://kickstart.local.lan/ks-rocky9.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
   ]
-
-  # Uncomment the below to kickstar via an ISO (the ISO you will need to make manually by simply saving the ks.cfg file into an iso file). 
-  # I used this in the interim as the box I was running from had issues as Packer kept using a private non-routed network.
-  # boot_command = [ 
-  #   "<wait15>",
-  #   "<tab>",
-  #   "linux inst.ks=hd:/dev/sr1:ks.cfg", # Run kickstart off optical drive 2
-  #   "<enter>"
-  # ]
-
 }
+
