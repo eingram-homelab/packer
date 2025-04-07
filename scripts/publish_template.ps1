@@ -36,6 +36,8 @@ function Get-VaultSecret {
 }
 
 # Start Script
+Install-Module VMware.PowerCLI -Scope CurrentUser -Force -AllowClobber
+Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
 $vaultToken = $env:VAULT_TOKEN
 $vaultAddress = "http://vault.local.lan:8200"
 $username = Get-VaultSecret $vaultAddress "secret/vsphere/vcsa" "vsphere_username" $vaultToken

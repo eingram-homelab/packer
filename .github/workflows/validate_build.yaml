@@ -125,11 +125,6 @@ jobs:
             echo oldTemplateName="${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
           fi
 
-      - name: Install PowerCLI
-        run: |
-          pwsh -Command "Install-Module VMware.PowerCLI -Scope CurrentUser -Force -AllowClobber"
-          pwsh -Command "Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false"
-      
       - name: Publish Template
         run: |
           ./scripts/publish_template.ps1 `
