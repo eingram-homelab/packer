@@ -39,17 +39,17 @@ source "vsphere-iso" "win2022core" {
   folder     = var.vcenter_folder
 
   convert_to_template = true
-  notes               = "Windows Server 2022 Datacenter Core x64 VM template build ${formatdate("YYYY_MM_DD", timestamp())}."
+  notes               = "Windows Server 2022 Datacenter Core x64 VM template build ${formatdate("YYYYMMDDHHmmss", timestamp())}"
 
-  ip_wait_timeout   = "60m"
-  ip_settle_timeout = "1m"
-  communicator      = "winrm"
-  winrm_port             = "5985"
+  ip_wait_timeout         = "60m"
+  ip_settle_timeout       = "1m"
+  communicator            = "winrm"
+  winrm_port              = "5985"
   winrm_timeout           = "10m"
   pause_before_connecting = "2m"
   winrm_username          = var.os_username
   winrm_password          = local.ssh_password
-  vm_name                 = "${var.vm_name}_${formatdate("YYYY_MM", timestamp())}"
+  vm_name                 = "${var.vm_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
   vm_version              = var.vm_version
   firmware                = var.vm_firmware
   guest_os_type           = var.vm_guest_os_type
@@ -87,7 +87,7 @@ source "vsphere-iso" "win2022core" {
       password = local.ssh_password
     })
   }
-  floppy_dirs = ["scripts", ]
+  floppy_dirs = ["${abspath(path.root)}/scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
   # floppy_files = ["drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
   floppy_img_path = var.floppy_img_path
@@ -150,12 +150,23 @@ build {
     pause_before      = "1m"
     elevated_user     = var.os_username
     elevated_password = local.ssh_password
-    script            = "scripts/customize_win.ps1"
+    script            = "${abspath(path.root)}/scripts/customize_win.ps1"
     timeout           = "15m"
   }
 
   provisioner "windows-restart" { # A restart before sysprep to settle the VM once more.
     pause_before    = "1m"
     restart_timeout = "1h"
+  }
+
+  # Output build details including artifact ID
+  post-processor "manifest" {
+    output     = "${abspath(path.root)}/build-manifest.json"
+    strip_path = true
+    custom_data = {
+      build_timestamp = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
+      vm_name         = "${var.vm_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
+      os_version      = "Windows 2022 Datacenter Core"
+    }
   }
 }

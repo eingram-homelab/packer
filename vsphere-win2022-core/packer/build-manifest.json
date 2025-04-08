@@ -1,0 +1,18 @@
+{
+  "builds": [
+    {
+      "name": "win2022core",
+      "builder_type": "vsphere-iso",
+      "build_time": 1744156167,
+      "files": null,
+      "artifact_id": "TMP-Win2022Core_Packer__20250408104608",
+      "packer_run_uuid": "8af86543-4b46-f3d2-da8a-598b3669c20e",
+      "custom_data": {
+        "build_timestamp": "2025-04-08 23:49:27",
+        "os_version": "Windows 2022 Datacenter Core",
+        "vm_name": "TMP-Win2022Core_Packer__20250408114927"
+      }
+    }
+  ],
+  "last_run_uuid": "8af86543-4b46-f3d2-da8a-598b3669c20e"
+}
