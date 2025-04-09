@@ -70,7 +70,7 @@ jobs:
         run: |
           # xorriso needed for vsphere-iso to build Windows template
           sudo apt-add-repository universe
-          sudo apt-get install xorriso
+          sudo apt-get install -y xorriso
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             dir=$(dirname "$file")
             echo "Building $dir"
