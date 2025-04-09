@@ -1,5 +1,5 @@
 /* 
-Specify any declared variables from the file of, variables.pkr.hcl, to override default values. 
+Specify any declared variables from the file of, variables.pkr.hcl, to override default values.
 Example of default value of var cpu_name is 2 cores. We override that with 4 cores below.
 */
 
