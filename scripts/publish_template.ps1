@@ -51,14 +51,19 @@ Try {
     Exit 1
 }
 # Remove the old template
-Write-Host "Removing old template: $oldTemplateName"
-Try {
-    Remove-Template -Template $oldTemplateName -DeletePermanently -Confirm:$false
-} Catch {
-    Write-Error "Failed to remove old template: $($_.Exception.Message)"
-    Disconnect-VIServer -Server vcsa-1.local.lan -Confirm:$false
-    Exit 1
+If (!(Get-Template -Name $oldTemplateName -ErrorAction SilentlyContinue)) {
+    Write-Host "Old template $oldTemplateName does not exist, skipping removal."
+} else {
+    Write-Host "Old template $oldTemplateName exists, removing it."
+    Try {
+        Remove-Template -Template $oldTemplateName -DeletePermanently -Confirm:$false
+    } Catch {
+        Write-Error "Failed to remove old template: $($_.Exception.Message)"
+        Disconnect-VIServer -Server vcsa-1.local.lan -Confirm:$false
+        Exit 1
+    }
 }
+
 Write-Host "Renaming new template: $newTemplateName to $oldTemplateName"
 Try {
     Set-Template -Template $newTemplateName -Name $oldTemplateName -Confirm:$false
