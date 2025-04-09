@@ -121,6 +121,7 @@ build {
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
       "exclude:$_.Title -like '*Preview*'",
       "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
       "include:$true"
     ]
   }
@@ -133,6 +134,7 @@ build {
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
       "exclude:$_.Title -like '*Preview*'",
       "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
       "include:$true"
     ]
   }
@@ -145,6 +147,7 @@ build {
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
       "exclude:$_.Title -like '*Preview*'",
       "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
       "include:$true"
     ]
   }

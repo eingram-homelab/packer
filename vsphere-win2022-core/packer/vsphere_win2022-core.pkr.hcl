@@ -124,7 +124,7 @@ build {
     search_criteria = "IsInstalled=0"
     filters = [
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      #"exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Preview*'",
       "include:$true"
     ]
   }
@@ -135,7 +135,7 @@ build {
     search_criteria = "IsInstalled=0"
     filters = [
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      #"exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Preview*'",
       "include:$true"
     ]
   }
@@ -146,8 +146,8 @@ build {
     search_criteria = "IsInstalled=0"
     filters = [
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      # "exclude:$_.Title -like '*Preview*'",
-      # "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
       "include:$true"
     ]
   }
