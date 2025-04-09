@@ -22,6 +22,10 @@ packer {
       source  = "github.com/rgl/windows-update"
       # Github Plugin Repo https://github.com/rgl/packer-plugin-windows-update
     }
+    vsphere = {
+      source  = "github.com/hashicorp/vsphere"
+      version = "~> 1"
+    }
   }
 }
 
@@ -39,18 +43,18 @@ source "vsphere-iso" "win_11" {
   folder     = var.vcenter_folder
 
   convert_to_template = true
-  notes               = "Windows 11 Pro x64 build ${formatdate("YYYY_MM_DD", timestamp())}.\nThis template is syspred and can be used for domain deployments."
+  notes               = "Windows 11 Pro x64 build ${formatdate("YYYYMMDDHHmmss", timestamp())}"
 
-  ip_wait_timeout   = "60m"
-  ip_settle_timeout = "1m"
-  communicator      = "winrm"
-  #winrm_port             = "5985"
+  ip_wait_timeout         = "60m"
+  ip_settle_timeout       = "1m"
+  communicator            = "winrm"
+  winrm_port              = "5985"
   winrm_timeout           = "10m"
   pause_before_connecting = "1m"
   winrm_username          = var.os_username
   winrm_password          = var.os_password
 
-  vm_name              = "${var.vm_name}_${formatdate("YYYY_MM", timestamp())}"
+  vm_name              = "${var.vm_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
   vm_version           = var.vm_version
   firmware             = var.vm_firmware
   guest_os_type        = var.vm_guest_os_type
@@ -85,11 +89,11 @@ source "vsphere-iso" "win_11" {
     })
   }
 
-  floppy_dirs = ["scripts", ]
+  floppy_dirs = ["${abspath(path.root)}/scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
-  floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
+  # floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
   floppy_img_path = var.floppy_img_path
-  boot_wait = "3s"
+  boot_wait       = "3s"
   boot_command = [
     "<spacebar><spacebar>"
   ]
@@ -149,7 +153,7 @@ build {
     pause_before      = "1m"
     elevated_user     = var.os_username
     elevated_password = var.os_password
-    script            = "scripts/customize_win_11.ps1"
+    script            = "${abspath(path.root)}/scripts/customize_win_11.ps1"
     timeout           = "5m"
   }
 
@@ -157,12 +161,23 @@ build {
     pause_before      = "1m"
     elevated_user     = var.os_username
     elevated_password = var.os_password
-    script            = "scripts/uninstall_uwp.ps1"
+    script            = "${abspath(path.root)}/scripts/uninstall_uwp.ps1"
     timeout           = "5m"
   }
 
-  provisioner "windows-restart" { 
+  provisioner "windows-restart" {
     pause_before    = "1m"
     restart_timeout = "15m"
+  }
+
+  # Output build details including artifact ID
+  post-processor "manifest" {
+    output     = "${abspath(path.root)}/build-manifest.json"
+    strip_path = true
+    custom_data = {
+      build_timestamp = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
+      vm_name         = "${var.vm_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
+      os_version      = "Windows 11 Pro x64"
+    }
   }
 }

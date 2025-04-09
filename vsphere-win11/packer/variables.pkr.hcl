@@ -99,5 +99,5 @@ variable "vmtools_iso_path" {
   type        = string
 }
 variable "floppy_img_path" {
-  type        = string
+  type = string
 }

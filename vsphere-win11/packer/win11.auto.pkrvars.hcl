@@ -21,7 +21,7 @@ vm_version       = "20"               # Refer to https://kb.vmware.com/s/article
 
 os_iso_path      = "[esxinuc1:datastore1] Repo/Win11_22H2_English_x64v1.iso"
 vmtools_iso_path = "[esxinuc1:datastore1] Repo/windows.iso"
-floppy_img_path = "[esxinuc1:datastore1] Repo/pvscsi-Windows8.flp"
+floppy_img_path  = "[esxinuc1:datastore1] Repo/pvscsi-Windows8.flp"
 
 cpu_num   = 4
 ram       = 4096
