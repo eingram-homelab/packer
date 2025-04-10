@@ -116,7 +116,7 @@ build {
   }
 
   provisioner "windows-update" {
-    pause_before    = "2m"
+    pause_before    = "5m"
     timeout         = "1h"
     search_criteria = "IsInstalled=0"
     filters = [
@@ -129,7 +129,7 @@ build {
   }
 
   provisioner "windows-update" {
-    pause_before    = "2m"
+    pause_before    = "5m"
     timeout         = "1h"
     search_criteria = "IsInstalled=0"
     filters = [
@@ -142,7 +142,7 @@ build {
   }
 
   provisioner "windows-update" {
-    pause_before    = "2m"
+    pause_before    = "5m"
     timeout         = "1h"
     search_criteria = "IsInstalled=0"
     filters = [
