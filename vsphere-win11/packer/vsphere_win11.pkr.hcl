@@ -115,6 +115,22 @@ build {
     restart_timeout = "15m"
   }
 
+  provisioner "powershell" {
+    pause_before      = "1m"
+    elevated_user     = var.os_username
+    elevated_password = var.os_password
+    script            = "${abspath(path.root)}/scripts/customize_win_11.ps1"
+    timeout           = "5m"
+  }
+
+  provisioner "powershell" {
+    pause_before      = "1m"
+    elevated_user     = var.os_username
+    elevated_password = var.os_password
+    script            = "${abspath(path.root)}/scripts/uninstall_uwp.ps1"
+    timeout           = "5m"
+  }
+
   provisioner "windows-update" {
     pause_before    = "2m"
     timeout         = "1h"
@@ -155,22 +171,6 @@ build {
       # "exclude:$_.Title -like '*Cumulative Update for Windows 11 Version 22H2 for x64-based Systems*'",
       "include:$true"
     ]
-  }
-
-  provisioner "powershell" {
-    pause_before      = "1m"
-    elevated_user     = var.os_username
-    elevated_password = var.os_password
-    script            = "${abspath(path.root)}/scripts/customize_win_11.ps1"
-    timeout           = "5m"
-  }
-
-  provisioner "powershell" {
-    pause_before      = "1m"
-    elevated_user     = var.os_username
-    elevated_password = var.os_password
-    script            = "${abspath(path.root)}/scripts/uninstall_uwp.ps1"
-    timeout           = "5m"
   }
 
   provisioner "windows-restart" {
