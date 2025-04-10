@@ -116,7 +116,7 @@ build {
   }
 
   provisioner "windows-update" {
-    pause_before    = "5m"
+    pause_before    = "2m"
     timeout         = "1h"
     search_criteria = "IsInstalled=0"
     filters = [
@@ -124,12 +124,13 @@ build {
       "exclude:$_.Title -like '*Preview*'",
       "exclude:$_.Title -like '*Feature*'",
       "exclude:$_.Title -like '*Broadcom*'",
+      "exclude:$_.Title -like '*Cumulative Update for Windows 11 Version 22H2 for x64-based Systems*'",
       "include:$true"
     ]
   }
 
   provisioner "windows-update" {
-    pause_before    = "5m"
+    pause_before    = "2m"
     timeout         = "1h"
     search_criteria = "IsInstalled=0"
     filters = [
@@ -137,12 +138,13 @@ build {
       "exclude:$_.Title -like '*Preview*'",
       "exclude:$_.Title -like '*Feature*'",
       "exclude:$_.Title -like '*Broadcom*'",
+      "exclude:$_.Title -like '*Cumulative Update for Windows 11 Version 22H2 for x64-based Systems*'",
       "include:$true"
     ]
   }
 
   provisioner "windows-update" {
-    pause_before    = "5m"
+    pause_before    = "2m"
     timeout         = "1h"
     search_criteria = "IsInstalled=0"
     filters = [
@@ -150,6 +152,7 @@ build {
       "exclude:$_.Title -like '*Preview*'",
       "exclude:$_.Title -like '*Feature*'",
       "exclude:$_.Title -like '*Broadcom*'",
+      "exclude:$_.Title -like '*Cumulative Update for Windows 11 Version 22H2 for x64-based Systems*'",
       "include:$true"
     ]
   }
