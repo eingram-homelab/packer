@@ -91,7 +91,7 @@ source "vsphere-iso" "win_10" {
     })
   }
 
-  floppy_dirs = ["${abspath(path.root)}scripts", ]
+  floppy_dirs = ["${abspath(path.root)}/scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
   # floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
   floppy_img_path = var.floppy_img_path
@@ -158,7 +158,7 @@ build {
     pause_before      = "1m"
     elevated_user     = var.os_username
     elevated_password = var.os_password
-    script            = "${abspath(path.root)}scripts/customize_win_10.ps1"
+    script            = "${abspath(path.root)}/scripts/customize_win_10.ps1"
     timeout           = "5m"
   }
 
@@ -166,7 +166,7 @@ build {
     pause_before      = "1m"
     elevated_user     = var.os_username
     elevated_password = var.os_password
-    script            = "${abspath(path.root)}scripts/uninstall_uwp.ps1"
+    script            = "${abspath(path.root)}/scripts/uninstall_uwp.ps1"
     timeout           = "5m"
   }
 
