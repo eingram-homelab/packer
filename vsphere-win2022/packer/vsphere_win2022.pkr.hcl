@@ -45,7 +45,7 @@ source "vsphere-iso" "win2022" {
   folder     = var.vcenter_folder
 
   convert_to_template = true
-  notes               = "Windows Server 2022 Datacenter x64 VM template built using Packer."
+  notes               = "Windows Server 2022 Datacenter x64 VM template build build ${formatdate("YYYYMMDDHHmmss", timestamp())}"
 
   ip_wait_timeout         = "60m"
   ip_settle_timeout       = "1m"
