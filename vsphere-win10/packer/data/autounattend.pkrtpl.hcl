@@ -1,13 +1,3 @@
-<!-- 
-    Tested on 15/02/2021  
-    
-    ********************************************************************************************************************************************************
-    **** NOTE this answer/unattend file is to be only used in conjuction with - EFI firmware - do not use this answer/unattend file with BIOS firmware *****
-    ********************************************************************************************************************************************************
-    
-    Operating system and or editions this answer/unattend file tested and works for the following:
-        * Windows 10 Pro x64 versions v20H2, 21H1
--->
 <unattend xmlns="urn:schemas-microsoft-com:unattend">
     <servicing/>
     <settings pass="windowsPE">  
@@ -20,10 +10,7 @@
         </component>  
         <component xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
             <DiskConfiguration>
-                <WillShowUI>OnError</WillShowUI>
                 <Disk wcm:action="add">
-                    <DiskID>0</DiskID>
-                    <WillWipeDisk>true</WillWipeDisk>
                     <CreatePartitions>
                         <CreatePartition wcm:action="add">
                             <Order>1</Order>
@@ -45,7 +32,7 @@
                             <Extend>true</Extend>
                             <Type>Primary</Type>
                         </CreatePartition>
-                    </CreatePartitions>
+				    </CreatePartitions>
                     <ModifyPartitions>
                         <ModifyPartition wcm:action="add">
                             <Order>1</Order>
@@ -58,15 +45,11 @@
                             <Order>2</Order>
                             <PartitionID>2</PartitionID>
                             <Label>System</Label>
-                            <!-- Do not modify system label, doing so breaks the answer file and 
-                            windows fails autounattend install during partition and disk configuration! -->
                             <Format>FAT32</Format>
                         </ModifyPartition>
                         <ModifyPartition wcm:action="add">
                             <Order>3</Order>
                             <PartitionID>3</PartitionID>
-                            <!-- No modification 
-                            required on partition 3 -->
                         </ModifyPartition>
                         <ModifyPartition wcm:action="add">
                             <Order>4</Order>
@@ -75,7 +58,9 @@
                             <Label>Windows</Label>
                             <Format>NTFS</Format>
                         </ModifyPartition>
-                    </ModifyPartitions>
+				    </ModifyPartitions>
+                    <DiskID>0</DiskID>
+                    <WillWipeDisk>true</WillWipeDisk>
                 </Disk>
             </DiskConfiguration>
             <ImageInstall>
