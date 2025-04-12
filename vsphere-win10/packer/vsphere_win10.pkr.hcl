@@ -86,14 +86,12 @@ source "vsphere-iso" "win_10" {
   ]
 
   cd_content = {
-    "autounattend.xml" = templatefile("${abspath(path.root)}/data/autounattend.pkrtpl.hcl", {
-      password = local.ssh_password
-    })
+    "autounattend.xml" = file("${abspath(path.root)}/data/autounattend.xml")
   }
 
   floppy_dirs = ["${abspath(path.root)}/scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
-  # floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
+  # floppy_files = ["drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
   floppy_img_path = var.floppy_img_path
   boot_wait       = "3s"
   boot_command = [
