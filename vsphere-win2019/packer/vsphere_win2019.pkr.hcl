@@ -1,3 +1,5 @@
+# Update this line to trigger build 
+
 local "vsphere_username" {
   expression = vault("/secret/vsphere/vcsa", "vsphere_username")
   sensitive  = true
@@ -8,10 +10,10 @@ local "vsphere_password" {
   sensitive  = true
 }
 
-local "ssh_password" {
-  expression = vault("/secret/ssh/eingram", "ssh_password")
-  sensitive  = true
-}
+# local "ssh_password" {
+#   expression = vault("/secret/ssh/eingram", "ssh_password")
+#   sensitive  = true
+# }
 
 packer {
   required_version = ">= 1.7.4"
@@ -21,6 +23,10 @@ packer {
       version = "0.14.1"
       source  = "github.com/rgl/windows-update"
       # Github Plugin Repo https://github.com/rgl/packer-plugin-windows-update
+    }
+    vsphere = {
+      source  = "github.com/hashicorp/vsphere"
+      version = "~> 1"
     }
   }
 }
@@ -39,17 +45,17 @@ source "vsphere-iso" "win2019" {
   folder     = var.vcenter_folder
 
   convert_to_template = true
-  notes               = "Windows Server 2019 Datacenter x64 VM template built using Packer."
+  notes               = "Windows Server 2019 Datacenter x64 build ${formatdate("YYYYMMDDHHmmss", timestamp())}"
 
-  ip_wait_timeout   = "60m"
-  ip_settle_timeout = "1m"
-  communicator      = "winrm"
-  #winrm_port             = "5985"
+  ip_wait_timeout         = "60m"
+  ip_settle_timeout       = "1m"
+  communicator            = "winrm"
+  winrm_port              = "5985"
   winrm_timeout           = "10m"
   pause_before_connecting = "2m"
   winrm_username          = var.os_username
   winrm_password          = var.os_password
-  vm_name                 = "${var.vm_name}_${formatdate("YYYY_MM", timestamp())}"
+  vm_name                 = "${var.vm_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
   vm_version              = var.vm_version
   firmware                = var.vm_firmware
   guest_os_type           = var.vm_guest_os_type
@@ -80,15 +86,12 @@ source "vsphere-iso" "win2019" {
   ]
 
   cd_content = {
-    "autounattend.xml" = templatefile("${abspath(path.root)}/data/autounattend.pkrtpl.hcl", {
-      password = local.ssh_password
-    })
+    "autounattend.xml" = file("${abspath(path.root)}/data/autounattend.xml")
   }
 
-  floppy_dirs = ["scripts", ]
+  floppy_dirs = ["${abspath(path.root)}/scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
-  floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
-
+  # floppy_files = ["unattended/autounattend.xml", "drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
   boot_wait = "3s"
   boot_command = [
     "<spacebar><spacebar>"
@@ -115,7 +118,9 @@ build {
     search_criteria = "IsInstalled=0"
     filters = [
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      #"exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
       "include:$true"
     ]
   }
@@ -126,7 +131,9 @@ build {
     search_criteria = "IsInstalled=0"
     filters = [
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      #"exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
       "include:$true"
     ]
   }
@@ -137,8 +144,9 @@ build {
     search_criteria = "IsInstalled=0"
     filters = [
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      # "exclude:$_.Title -like '*Preview*'",
-      # "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
       "include:$true"
     ]
   }
@@ -147,12 +155,23 @@ build {
     pause_before      = "1m"
     elevated_user     = var.os_username
     elevated_password = var.os_password
-    script            = "scripts/customize_win2019.ps1"
+    script            = "${abspath(path.root)}/scripts/customize_win2019.ps1"
     timeout           = "15m"
   }
 
   provisioner "windows-restart" { # A restart before sysprep to settle the VM once more.
     pause_before    = "1m"
     restart_timeout = "1h"
+  }
+
+  # Output build details including artifact ID
+  post-processor "manifest" {
+    output     = "${abspath(path.root)}/build-manifest.json"
+    strip_path = true
+    custom_data = {
+      build_timestamp = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
+      vm_name         = "${var.vm_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
+      os_version      = "Windows 2019 Datacenter Core"
+    }
   }
 }
