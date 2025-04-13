@@ -113,46 +113,53 @@ build {
     restart_timeout = "15m"
   }
 
-  provisioner "windows-update" {
-    pause_before    = "2m"
-    timeout         = "1h"
-    search_criteria = "IsInstalled=0"
-    filters = [
-      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      #"exclude:$_.Title -like '*Preview*'",
-      "include:$true"
-    ]
-  }
-
-  provisioner "windows-update" {
-    pause_before    = "1m"
-    timeout         = "1h"
-    search_criteria = "IsInstalled=0"
-    filters = [
-      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      #"exclude:$_.Title -like '*Preview*'",
-      "include:$true"
-    ]
-  }
-
-  provisioner "windows-update" {
-    pause_before    = "1m"
-    timeout         = "1h"
-    search_criteria = "IsInstalled=0"
-    filters = [
-      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      # "exclude:$_.Title -like '*Preview*'",
-      # "exclude:$_.Title -like '*Feature*'",
-      "include:$true"
-    ]
-  }
-
   provisioner "powershell" {
     pause_before      = "1m"
     elevated_user     = var.os_username
     elevated_password = var.os_password
     script            = "${abspath(path.root)}/scripts/customize_win.ps1"
     timeout           = "15m"
+  }
+
+  provisioner "windows-update" {
+    pause_before    = "2m"
+    timeout         = "1h"
+    search_criteria = "IsInstalled=0"
+    filters = [
+      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
+      "exclude:$_.Title -like '*Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5055526)*'",
+      "include:$true"
+    ]
+  }
+
+  provisioner "windows-update" {
+    pause_before    = "1m"
+    timeout         = "1h"
+    search_criteria = "IsInstalled=0"
+    filters = [
+      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
+      "exclude:$_.Title -like '*Cumulative Update for Microsoft server operating system version 21H2 for x64-based Systems (KB5055526)*'",
+      "include:$true"
+    ]
+  }
+
+  provisioner "windows-update" {
+    pause_before    = "1m"
+    timeout         = "1h"
+    search_criteria = "IsInstalled=0"
+    filters = [
+      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
+      "include:$true"
+    ]
   }
 
   provisioner "windows-restart" { # A restart before sysprep to settle the VM once more.
