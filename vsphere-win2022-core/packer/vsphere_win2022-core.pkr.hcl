@@ -89,9 +89,7 @@ source "vsphere-iso" "win2022core" {
   #   "${abspath(path.cwd)}/scripts/*"
   # ]
   cd_content = {
-    "autounattend.xml" = templatefile("${abspath(path.root)}/data/autounattend.pkrtpl.hcl", {
-      password = local.ssh_password
-    })
+    "autounattend.xml" = file("${abspath(path.root)}/data/autounattend.xml")
   }
   floppy_dirs = ["${abspath(path.root)}/scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
@@ -160,7 +158,7 @@ build {
   provisioner "powershell" {
     pause_before      = "1m"
     elevated_user     = var.os_username
-    elevated_password = local.ssh_password
+    elevated_password = var.os_password
     script            = "${abspath(path.root)}/scripts/customize_win.ps1"
     timeout           = "15m"
   }
