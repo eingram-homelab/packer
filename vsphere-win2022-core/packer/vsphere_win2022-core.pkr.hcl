@@ -10,10 +10,10 @@ local "vsphere_password" {
   sensitive  = true
 }
 
-local "ssh_password" {
-  expression = vault("/secret/ssh/eingram", "ssh_password")
-  sensitive  = true
-}
+# local "ssh_password" {
+#   expression = vault("/secret/ssh/eingram", "ssh_password")
+#   sensitive  = true
+# }
 
 packer {
   required_version = ">= 1.7.4"
@@ -54,7 +54,7 @@ source "vsphere-iso" "win2022core" {
   winrm_timeout           = "10m"
   pause_before_connecting = "2m"
   winrm_username          = var.os_username
-  winrm_password          = local.ssh_password
+  winrm_password          = var.os_password
   vm_name                 = "${var.vm_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
   vm_version              = var.vm_version
   firmware                = var.vm_firmware
@@ -96,7 +96,7 @@ source "vsphere-iso" "win2022core" {
   floppy_dirs = ["${abspath(path.root)}/scripts", ]
   # floppy_files = ["unattended/autounattend.xml"]
   # floppy_files = ["drivers/PVSCSI.CAT", "drivers/PVSCSI.INF", "drivers/PVSCSI.SYS", "drivers/TXTSETUP.OEM"]
-  floppy_img_path = var.floppy_img_path
+  # floppy_img_path = var.floppy_img_path
 
   boot_wait = "3s"
   boot_command = [
@@ -125,17 +125,8 @@ build {
     filters = [
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
       "exclude:$_.Title -like '*Preview*'",
-      "include:$true"
-    ]
-  }
-
-  provisioner "windows-update" {
-    pause_before    = "1m"
-    timeout         = "1h"
-    search_criteria = "IsInstalled=0"
-    filters = [
-      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
-      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
       "include:$true"
     ]
   }
@@ -148,6 +139,20 @@ build {
       "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
       "exclude:$_.Title -like '*Preview*'",
       "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
+      "include:$true"
+    ]
+  }
+
+  provisioner "windows-update" {
+    pause_before    = "1m"
+    timeout         = "1h"
+    search_criteria = "IsInstalled=0"
+    filters = [
+      "exclude:$_.Title -like '*VMware*'", # Can break winRM connectivity to Packer since driver installs interrupt network connectivity
+      "exclude:$_.Title -like '*Preview*'",
+      "exclude:$_.Title -like '*Feature*'",
+      "exclude:$_.Title -like '*Broadcom*'",
       "include:$true"
     ]
   }

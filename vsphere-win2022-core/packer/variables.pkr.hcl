@@ -22,6 +22,13 @@ variable "os_username" {
   default     = "Packer"
 }
 
+variable "os_password" {
+  description = "Local workstation password for login, WinRM or SSH etc."
+  type        = string
+  default     = "${env("W10_PASS")}" # Example of using evironment variables.
+  sensitive   = true
+}
+
 variable "vcenter_server" {
   description = "vCenter server to connect."
   type        = string
@@ -93,6 +100,6 @@ variable "vmtools_iso_path" {
   description = "ISO Path for VMware Tools Windows exe. Used for drivers, performance etc."
   type        = string
 }
-variable "floppy_img_path" {
-  type = string
-}
+# variable "floppy_img_path" {
+#   type = string
+# }
