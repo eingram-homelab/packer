@@ -21,6 +21,7 @@ vm_version       = "20"                    # Refer to https://kb.vmware.com/s/ar
 
 os_iso_path      = "[esxinuc1:datastore1] Repo/Windows_Server_2016_Datacenter_EVAL_en-us_14393_refresh.ISO"
 vmtools_iso_path = "[esxinuc1:datastore1] Repo/windows.iso"
+floppy_img_path  = "[esxinuc1:datastore1] Repo/pvscsi-Windows8.flp"
 
 cpu_num   = 4
 ram       = 4096
