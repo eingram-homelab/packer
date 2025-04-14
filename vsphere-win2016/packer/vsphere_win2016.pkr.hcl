@@ -47,10 +47,10 @@ source "vsphere-iso" "win2016" {
   convert_to_template = true
   notes               = "Windows Server 2016 Datacenter x64 VM template built using Packer."
 
-  ip_wait_timeout   = "60m"
-  ip_settle_timeout = "1m"
-  communicator      = "winrm"
-  winrm_port             = "5985"
+  ip_wait_timeout         = "60m"
+  ip_settle_timeout       = "1m"
+  communicator            = "winrm"
+  winrm_port              = "5985"
   winrm_timeout           = "10m"
   pause_before_connecting = "2m"
   winrm_username          = var.os_username
