@@ -22,7 +22,7 @@ jobs:
       VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.2
         with:
           repository: eingram-homelab/packer
           ref: main
