@@ -1,4 +1,4 @@
-# Change this line to trigger new build
+# Change this line to trigger new build 
 
 packer {
   required_plugins {
@@ -129,7 +129,7 @@ source "vsphere-iso" "rocky" {
   # http_directory = "/"
   # http_content = local.data_source_content
   boot_command = [
-    "<up>e<wait><down><wait><down><wait><end> inst.text inst.ks=http://kickstart.local.lan/ks-rocky10.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
+    "<up>e<wait><down><wait><down><wait><end> inst.text inst.ks=http://kickstart.local.lan/ks-rocky10-rke.cfg<wait><leftCtrlOn>x<leftCtrlOff><wait>"
   ]
 }
 
