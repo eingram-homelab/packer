@@ -1,0 +1,9 @@
+name: Validate packer templates
+
+on:
+  pull_request:
+
+jobs:
+  validate:
+    uses: eingram-homelab/.github/blob/main/reusable_workflows/packer/packer_validate.yaml@main
+    name: Validate Packer Template
