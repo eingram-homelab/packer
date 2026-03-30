@@ -2,6 +2,10 @@ name: Validate packer templates
 
 on:
   pull_request:
+    branches: [ main ]
+    paths:
+      - '**.pkr.hcl'
+  workflow_dispatch:
 
 jobs:
   validate:
