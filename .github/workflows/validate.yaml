@@ -5,5 +5,5 @@ on:
 
 jobs:
   validate:
-    uses: eingram-homelab/.github/blob/main/reusable_workflows/packer/packer_validate.yaml@main
+    uses: eingram-homelab/reusable_workflows/.github/workflows/packer_validate.yaml@main
     name: Validate Packer Template
