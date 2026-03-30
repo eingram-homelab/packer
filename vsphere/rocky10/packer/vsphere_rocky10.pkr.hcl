@@ -1,6 +1,6 @@
 # Change this line to trigger new build
 
-packer {
+packr {
   required_plugins {
     vsphere = {
       source  = "github.com/hashicorp/vsphere"
