@@ -1,21 +1,17 @@
-name: Packer Validation and Build
+name: Packer Build
 
 on:
   # push:
   #   branches: [ main ]
   #   paths:
   #     - '**.pkr.hcl'
-  # pull_request:
-  #   branches: [ develop ]
-  #   paths:
-  #     - '**.pkr.hcl'
   workflow_dispatch:
 
 jobs:
-  validate_and_build:
+  build:
     outputs:
       TMPL_NAME: ${{ steps.set_TMPL_NAME.outputs.TMPL_NAME }}
-    name: Validate and Build Packer Templates
+    name: Build Packer Templates
     runs-on: arc-runners
     env:
       VAULT_ADDR: ${{ vars.VAULT_ADDR }}
@@ -39,30 +35,12 @@ jobs:
           files: |
             **/*.pkr.hcl
 
-      - name: Check Format for changed files
-        if: steps.changed-files.outputs.all_changed_files != ''
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            dir=$(dirname "$file")
-            echo "Checking format for $dir"
-            packer fmt -check "$dir"
-          done
-
       - name: Run packer init
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             dir=$(dirname "$file")
             echo "Running packer init for $dir"
             packer init "$dir"
-          done
-
-      - name: Run packer validate
-        if: steps.changed-files.outputs.all_changed_files != ''
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            dir=$(dirname "$file")
-            echo "Validating $dir"
-            packer validate "$dir"
           done
 
       - name: Run packer build
@@ -88,7 +66,7 @@ jobs:
 
   call_terraform_vsphere-tmpl-verify:
     needs: validate_and_build
-    uses: eingram-homelab/terraform/.github/workflows/vsphere-tmpl-verify.yaml@main
+    uses: eingram-homelab/reusable_workflows/.github/workflows/vsphere-tmpl-verify.yaml@main
     with:
       TMPL_NAME: ${{ needs.validate_and_build.outputs.TMPL_NAME }}
     secrets:
