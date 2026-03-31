@@ -1,5 +1,5 @@
 # Assign values to override their default values (default values are found in the vsphere_centos8.pkr.hcl file).
-# All values are automatically used and persist through the entire Packer process.
+# All values are automatically used and persist through the entire Packer process. 
 
 vsphere_template_name = "TMP-Rocky10_Packer"
 vm_folder             = "Templates"
