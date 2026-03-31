@@ -11,4 +11,5 @@ jobs:
   validate:
     uses: eingram-homelab/reusable_workflows/.github/workflows/packer_validate.yaml@main
     name: Validate Packer Template
-    secrets: inherit
+    secrets:
+      VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
