@@ -9,7 +9,7 @@ on:
 
 jobs:
   validate:
-    uses: eingram-homelab/reusable_workflows/.github/workflows/packer_validate.yaml@main
     name: Validate Packer Template
+    uses: eingram-homelab/reusable_workflows/.github/workflows/packer_validate.yaml@main
     secrets:
       VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
