@@ -1,0 +1,18 @@
+{
+  "builds": [
+    {
+      "name": "rocky",
+      "builder_type": "vsphere-iso",
+      "build_time": 1775096468,
+      "files": null,
+      "artifact_id": "TMP-Rocky10_Packer__20260402015310",
+      "packer_run_uuid": "e34a27b3-9171-f695-f2b0-daf6322a6180",
+      "custom_data": {
+        "build_timestamp": "2026-04-02 02:21:08",
+        "os_version": "Rocky Linux 10",
+        "vm_name": "TMP-Rocky10_Packer__20260402022108"
+      }
+    }
+  ],
+  "last_run_uuid": "e34a27b3-9171-f695-f2b0-daf6322a6180"
+}

@@ -4,7 +4,7 @@ packer {
   required_plugins {
     vsphere = {
       source  = "github.com/hashicorp/vsphere"
-      version = "~> 1"
+      version = ">= 2.1.2"
     }
   }
 }
@@ -71,7 +71,7 @@ build {
     custom_data = {
       build_timestamp = "${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}"
       vm_name         = "${var.vsphere_template_name}__${formatdate("YYYYMMDDHHmmss", timestamp())}"
-      os_version      = "Rocky Linux 9"
+      os_version      = "Rocky Linux 10"
     }
   }
 }
