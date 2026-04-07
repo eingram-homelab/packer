@@ -1,0 +1,15 @@
+name: Release Workflow
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.pkr.hcl'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    uses: eingram-homelab/reusable_workflows/.github/workflows/packer-build.yaml@main
+    name: Build vSphere Template
+    secrets:
+      VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}

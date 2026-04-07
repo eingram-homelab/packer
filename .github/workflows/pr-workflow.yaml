@@ -1,4 +1,4 @@
-name: Validate packer templates
+name: PR Workflow
 
 on:
   pull_request:
@@ -10,6 +10,6 @@ on:
 jobs:
   validate:
     uses: eingram-homelab/reusable_workflows/.github/workflows/packer_validate.yaml@main
-    name: Validate Packer Template
+    name: Validate Packer Project
     secrets:
       VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
